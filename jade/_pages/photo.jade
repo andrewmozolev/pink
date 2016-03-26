@@ -1,0 +1,22 @@
+extends ../_layouts/base
+
+block variables
+   - var selected = "photo.html"
+
+block content
+  +heading("Фотографии пользователей")
+  .box
+    .container
+      +description("Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?")
+
+      +photos
+
+      +description("Затмите их всех! Выкладывайте все, что накопилось в телефоне!")
+
+  .box.box--gray
+    .container
+      +b.FORM.form(
+        action="/echo",
+        method="post"
+      )
+        +add-photo

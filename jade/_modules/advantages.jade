@@ -1,0 +1,6 @@
+mixin advantages
+  +b.advantages
+    each item in site.data.advantages
+      +e.item
+        +e.H3.title= item.title
+        +e.P.text= item.text

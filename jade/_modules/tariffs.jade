@@ -1,0 +1,63 @@
+- var tariffs = site.data.tariffs[0]
+
+mixin tariffs
+  +b.tariffs
+    each item,index in tariffs.tariffs
+
+      //- проверяем checked
+      - var checked = item.isChecked ? true : false
+
+      //- Добавляем inputs для переключения слайдов
+      +e.INPUT.input(
+          type = 'radio',
+          id = 'toggle-tariffs-' + (index+1),
+          name = 'tariffs',
+          checked = checked
+        )
+
+    //- Раск
+    style td,th {border: 1px solid black;}
+
+    +e.TABLE.table
+      //- Делаем цикл для вывода строк
+      each item in site.data.tariffs
+        //- Сами строки
+        +e.TR
+
+          //- Проверяем является ли строка тарифами <<<<<<<<<<<<<
+          if item.tariffs
+            //- Если да - то добавляем одну пустую <th>
+            th
+            //- Далее крутим цикл по тарифам
+            each val in item.tariffs
+              //- Закидываем их так же в <th>
+              th
+                //- Вывоводим имя тарифа
+                +e.title= val.tariffName
+                //- Выводим цену тарифа
+                +e.price= val.tariffPrice
+
+
+            //- Иначе проверяем является ли строка опциями <<<<<<<<<<<<<<
+          else if item.option
+            //- В первую ячейку <td> записываем опцию
+            td= item.option
+            //- Далее крутим цикл по значениям тарифов для данной опции
+            each val in item.tariffValues
+              //- Закидываем их в <td>
+              td(data-option=item.option)
+                //- Проверяем значение тарифа на true
+                if val.tariffValue
+                  +e.SPAN.icon--true true
+                else
+                  +e.SPAN.icon--false false
+
+
+
+    //- Добавляем labels переключатели
+    each item,index in tariffs.tariffs
+      +e.LABEL.toggle(
+          href='#' + (index+1),
+          for='toggle-tariffs-' + (index+1)
+        )
+        = 'tariff:' + (index+1)

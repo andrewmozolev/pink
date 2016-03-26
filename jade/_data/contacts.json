@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Звоните",
+    "type": "phone",
+    "description": "+7 (812) 555-66-66",
+    "value": "+78125556666"
+  },
+  {
+    "title": "Пишите",
+    "type": "email",
+    "description": "mail@htmlacademy.ru",
+    "value": "mail@htmlacademy.ru"
+  },
+  {
+    "title": "Приезжайте в гости",
+    "type": "address",
+    "description": "ул. Большая Конюшенная, 19/8"
+  }
+]

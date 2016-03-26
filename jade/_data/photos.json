@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Анна",
+    "time": "5 минут назад",
+    "comment": "Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую транслацию в перископе, задавайте свои вопросы!",
+    "img": "http://placehold.it/320x150",
+    "link": "#",
+    "imgAlt": "Панорама дня",
+    "like": "215",
+    "best": true
+  },
+  {
+    "name": "Левон",
+    "time": "5 часов назад",
+    "comment": "Вчера он на луну летал, сегодня в руки к нам попал.",
+    "img": "http://placehold.it/285x180",
+    "link": "#",
+    "imgAlt": "Photo",
+    "like": "356",
+    "best": false
+  },
+  {
+    "name": "Антон",
+    "time": "12 часов назад",
+    "comment": "Соседи будут рады!",
+    "img": "http://placehold.it/285x180",
+    "link": "#",
+    "imgAlt": "Photo",
+    "like": "666",
+    "best": false
+  },
+  {
+    "name": "Борис",
+    "time": "20 часов назад",
+    "comment": "Здесь могла быть ваша цитата о высоком и вечном.",
+    "img": "http://placehold.it/285x180",
+    "link": "#",
+    "imgAlt": "Photo",
+    "like": "215",
+    "best": false
+  },
+  {
+    "name": "Сергей",
+    "time": "25 часов назад",
+    "comment": "Самая кубанская в мире!",
+    "img": "http://placehold.it/285x180",
+    "link": "#",
+    "imgAlt": "Photo",
+    "like": "4",
+    "best": false
+  },
+  {
+    "name": "Максим",
+    "time": "40 часов назад",
+    "comment": "Где снег-то?",
+    "img": "http://placehold.it/285x180",
+    "link": "#",
+    "imgAlt": "Photo",
+    "like": "150",
+    "best": false
+  },
+  {
+    "name": "Надежда",
+    "time": "45 часов назад",
+    "comment": "Всем GM и взаимные лайки!",
+    "img": "http://placehold.it/285x180",
+    "link": "#",
+    "imgAlt": "Photo",
+    "like": "2560",
+    "best": false
+  }
+]

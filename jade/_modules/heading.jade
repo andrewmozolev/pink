@@ -1,0 +1,7 @@
+mixin heading(title, ifIndex)
+
+  - var modifyer = ifIndex ? '--index' : ''
+
+    +b.heading(class = modifyer)
+      .container
+        +e.H2.title= title

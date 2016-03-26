@@ -1,0 +1,8 @@
+mixin page-header
+  +b.HEADER.page-header
+    +e.inner
+      .container
+        //- если нужен svg в лого добавляем -> (true)
+        +logo(true)
+      +e.btn-hamburger
+      +navigation
