@@ -7,3 +7,5 @@ Thumbs.db
 *.psd
 *.ai
 css/*.css
+build/
+*.todo
