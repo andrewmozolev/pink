@@ -6,7 +6,10 @@ block variables
   - var selected = "form.html"
 
 block content
-  +heading("Конкурс на самое безбашеное путешествие с Пинк")
+
+  +b.heading
+    +e.wrap
+      +e.H2.title Конкурс на самое безбашеное путешествие с Пинк
 
   +b.FORM.form(
     action="/echo",
@@ -21,9 +24,10 @@ block content
 
     .box.box--gray
       .container
-        p.form__title Ваши безбашенные достижения в путешествии
-        each item in site.data.inputs.achievementsCheckboxes
-          +checkbox(item)
+        p.form__title С каким приложением путешествовали?
+        each item in site.data.inputs.osRadios
+          +radio(item)
+
     .box
       .container
         each item in site.data.inputs.contactInputs
@@ -31,9 +35,10 @@ block content
 
     .box.box--gray
       .container
-        p.form__title С каким приложением путешествовали?
-        each item in site.data.inputs.osRadios
-          +radio(item)
+        p.form__title Ваши безбашенные достижения в путешествии
+        each item in site.data.inputs.achievementsCheckboxes
+          +checkbox(item)
+
 
     .box
       .container
@@ -44,10 +49,11 @@ block content
             name="user-recall",
             id="user-recall"
           )
+    .box
+      .container
+        +e.btn
+          +b.BUTTON.btn--form(type = "submit") Отправить форму
 
-    +e.btn
-      +b.BUTTON.btn--form(type = "submit") Отправить форму
-
-    +e.SPAN.footnote
-      +e.SPAN.color *
-      |— обязательные поля
+        +e.SPAN.footnote
+          +e.SPAN.color *
+          |— обязательные поля

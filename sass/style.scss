@@ -1,8 +1,13 @@
+// @include media(mobile) {}
+// @include media(tablet) {}
+// @include media(desktop) {}
+
+@import "_global/normalize";
 @import "_global/variables";
 @import "_global/mixins";
-@import "_global/type";
-
-
+@import "_global/base";
+@import "_global/grid";
+@import "_global/svg-sprite";
 @import "_modules/btn";
 
 //- Header
@@ -11,10 +16,12 @@
 @import "_modules/navigation";
 
 //- Content
+@import "_modules/box";
 @import "_modules/heading";
 @import "_modules/downloads";
 @import "_modules/info-title";
 @import "_modules/advantages";
+@import "_modules/feature";
 @import "_modules/reviews";
 @import "_modules/comment";
 @import "_modules/tariffs";

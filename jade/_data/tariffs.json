@@ -4,12 +4,12 @@
       {
         "tariffName": "Бесплатный",
         "tariffPrice": "3.00 USD",
-        "isChecked": true
+        "isChecked": false
       },
       {
         "tariffName": "Стандарт",
         "tariffPrice": "6.00 USD",
-        "isChecked": false
+        "isChecked": true
       },
       {
         "tariffName": "Премиум",

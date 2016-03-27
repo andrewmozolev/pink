@@ -1,0 +1,20 @@
+.logo {
+  outline: 1px solid red;
+  color: #fff;
+  height: 66px;
+  width: 150px;
+  padding-top: 22px;
+
+
+  &__text,
+  &__link {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+  }
+}
+
+
+// @media #{$mobile} {}
+// @media #{$tablet} {}
+// @media #{$desktop} {}

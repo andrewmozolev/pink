@@ -1,0 +1,37 @@
+.photos {
+
+
+  &__grid {
+    @include grid;
+  }
+
+
+  &__item {
+    @include col;
+    margin-bottom: 20px;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .photos {
+    &__item {
+      @include col(6);
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .photos {
+
+    &__item {
+      @include col(4);
+      margin-bottom: 54px;
+    }
+  }
+}

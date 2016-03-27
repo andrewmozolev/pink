@@ -1,0 +1,24 @@
+.box {
+  background-color: #fff;
+
+
+  &--gray {
+    background-color: $bg_gray;
+  }
+}
+
+
+@media #{$desktop} {
+  .box {
+
+
+    &--gray-desktop {
+      background-color: $bg_gray;
+    }
+
+
+    &--no-desktop {
+      background-color: transparent;
+    }
+  }
+}

@@ -4,16 +4,20 @@ block variables
    - var selected = "photo.html"
 
 block content
-  +heading("Фотографии пользователей")
+
+  +b.heading
+    +e.wrap
+      +e.H2.title Фотографии пользователей
   .box
     .container
       +description("Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?")
 
-      +photos
+    +photos
 
+    .container
       +description("Затмите их всех! Выкладывайте все, что накопилось в телефоне!")
 
-  .box.box--gray
+  .box.box--gray.box--no-desktop
     .container
       +b.FORM.form(
         action="/echo",

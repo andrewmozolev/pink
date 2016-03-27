@@ -1,0 +1,21 @@
+//gutter between column
+$gutter: $offset-mobile;
+
+// grid container
+@mixin grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-left: - $gutter / 2;
+  margin-right: - $gutter / 2;
+}
+
+@mixin col($i: 12) {
+  flex: 0 0 #{$i / 12 * 100%};
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+  display: flex;
+}
+
+
+

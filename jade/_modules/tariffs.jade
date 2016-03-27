@@ -15,14 +15,12 @@ mixin tariffs
           checked = checked
         )
 
-    //- Раск
-    style td,th {border: 1px solid black;}
-
+      //- Создаем нашу таблицу
     +e.TABLE.table
       //- Делаем цикл для вывода строк
       each item in site.data.tariffs
         //- Сами строки
-        +e.TR
+        +e.TR.tr--empty
 
           //- Проверяем является ли строка тарифами <<<<<<<<<<<<<
           if item.tariffs

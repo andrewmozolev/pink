@@ -11,6 +11,9 @@ var syntax_scss  = require('postcss-scss');
 var stylelint    = require('stylelint');
 var server = require('browser-sync');
 var notify = require('gulp-notify');
+var uglify = require('gulp-uglify');
+var svgSprite = require('gulp-svg-sprite');
+
 
 var fs = require('fs'); // встроенный в node модуль, устанавливать не надо
 var foldero = require('foldero'); // плагин
@@ -25,19 +28,28 @@ var dataPath = 'jade/_data';
 var paths = {
   build: {
     jade: 'build/',
-    sass: 'build/css/'
+    sass: 'build/css/',
+    js: 'build/js/',
+    svg: 'build/img/svg-sprite.svg',
+    img: 'build/img/'
   },
   src: {
     jade: 'jade/_pages/*.jade',
-    sass: 'sass/style.scss'
+    sass: 'sass/style.scss',
+    js: 'js/*.js',
+    svg: 'img/svg-sprite/*.svg',
+    img: 'img/**/*.{jpg,png}'
   },
   watch: {
     jade: 'jade/**/*.*',
-    sass: 'sass/**/*.{scss,sass}'
+    sass: 'sass/**/*.{scss,sass}',
+    js: 'js/**/*.js',
+    svg: 'img/svg-sprite/**/*.svg',
+    img: 'img/**/*.{jpg,png}'
   }
 };
 
-
+// Gulp Jade
 gulp.task('jade', function() {
   // в этой переменной копим данные
   var siteData = {};
@@ -93,7 +105,52 @@ gulp.task('jade', function() {
 });
 
 
-gulp.task("styletest", function() {
+//  Gulp SVG-Sprite
+gulp.task('svg', function() {
+  return gulp.src(paths.src.svg)
+  .pipe(svgSprite({
+    mode: {
+      symbol: {
+        dest: '.',
+        dimensions: '%s',
+        sprite: paths.build.svg,
+        example: false,
+        render: {scss: {dest: 'sass/_global/svg-sprite.scss'}}
+      }
+    },
+    svg: {
+      xmlDeclaration: false,
+      doctypeDeclaration: false
+    }
+  }))
+  .pipe(gulp.dest('./'));
+});
+
+
+// Gulp Images
+gulp.task('images', function() {
+  return gulp.src(paths.src.img)
+  .pipe(gulp.dest(paths.build.img))
+})
+
+
+// Gulp JS
+gulp.task('js', function() {
+  gulp.src(paths.src.js)
+  .pipe(plumber({
+    errorHandler: notify.onError('Error: <%= error.message %>')
+  }))
+  .pipe(uglify())
+  .pipe(gulp.dest(paths.build.js))
+  .pipe(notify({
+    message:'JS complite: <%= file.relative %>!',
+    sound: 'Pop'
+  }))
+});
+
+
+// Gulp Sass
+gulp.task('styletest', function() {
   var processors = [
     stylelint(),
     reporter({
@@ -101,12 +158,12 @@ gulp.task("styletest", function() {
     })
   ];
 
-  return gulp.src(['sass/**/*.scss'])
+  return gulp.src(['!sass/_global/svg-sprite.scss', 'sass/**/*.scss'])
     .pipe(plumber())
     .pipe(postcss(processors, {syntax: syntax_scss}))
 });
 
-gulp.task('style',["styletest"], function() {
+gulp.task('style',['styletest'], function() {
   gulp.src(paths.src.sass)
   .pipe(plumber({
     errorHandler: notify.onError({
@@ -128,13 +185,14 @@ gulp.task('style',["styletest"], function() {
   .pipe(gulp.dest(paths.build.sass))
   .pipe(server.reload({stream: true}))
   .pipe(notify({
-    message:'jade up!',
+    message:'SCSS complite: <%= file.relative %>!',
     sound: 'Pop'
   }));
 });
 
 
-gulp.task('serve', ['style','jade'], function() {
+
+gulp.task('serve', ['style','jade','js','svg','images'], function() {
   server.init({
     server: {
       baseDir: paths.build.jade
@@ -146,4 +204,7 @@ gulp.task('serve', ['style','jade'], function() {
 
   gulp.watch(paths.watch.sass, ['style']);
   gulp.watch(paths.watch.jade, ['jade', server.reload]);
+  gulp.watch(paths.watch.js, ['js']);
+  gulp.watch(paths.watch.svg, ['svg']);
+  gulp.watch(paths.watch.img, ['img']);
 });

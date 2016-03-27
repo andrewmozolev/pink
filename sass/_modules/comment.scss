@@ -1,0 +1,29 @@
+.comment {
+  margin: 0;
+  text-align: center;
+}
+
+
+@media #{$mobile} {
+  .comment {
+    position: relative;
+    padding-top: 90px;
+
+
+    &__author {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+    }
+
+
+    &__about-author {
+      display: none;
+    }
+  }
+}
+
+
+// @media #{$tablet} {}
+// @media #{$desktop} {}

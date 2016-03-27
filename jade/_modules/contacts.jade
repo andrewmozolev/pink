@@ -2,8 +2,8 @@ mixin contacts
   +b.contacts
     +e.H2.headling Остались вопросы? Свяжитесь с нами!
     each item in site.data.contacts
-      +e.item
-        +e.H3.title= item.title + ":"
+      +e.item(class= "--" + item.type)
+        +e.SPAN.title= item.title + ":"
         case item.type
           when "phone"
             +e.A.description(href="tel:" + item.value)= item.description

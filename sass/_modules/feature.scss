@@ -1,0 +1,28 @@
+.feature {
+  outline: 1px solid red;
+  padding-top: 60px;
+}
+
+
+@media #{$mobile} {
+  .feature {
+    display: none;
+  }
+}
+
+
+@media #{$tablet} {
+  .feature {
+    min-height: 400px;
+    padding-left: 50%;
+  }
+}
+
+
+@media #{$desktop} {
+  .feature {
+    min-height: 430px;
+    padding-left: 370px;
+
+  }
+}

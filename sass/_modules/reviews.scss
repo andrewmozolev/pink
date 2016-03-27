@@ -1,0 +1,33 @@
+.reviews {
+
+
+  &__item {
+    display: none;
+  }
+
+
+  &__input[id="toggle-reviews-1"]:checked ~ &__item--1,
+  &__input[id="toggle-reviews-2"]:checked ~ &__item--2,
+  &__input[id="toggle-reviews-3"]:checked ~ &__item--3 {
+    display: block;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .reviews {
+    min-height: 290px;
+    padding-top: 35px;
+  }
+}
+
+
+@media #{$desktop} {
+  .reviews {
+    min-height: 415px;
+    padding-top: 180px;
+  }
+}

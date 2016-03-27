@@ -1,0 +1,20 @@
+$break-mobile: 320px;
+$break-tablet: 700px;
+$break-desktop: 1020px;
+
+$offset-mobile: 20px;
+$offset-tablet: 40px;
+$offset-desktop: 40px;
+
+$mobile: "only screen and (max-width: "$break-tablet - 1")";
+$mobile-tablet: "only screen and (max-width: "$break-desktop - 1")";
+$tablet: "only screen and (min-width: "$break-tablet") and (max-width: "$break-desktop - 1")";
+$tablet-desktop: "only screen and (min-width: "$break-tablet")";
+$desktop: "only screen and (min-width: "$break-desktop")";
+
+$bg_gray: #f2f2f2;
+
+$font-family: "Open Sans", Arial, sans-serif;
+$fw--light: 300;
+$fw--regular: 400;
+$fw--bold: 700;

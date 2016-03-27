@@ -1,0 +1,76 @@
+.downloads {
+  background-color: #1d2631;
+  color: #fff;
+
+
+  &__wrap {
+    outline: 1px solid red;
+    min-height: 271px;
+  }
+
+
+  &__link {
+    color: #fff;
+  }
+
+  &__text {
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: $fw--light;
+    line-height: (24 / 14);
+  }
+}
+
+
+@media #{$mobile} {
+  .downloads {
+    @include container;
+
+
+    &__text {
+      max-width: 280px;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+  }
+}
+
+
+@media #{$tablet} {
+  .downloads {
+    width: 50%;
+    padding-right: 10px;
+    outline: 1px solid green;
+
+
+    &__wrap {
+      width: 300px;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+@media #{$tablet-desktop} {
+  .downloads {
+    background-color: transparent;
+
+
+    // &__wrap {
+    //   width: 300px;
+    // }
+
+
+    &__text {
+      font-size: 18px;
+      line-height: (24 / 18);
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .downloads {
+    @include container;
+  }
+}

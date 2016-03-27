@@ -1,16 +1,16 @@
 extends ../_layouts/base
 
 block variables
-  - var isNoFooter = true
+  - var isNoShowMobileFooter = true
   - var isIndex = true
-  - var selected = "index.html";
-
+  - var selected = "index.html"
+  - var isMap = true
 block content
-  +heading("Взгляните на жизнь иначе!", true)
 
-  .box.box--dark
-    .container
-      +downloads
+  +b.heading--index
+    +e.wrap--index
+      +e.H2.title--index Взгляните на&nbsp;жизнь иначе!
+    +downloads
 
   .box
     .container
@@ -19,6 +19,11 @@ block content
   .box.box--gray
     .container
       +advantages
+
+  .box.box--gray-desktop
+    .container
+      +feature
+
   .box
     .container
       +reviews

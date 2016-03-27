@@ -1,4 +1,8 @@
 mixin comment(item)
   +b.BLOCKQUOTE.comment
-    +e.CITE.author= item.author
     +e.P.text= item.comment
+    +e.CITE.author= item.author
+    +e.about-author
+      +e.SPAN.age= item.age
+        |,&nbsp;
+      +e.SPAN.job= item.job
