@@ -6,7 +6,7 @@
 
   &__title {
     margin: 0;
-    font-weight: $fw--light;
+    font-weight: 300;
     font-size: 24px;
     line-height: (29 / 24);
   }
@@ -23,7 +23,8 @@
 
 
     &__part {
-      width: 220px;
+      padding-left: 35px;
+      padding-right: 35px;
     }
 
 

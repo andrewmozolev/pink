@@ -1,8 +1,14 @@
 .logo {
   position: relative;
-  outline: 1px solid red;
+  // outline: 1px solid red;
   color: #fff;
   width: 150px;
+  margin-top: 21px;
+
+
+  &__logo-svg {
+    display: none;
+  }
 
 
   &__text,
@@ -14,13 +20,33 @@
 }
 
 
-// @media #{$mobile} {}
+@media #{$mobile} {
+  .logo {
+    &__logo-svg--mobile {
+      display: block;
+    }
+  }
+}
 
 
-// @media #{$tablet} {
-//   .logo {
-//   }
-// }
+@media #{$tablet} {
+  .logo {
+    margin-top: 27px;
 
 
-// @media #{$desktop} {}
+    &__logo-svg--tablet {
+      display: block;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .logo {
+    margin-top: 27px;
+
+    &__logo-svg--desktop {
+      display: block;
+    }
+  }
+}

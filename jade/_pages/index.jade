@@ -5,6 +5,13 @@ block variables
   - var isIndex = true
   - var selected = "index.html"
   - var isMap = true
+block append style
+  style.
+    .reviews__input[id="toggle-reviews-1"]:checked ~ .reviews__item--1,
+    .reviews__input[id="toggle-reviews-2"]:checked ~ .reviews__item--2,
+    .reviews__input[id="toggle-reviews-3"]:checked ~ .reviews__item--3 {
+      display: block;
+    }
 block content
 
   +b.heading--index
@@ -31,7 +38,7 @@ block content
   .box.box--gray
     +tariffs
 
-  .box
+  .box.box--triangle
     .container
       +contacts
-    +map
+  +map

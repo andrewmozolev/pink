@@ -12,7 +12,7 @@
 
   th:nth-child(n+2) {
     color: #fff;
-    background-color: #283645;
+    background-color: $bg_blue;
   }
 
 
@@ -34,24 +34,29 @@
 
     &__table {
       position: relative;
-      width: 400%;
+      width: 300%;
       transition: transform 1s;
     }
 
+    th:first-child,
+    td:first-child {
+      display: none;
+      background-color: #000;
+    }
 
     td {
-      width: 25%;
+      width: (100% / 3);
       padding-right: 20px;
     }
 
 
-    td:nth-child(n+2) {
+    td {
       position: relative;
       text-align: right;
     }
 
 
-    td:nth-child(n+2)::before {
+    td::before {
       position: absolute;
       left: 20px;
       content: attr(data-option);
@@ -62,17 +67,17 @@
 
 
     &__input[id="toggle-tariffs-1"]:checked ~ &__table {
-      transform: translateX(-25%);
+      transform: translateX(0%);
     }
 
 
     &__input[id="toggle-tariffs-2"]:checked ~ &__table {
-      transform: translateX(-50%);
+      transform: translateX(-33.33%);
     }
 
 
     &__input[id="toggle-tariffs-3"]:checked ~ &__table {
-      transform: translateX(-75%);
+      transform: translateX(-66.66%);
     }
   }
 }

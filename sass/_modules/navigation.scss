@@ -7,8 +7,8 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    font-weight: $fw--bold;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: $fz_base;
     line-height: (32 / 18);
   }
 
@@ -31,7 +31,7 @@
   .navigation {
     left: 0;
     right: 0;
-    background-color: #283645;
+    background-color: $bg_blue;
 
 
     &--closed {
@@ -67,26 +67,29 @@
 
 @media #{$desktop} {
   .navigation {
-    display: block;
-    margin-top: 45px;
+    max-width: 790px;
+    padding-top: 46px;
+
 
     &__list {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      // max-width: 790px;
-      font-size: 0;
-      font-weight: $fw--regular;
+      align-items: stretch;
+      margin-left: -82px;
+      font-weight: 400;
+      line-height: 1;
     }
 
 
     &__item {
-      // display: inline-block;
-      // vertical-align: top;
-      height: 55px;
-      font-size: 18px;
       margin-left: 82px;
-      outline: 1px solid red;
+      padding-bottom: 30px;
+    }
+
+
+    &__link {
+      padding: 0;
     }
   }
 }

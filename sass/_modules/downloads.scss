@@ -1,7 +1,7 @@
 .downloads {
   background-color: #1d2631;
   color: #fff;
-
+  text-align: center;
 
   &__wrap {
     outline: 1px solid red;
@@ -15,7 +15,7 @@
 
   &__text {
     text-align: center;
-    font-weight: $fw--light;
+    font-weight: 300;
     line-height: (24 / 14);
   }
 }
@@ -55,9 +55,9 @@
     background-color: transparent;
 
 
-    // &__wrap {
-    //   width: 300px;
-    // }
+    &__wrap {
+      width: 300px;
+    }
 
 
     &__text {

@@ -14,7 +14,7 @@ function handleMenu(menu, togglers) {
 
   for (var i = togglers.length - 1; i >= 0; i--) {
     var toggler = togglers[i];
-    toggler.classList.add('page-header__btn-burger--opened');
+    toggler.classList.add('page-header__btn-burger--show');
     toggler.addEventListener('click', onToggleClick);
   }
 
@@ -33,9 +33,11 @@ function handleMenu(menu, togglers) {
 
 
 function initMap() {
-
-  var centerLatLng = new google.maps.LatLng(59.938794, 30.323082);
-  var markerLatLng = new google.maps.LatLng(59.938770, 30.323075);
+  var map = document.getElementById('map');
+  var latitude = map.getAttribute('data-latitude');
+  var longitude = map.getAttribute('data-longitude');
+  var centerLatLng = new google.maps.LatLng(latitude,longitude);
+  // var markerLatLng = new google.maps.LatLng(59.938770, 30.323075);
 
   var mapOptions = {
     zoom: 16,

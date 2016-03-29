@@ -38,7 +38,7 @@ var paths = {
     sass: 'sass/style.scss',
     js: 'js/*.js',
     svg: 'img/svg-sprite/*.svg',
-    img: 'img/**/*.{jpg,png}'
+    img: ['!img/svg-sprite/*.*','img/**/*.*']
   },
   watch: {
     jade: 'jade/**/*.*',

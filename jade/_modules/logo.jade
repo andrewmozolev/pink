@@ -8,7 +8,11 @@ mixin logo(isImage)
     a(href=href, class="logo__" + className)
 
       if (isImage)
-        +e.SVG.logo-svg.svg-logo-pink-white-mobile
+        +e.SVG.logo-svg--mobile.svg-logo-pink-white-mobile
           use(xlink:href="img/svg-sprite.svg#logo-pink-white-mobile")
+        +e.SVG.logo-svg--tablet.svg-logo-pink-white-tablet
+          use(xlink:href="img/svg-sprite.svg#logo-pink-white-tablet")
+        +e.SVG.logo-svg--desktop.svg-logo-pink-white-desktop
+          use(xlink:href="img/svg-sprite.svg#logo-pink-white-desktop")
 
       | Pink

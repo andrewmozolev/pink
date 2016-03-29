@@ -12,10 +12,17 @@ $tablet: "only screen and (min-width: "$break-tablet") and (max-width: "$break-d
 $tablet-desktop: "only screen and (min-width: "$break-tablet")";
 $desktop: "only screen and (min-width: "$break-desktop")";
 
+$retina2x: "(min-resolution: 1.5dppx)";
+
+$fz_base: 18px;
+$fz_small: ceil($fz_base * 0.77);
+$fz_large: ceil($fz_base * 1.2);
+
 $bg_gray: #f2f2f2;
 $bg_pink: #d22856;
+$bg_blue: #283645;
+
+$c_dark: #283645;
+
 $bg_pink-opacity: rgba(210, 40, 86, 0.3);
 
-$fw--light: 300;
-$fw--regular: 400;
-$fw--bold: 700;

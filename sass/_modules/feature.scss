@@ -1,6 +1,27 @@
 .feature {
+  position: relative;
   outline: 1px solid red;
   padding-top: 60px;
+  background-image: url("../img/bg/bg-timer.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  &__svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    fill: #dedede;
+    width: 240px;
+    height: 277px;
+    outline: 1px solid red;
+  }
+
+
+  &__title {
+    margin-top: 0;
+  }
 }
 
 
@@ -13,7 +34,7 @@
 
 @media #{$tablet} {
   .feature {
-    min-height: 400px;
+    min-height: 394px;
     padding-left: 50%;
   }
 }
@@ -24,5 +45,10 @@
     min-height: 430px;
     padding-left: 370px;
 
+
+    &__svg {
+      width: 300px;
+      height: 345px;
+    }
   }
 }
