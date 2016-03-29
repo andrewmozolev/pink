@@ -9,7 +9,7 @@ block content
 
   +b.heading
     +e.wrap
-      +e.H2.title Конкурс на самое безбашеное путешествие с Пинк
+      +e.H2.title Конкурс на&nbsp;самое безбашеное путешествие с&nbsp;Пинк
 
   +b.FORM.form(
     action="/echo",
@@ -17,14 +17,14 @@ block content
   )
     .box
       .container
-        +description("Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!")
+        +description("Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на&nbsp;вашу бонусную карту!")
 
         each item in site.data.inputs.nameInputs
           +form-group(item)
 
     .box.box--gray
       .container
-        p.form__title С каким приложением путешествовали?
+        p.form__title С&nbsp;каким приложением путешествовали?
         each item in site.data.inputs.osRadios
           +radio(item)
 
@@ -35,7 +35,7 @@ block content
 
     .box.box--gray
       .container
-        p.form__title Ваши безбашенные достижения в путешествии
+        p.form__title Ваши безбашенные достижения в&nbsp;путешествии
         each item in site.data.inputs.achievementsCheckboxes
           +checkbox(item)
 

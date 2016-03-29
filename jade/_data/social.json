@@ -1,14 +1,17 @@
 [
   {
-    "name": "icon-twitter",
+    "name": "twitter",
+    "icon": "icon-twitter",
     "link": "#"
   },
   {
-    "name": "icon-facebook",
+    "name": "facebook",
+    "icon": "icon-facebook",
     "link": "#"
   },
   {
-    "name": "icon-youtube",
+    "name": "youtube",
+    "icon": "icon-youtube",
     "link": "#"
   }
 ]

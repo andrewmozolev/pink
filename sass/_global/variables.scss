@@ -13,8 +13,9 @@ $tablet-desktop: "only screen and (min-width: "$break-tablet")";
 $desktop: "only screen and (min-width: "$break-desktop")";
 
 $bg_gray: #f2f2f2;
+$bg_pink: #d22856;
+$bg_pink-opacity: rgba(210, 40, 86, 0.3);
 
-$font-family: "Open Sans", Arial, sans-serif;
 $fw--light: 300;
 $fw--regular: 400;
 $fw--bold: 700;

@@ -20,7 +20,7 @@ function handleMenu(menu, togglers) {
 
 }
 
-(function menu() {
+(function() {
   var btns = document.querySelectorAll('.js-toggle');
   var menu = document.getElementById('nav');
   var header = document.getElementById('header');

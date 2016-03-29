@@ -2,7 +2,7 @@
 // @include media(tablet) {}
 // @include media(desktop) {}
 
-@import "_global/normalize";
+@import "../node_modules/normalize.css/normalize";
 @import "_global/variables";
 @import "_global/mixins";
 @import "_global/base";

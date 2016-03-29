@@ -1,6 +1,6 @@
 mixin contacts
   +b.contacts
-    +e.H2.headling Остались вопросы? Свяжитесь с нами!
+    +e.H2.headling Остались вопросы? Свяжитесь с&nbsp;нами!
     each item in site.data.contacts
       +e.item(class= "--" + item.type)
         +e.SPAN.title= item.title + ":"

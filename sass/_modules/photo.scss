@@ -36,10 +36,12 @@
 
 @media #{$tablet} {
   .photo {
+
+
     &--normal {
       max-width: 300px;
-      margin: 0 auto;
     }
+
 
     &__inner--normal {
       padding-left: 28px;

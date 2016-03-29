@@ -21,3 +21,21 @@
     outline: 2px solid purple;
   }
 }
+
+@mixin h1 {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-style: normal;
+  font-size: 50px;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #000;
+}
+
+@mixin h2 {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000;
+}

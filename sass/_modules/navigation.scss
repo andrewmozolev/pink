@@ -41,6 +41,7 @@
 
     &--positioned {
       position: absolute;
+      top: 100%;
     }
 
 
@@ -67,18 +68,22 @@
 @media #{$desktop} {
   .navigation {
     display: block;
-    margin-top: 40px;
+    margin-top: 45px;
 
     &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      // max-width: 790px;
       font-size: 0;
-      max-width: 790px;
       font-weight: $fw--regular;
     }
 
 
     &__item {
-      display: inline-block;
-      vertical-align: top;
+      // display: inline-block;
+      // vertical-align: top;
+      height: 55px;
       font-size: 18px;
       margin-left: 82px;
       outline: 1px solid red;

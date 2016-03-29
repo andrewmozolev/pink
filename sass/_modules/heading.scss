@@ -2,12 +2,13 @@
   position: relative;
   z-index: 1;
   background-color: #1d2732;
-  padding-top: 23px;
 
 
   &__title {
-    width: 245px;
     margin: 0 auto;
+    margin-top: 23px;
+    padding-left: 25px;
+    padding-right: 25px;
     text-align: center;
     color: #fff;
     outline: 1px solid red;
@@ -37,7 +38,7 @@
       background-image: url("../img/iphone-hand-mobile.png"), url("../img/bg-back-mobile.jpg");
       background-repeat: no-repeat, repeat;
       background-size: auto, cover;
-      background-position: bottom 0 left 0, 50% 50%;
+      background-position: bottom 0 left 50%, 50% 50%;
     }
   }
 }
@@ -48,13 +49,14 @@
     @include container;
     min-height: 330px;
     padding-top: 66px;
-    background-image: url("../img/bg-back-mobile.jpg");
-    background-size: cover;
-    background-position: 50% 50%;
+    background-image: url("../img/iphone-hand-tablet@1x.png"), url("../img/bg-back-mobile.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: auto, cover;
+    background-position: bottom 0 right 0, 50% 50%;
 
 
     &--index {
-      min-height: 620px;
+      min-height: 730px;
       padding-top: 95px;
     }
 

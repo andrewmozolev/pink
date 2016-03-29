@@ -1,9 +1,8 @@
 .logo {
+  position: relative;
   outline: 1px solid red;
   color: #fff;
-  height: 66px;
   width: 150px;
-  padding-top: 22px;
 
 
   &__text,
@@ -16,5 +15,12 @@
 
 
 // @media #{$mobile} {}
-// @media #{$tablet} {}
+
+
+// @media #{$tablet} {
+//   .logo {
+//   }
+// }
+
+
 // @media #{$desktop} {}

@@ -9,6 +9,6 @@ mixin social
 
         = item.name
 
-        +e.SVG.svg(class = "svg-" + item.name)
-          use(xlink:href="img/svg-sprite.svg#" + item.name)
+        +e.SVG.svg(class = "svg-" + item.icon)
+          use(xlink:href="img/svg-sprite.svg#" + item.icon)
 

@@ -9,6 +9,7 @@
   &__item {
     @include col;
     margin-bottom: 20px;
+    outline: 1px solid green;
   }
 }
 
@@ -21,6 +22,11 @@
     &__item {
       @include col(6);
       margin-bottom: 20px;
+    }
+
+
+    &__item:nth-child(odd) {
+      justify-content: flex-end;
     }
   }
 }

@@ -157,10 +157,14 @@ gulp.task('styletest', function() {
       throwError: true
     })
   ];
-
   return gulp.src(['!sass/_global/svg-sprite.scss', 'sass/**/*.scss'])
-    .pipe(plumber())
-    .pipe(postcss(processors, {syntax: syntax_scss}))
+  .pipe(plumber({
+    errorHandler: notify.onError({
+      message: 'Error: <%= error.message %>',
+      sound: 'notwork'
+    })
+  }))
+  .pipe(postcss(processors, {syntax: syntax_scss}))
 });
 
 gulp.task('style',['styletest'], function() {
@@ -183,11 +187,11 @@ gulp.task('style',['styletest'], function() {
     ]))
   .pipe(csscomb())
   .pipe(gulp.dest(paths.build.sass))
-  .pipe(server.reload({stream: true}))
+  .pipe(server.stream())
   .pipe(notify({
     message:'SCSS complite: <%= file.relative %>!',
     sound: 'Pop'
-  }));
+  }))
 });
 
 
@@ -202,7 +206,7 @@ gulp.task('serve', ['style','jade','js','svg','images'], function() {
     ui: false
   });
 
-  gulp.watch(paths.watch.sass, ['style']);
+  gulp.watch(paths.watch.sass, ['style', server.stream]);
   gulp.watch(paths.watch.jade, ['jade', server.reload]);
   gulp.watch(paths.watch.js, ['js']);
   gulp.watch(paths.watch.svg, ['svg']);

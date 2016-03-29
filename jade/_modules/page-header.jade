@@ -5,8 +5,5 @@ mixin page-header
         //- если нужен svg в лого добавляем -> (true)
         +logo(true)
         +e.btn-burger.js-toggle
-          +e.SVG.svg-burger.svg-icon-menu-burger
-            use(xlink:href="img/svg-sprite.svg#icon-menu-burger")
-          +e.SVG.svg-close.svg-icon-menu-cross
-            use(xlink:href="img/svg-sprite.svg#icon-menu-cross")
+          span
         +navigation

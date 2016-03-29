@@ -53,8 +53,8 @@ html(lang="ru")
       block content
 
 
-    //- Проверяем страницу на isNoShowMobileFooter, если да - то добавляем модификатор --no-show-mobile
-    - var classFooter = isNoShowMobileFooter ? "--no-show-mobile" : false
+    //- Проверяем страницу на isHideMobileFooter, если да - то добавляем модификатор --hide-mobile
+    - var classFooter = isHideMobileFooter ? "--hide-mobile" : false
     +page-footer(classFooter)
 
     //- Добавляем popup-fail всем страницам с isPopupFail
