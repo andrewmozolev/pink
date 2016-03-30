@@ -11,46 +11,44 @@ block content
     +e.wrap
       +e.H2.title Конкурс на&nbsp;самое безбашеное путешествие с&nbsp;Пинк
 
-  +b.FORM.form(
-    action="/echo",
-    method="post"
-  )
-    .box
-      .container
-        +description("Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на&nbsp;вашу бонусную карту!")
+  .container
+    +description("Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на&nbsp;вашу бонусную карту!")
 
+    +b.FORM.form(
+      action="/echo",
+      method="post"
+    )
+      +e.FIELDSET.fieldset--name
         each item in site.data.inputs.nameInputs
           +form-group(item)
 
-    .box.box--gray
-      .container
-        p.form__title С&nbsp;каким приложением путешествовали?
+      +e.FIELDSET.fieldset--os.form__fieldset--gray
+        +e.LEGEND.title С&nbsp;каким приложением путешествовали?
         each item in site.data.inputs.osRadios
           +radio(item)
 
-    .box
-      .container
+
+      +e.FIELDSET.fieldset--contacts
+        +e.LEGEND.title--contacts Контантная информация
         each item in site.data.inputs.contactInputs
           +form-group(item)
 
-    .box.box--gray
-      .container
-        p.form__title Ваши безбашенные достижения в&nbsp;путешествии
+      +e.FIELDSET.fieldset--achievements.form__fieldset--gray
+        +e.LEGEND.title Ваши безбашенные достижения в&nbsp;путешествии
         each item in site.data.inputs.achievementsCheckboxes
           +checkbox(item)
 
 
-    .box
-      .container
-        fieldset.form__text
-          label.form__title(for="user-racall") Опишите свои эмоции
-          textarea.form__textarea(
-            placeholder="Можно прям в красках, не стесняясь в выражениях",
-            name="user-recall",
-            id="user-recall"
-          )
-    .box
-      .container
+
+      +e.FIELDSET.fieldset--textarea
+        +e.LEGEND.title(for="user-racall") Опишите свои эмоции
+        +e.TEXTAREA.textarea(
+          placeholder="Можно прям в красках, не стесняясь в выражениях",
+          name="user-recall",
+          id="user-recall"
+        )
+
+      +e.btn-wrap
         +e.btn
           +b.BUTTON.btn--form(type = "submit") Отправить форму
 

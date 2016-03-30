@@ -1,26 +1,26 @@
 .feature {
-  position: relative;
-  outline: 1px solid red;
-  padding-top: 60px;
-  background-image: url("../img/bg/bg-timer.svg");
+  padding-top: 100px;
+  background-image: url("../img/bg/timer.svg");
   background-repeat: no-repeat;
-  background-position: center;
-
-
-  &__svg {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    fill: #dedede;
-    width: 240px;
-    height: 277px;
-    outline: 1px solid red;
-  }
+  background-size: 240px 278px;
+  background-position: left 0 top 50%;
 
 
   &__title {
-    margin-top: 0;
+    margin: 0;
+    line-height: (36 / 30);
+    font-weight: 700;
+  }
+
+
+  &__text {
+    margin: 0;
+    padding-right: 10px;
+  }
+
+
+  &__link {
+    @include link;
   }
 }
 
@@ -35,7 +35,27 @@
 @media #{$tablet} {
   .feature {
     min-height: 394px;
-    padding-left: 50%;
+    padding-left: 310px;
+
+
+    &__title {
+      padding-right: 120px;
+      margin-bottom: 16px;
+      font-size: $fz_large;
+    }
+
+
+    &__text {
+      margin-bottom: 11px;
+      font-size: $fz_small;
+      line-height: (24 / 14);
+    }
+
+
+    &__link {
+      font-size: $fz_small;
+      line-height: (24 / 14);
+    }
   }
 }
 
@@ -44,11 +64,25 @@
   .feature {
     min-height: 430px;
     padding-left: 370px;
+    padding-top: 135px;
+    background-size: 300px 345px;
 
 
-    &__svg {
-      width: 300px;
-      height: 345px;
+    &__title {
+      padding-bottom: 21px;
+    }
+
+
+    &__text {
+      padding-right: 40px;
+      font-size: $fz_base;
+      line-height: (30 / 18);
+    }
+
+
+    &__link {
+      font-size: $fz_base;
+      line-height: (30 / 18);
     }
   }
 }

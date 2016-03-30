@@ -29,8 +29,8 @@
 
 @media #{$mobile-tablet} {
   .navigation {
-    left: 0;
-    right: 0;
+    position: relative;
+    width: auto;
     background-color: $bg_blue;
 
 
@@ -42,6 +42,13 @@
     &--positioned {
       position: absolute;
       top: 100%;
+      left: 0;
+      right: 0;
+    }
+
+
+    &__list {
+      width: 100%;
     }
 
 

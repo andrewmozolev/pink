@@ -26,12 +26,26 @@
 }
 
 
+@media #{$mobile} {
+  .box {
+    &--gray-mobile {
+      background-color: $bg_gray;
+    }
+  }
+}
+
+
 @media #{$tablet} {
   .box {
 
 
     &--gray {
       background-size: 100% 55px;
+    }
+
+
+    &--mobile {
+      background-color: transparent;
     }
 
 
@@ -62,7 +76,7 @@
       background-color: $bg_gray;
     }
 
-
+    &--mobile,
     &--no-desktop {
       background-color: transparent;
     }

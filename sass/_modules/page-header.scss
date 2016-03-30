@@ -14,8 +14,8 @@
   &__inner {
     position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
   }
 
 
@@ -108,11 +108,11 @@
 
 @media #{$mobile} {
   .page-header {
-    height: 66px;
+    min-height: 66px;
 
 
     &__inner {
-      height: 66px;
+      min-height: 66px;
     }
   }
 }
@@ -121,11 +121,11 @@
 @media #{$tablet} {
   .page-header {
     margin-bottom: -110px;
-    height: 110px;
+    min-height: 110px;
 
 
     &__inner {
-      height: 110px;
+      min-height: 110px;
     }
 
 
@@ -138,11 +138,13 @@
 
 @media #{$desktop} {
   .page-header {
-    position: fixed;
+    margin-bottom: -110px;
     min-height: 110px;
+    background-color: rgba(0, 0, 0, 0.3);
 
 
     &__inner {
+      flex-direction: row;
       justify-content: space-between;
       min-height: 110px;
     }
