@@ -15,15 +15,25 @@ $desktop: "only screen and (min-width: "$break-desktop")";
 $retina2x: "(min-resolution: 1.5dppx)";
 
 $fz_base: 18px;
+// 14px
 $fz_small: ceil($fz_base * 0.77);
+// 30px
 $fz_large: ceil($fz_base * 1.66);
+// 40px
+$fz_xlarge: ceil($fz_base * 2.22);
+// 50px
+$fz_xxlarge: ceil($fz_base * 2.77);
 
 $bg_gray: #f2f2f2;
 $bg_pink: #d22856;
 $bg_blue: #283645;
+$bg_dark: #1d2631;
 $bg_pink-opacity: rgba(210, 40, 86, 0.3);
+$bg_white-opacity: rgba(255, 255, 255, 0.3);
+$bg_black-opacity: rgba(0, 0, 0, 0.3);
 
 
 $c_pink: $bg_pink;
 $c_blue: $bg_blue;
 $c_blue-opacity: rgba(40, 54, 69, 0.3);
+$c_pink-opacity: rgba(210, 40, 86, 0.3);

@@ -59,6 +59,7 @@
       padding-bottom: 19px;
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-bottom: 1px solid #000;
+      text-decoration: none;
     }
   }
 }
@@ -96,7 +97,41 @@
 
 
     &__link {
+      position: relative;
       padding: 0;
+      text-decoration: none;
+      line-height: 1;
+    }
+
+
+    &__link:active {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+
+    &__link--active:active {
+      color: #fff;
+    }
+
+
+    &__link:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+    }
+
+
+    &__link:active::after {
+      display: none;
+    }
+
+
+    &__link--active::after {
+      display: none;
     }
   }
 }

@@ -4,13 +4,16 @@ mixin downloads
       +e.btn
         +b.A.btn--download(href="#") Скачать приложение
 
-      +e.A.link(href="#" title="itunes") itunes
-        +e.IMG.link-img(src="http://placehold.it/50x50" alt="itunes")
+      +e.A.link(href="#" title="itunes") apple
+        +e.SVG.svg--itunes.svg-logo-apple
+          use(xlink:href="img/svg-sprite.svg#logo-apple")
 
       +e.A.link(href="#" title="android") android
-        +e.IMG.link-img(src="http://placehold.it/50x50" alt="android")
+        +e.SVG.svg--itunes.svg-logo-android
+          use(xlink:href="img/svg-sprite.svg#logo-android")
 
       +e.A.link(href="#" title="windows") windows
-        +e.IMG.link-img(src="http://placehold.it/50x50" alt="windows")
+        +e.SVG.svg--itunes.svg-logo-microsoft
+          use(xlink:href="img/svg-sprite.svg#logo-microsoft")
 
       +e.P.text Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8

@@ -1,21 +1,33 @@
 .advantages {
-  font-size: $fz_base;
+  padding-top: 77px;
+
 
   &__item {
     text-align: center;
+    margin-bottom: 30px;
   }
 
 
   &__title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 14px;
+    font-size: $fz_base;
     font-weight: 700;
     line-height: (24 / 18);
   }
 
 
   &__text {
+    padding: 0;
+    margin: 0;
     font-size: $fz_small;
     line-height: (24 / 14);
     color: $c_blue;
+  }
+
+  &__item:last-of-type {
+    margin-bottom: 0;
   }
 }
 
@@ -40,8 +52,7 @@
   .advantages {
     min-height: 483px;
     padding-left: 50%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 75px;
     background-image: url("../img/iphone-screen-tablet-3@1x.png");
     background-repeat: no-repeat;
     background-position: left 0 bottom 0;
@@ -61,13 +72,15 @@
 
 @media #{$desktop} {
   .advantages {
-    min-height: 600px;
+    padding-top: 0;
     display: flex;
     justify-content: space-between;
+    outline: 1px solid red;
 
 
     &__item {
       position: relative;
+      margin-bottom: 23px;
       padding-top: 359px;
       max-width: 250px;
     }
@@ -116,6 +129,14 @@
 
     &__title {
       margin-top: 0;
+      font-size: $fz_large;
+      line-height: (30 / 30);
+    }
+
+
+    &__text {
+      font-size: $fz_base;
+      line-height: (30 / 18);
     }
   }
 }

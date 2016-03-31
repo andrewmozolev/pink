@@ -6,7 +6,7 @@ mixin navigation
           //- проверяем совпадает ли ссылка с текущей страницей
           if selected == item.link
             //- если совпадает то ссылку не добавляем
-            +e.A.link= item.name
+            +e.A.link(class="--active")= item.name
 
           else
             //- если не совпадает то ссылку добавляем

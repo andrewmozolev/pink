@@ -109,6 +109,7 @@
 @media #{$mobile} {
   .page-header {
     min-height: 66px;
+    position: fixed;
 
 
     &__inner {
@@ -122,6 +123,7 @@
   .page-header {
     margin-bottom: -110px;
     min-height: 110px;
+    position: fixed;
 
 
     &__inner {

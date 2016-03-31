@@ -7,7 +7,6 @@
 
 
   @media #{$tablet} {
-    min-width: $break-tablet;
     padding-left: $offset-tablet;
     padding-right: $offset-tablet;
     outline: 2px solid orange;
@@ -15,7 +14,7 @@
 
 
   @media #{$desktop} {
-    width: $break-desktop;
+    max-width: $break-desktop;
     padding-left: $offset-desktop;
     padding-right: $offset-desktop;
     outline: 2px solid purple;
@@ -23,8 +22,6 @@
 }
 
 @mixin h1 {
-  font-family: "Open Sans", Arial, sans-serif;
-  font-style: normal;
   font-size: 50px;
   line-height: 1.2;
   font-weight: 300;
@@ -32,8 +29,6 @@
 }
 
 @mixin h2 {
-  font-family: "Open Sans", Arial, sans-serif;
-  font-style: normal;
   font-size: $fz_large;
   line-height: 1.2;
   font-weight: 700;

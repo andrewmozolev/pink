@@ -1,30 +1,31 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var csscomb = require('gulp-csscomb');
-var plumber = require('gulp-plumber');
-var postcss = require('gulp-postcss');
+var gulp         = require('gulp');
+var sass         = require('gulp-sass');
+var csscomb      = require('gulp-csscomb');
+var plumber      = require('gulp-plumber');
+var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var reporter     = require('postcss-reporter');
 var syntax_scss  = require('postcss-scss');
 var stylelint    = require('stylelint');
-var server = require('browser-sync');
-var notify = require('gulp-notify');
-var uglify = require('gulp-uglify');
-var svgSprite = require('gulp-svg-sprite');
+var server       = require('browser-sync');
+var notify       = require('gulp-notify');
+var uglify       = require('gulp-uglify');
+var svgSprite    = require('gulp-svg-sprite');
+var fs           = require('fs'); // встроенный в node модуль, устанавливать не надо
+var foldero      = require('foldero'); // плагин
+var jade         = require('gulp-jade');
+
+var dataPath     = 'jade/_data'; // Где лежат файлы
 
 
-var fs = require('fs'); // встроенный в node модуль, устанавливать не надо
-var foldero = require('foldero'); // плагин
-// var jade = require('jade');
-var jade = require('gulp-jade');
-
-// где лежат файлы
-var dataPath = 'jade/_data';
 
 
-// paths
+/*=============================
+=            Paths            =
+=============================*/
+
 var paths = {
   build: {
     jade: 'build/',
@@ -49,7 +50,19 @@ var paths = {
   }
 };
 
-// Gulp Jade
+/*=====  End of Paths  ======*/
+
+
+
+
+
+
+
+
+/*=================================
+=            Gulp Jade            =
+=================================*/
+
 gulp.task('jade', function() {
   // в этой переменной копим данные
   var siteData = {};
@@ -104,8 +117,19 @@ gulp.task('jade', function() {
   }));
 });
 
+/*=====  End of Gulp Jade  ======*/
 
-//  Gulp SVG-Sprite
+
+
+
+
+
+
+
+/*=======================================
+=            Gulp SVG-Sprite            =
+=======================================*/
+
 gulp.task('svg', function() {
   return gulp.src(paths.src.svg)
   .pipe(svgSprite({
@@ -126,15 +150,37 @@ gulp.task('svg', function() {
   .pipe(gulp.dest('./'));
 });
 
+/*=====  End of Gulp SVG-Sprite  ======*/
 
-// Gulp Images
+
+
+
+
+
+
+
+/*===================================
+=            Gulp Images            =
+===================================*/
+
 gulp.task('images', function() {
   return gulp.src(paths.src.img)
   .pipe(gulp.dest(paths.build.img))
 })
 
+/*=====  End of Gulp Images  ======*/
 
-// Gulp JS
+
+
+
+
+
+
+
+/*===============================
+=            Gulp JS            =
+===============================*/
+
 gulp.task('js', function() {
   gulp.src(paths.src.js)
   .pipe(plumber({
@@ -148,8 +194,17 @@ gulp.task('js', function() {
   }))
 });
 
+/*=====  End of Gulp JS  ======*/
 
-// Gulp Sass
+
+
+
+
+
+/*=================================
+=            Gulp Sass            =
+=================================*/
+
 gulp.task('styletest', function() {
   var processors = [
     stylelint(),
@@ -194,7 +249,18 @@ gulp.task('style',['styletest'], function() {
   }))
 });
 
+/*=====  End of Gulp Sass  ======*/
 
+
+
+
+
+
+
+
+/*==================================
+=            Gulp Serve            =
+==================================*/
 
 gulp.task('serve', ['style','jade','js','svg','images'], function() {
   server.init({
@@ -212,3 +278,5 @@ gulp.task('serve', ['style','jade','js','svg','images'], function() {
   gulp.watch(paths.watch.svg, ['svg']);
   gulp.watch(paths.watch.img, ['img']);
 });
+
+/*=====  End of Gulp Serve  ======*/
