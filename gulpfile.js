@@ -17,7 +17,7 @@ var fs           = require('fs'); // встроенный в node модуль, 
 var foldero      = require('foldero'); // плагин
 var jade         = require('gulp-jade');
 
-var dataPath     = 'jade/_data'; // Где лежат файлы
+var dataPath     = 'src/jade/_data'; // Где лежат файлы
 
 
 
@@ -35,18 +35,18 @@ var paths = {
     img: 'build/img/'
   },
   src: {
-    jade: 'jade/_pages/*.jade',
-    sass: 'sass/style.scss',
-    js: 'js/*.js',
-    svg: 'img/svg-sprite/*.svg',
-    img: ['!img/svg-sprite/*.*','img/**/*.*']
+    jade: 'src/jade/_pages/*.jade',
+    sass: 'src/sass/style.scss',
+    js: 'src/js/*.js',
+    svg: 'src/img/svg-sprite/*.svg',
+    img: ['!src/img/svg-sprite/*.*','src/img/**/*.*']
   },
   watch: {
-    jade: 'jade/**/*.*',
-    sass: 'sass/**/*.{scss,sass}',
-    js: 'js/**/*.js',
-    svg: 'img/svg-sprite/**/*.svg',
-    img: 'img/**/*.{jpg,png}'
+    jade: 'src/jade/**/*.*',
+    sass: 'src/sass/**/*.{scss,sass}',
+    js: 'src/js/**/*.js',
+    svg: 'src/img/svg-sprite/**/*.svg',
+    img: 'src/img/**/*.{jpg,png}'
   }
 };
 
@@ -112,7 +112,7 @@ gulp.task('jade', function() {
   }))
   .pipe(gulp.dest(paths.build.jade))
   .pipe(notify({
-    message:'jade up!',
+    message:'Jade complite: <%= file.relative %>!',
     sound: 'Pop'
   }));
 });
@@ -139,7 +139,7 @@ gulp.task('svg', function() {
         dimensions: '%s',
         sprite: paths.build.svg,
         example: false,
-        render: {scss: {dest: 'sass/_global/svg-sprite.scss'}}
+        render: {scss: {dest: 'src/sass/_global/svg-sprite.scss'}}
       }
     },
     svg: {

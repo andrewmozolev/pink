@@ -1,0 +1,36 @@
+.map {
+  width: 100%;
+  background-image: url("../img/bg/bg-map.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $bg_gray;
+
+  &__image {
+    height: 300px;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .map {
+
+
+    &__image {
+      height: 380px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .map {
+
+
+    &__image {
+      height: 505px;
+    }
+  }
+}

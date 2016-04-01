@@ -1,0 +1,9 @@
+mixin logo(item)
+
+  - var href = isIndex ? false : "index.html"
+  - var className = !href ? null : "--active"
+  - var className2 = item == "footer" ? "--footer" : "--header"
+
+  +b.logo
+    +e.A.link(href=href, class=className, class=className2) Pink
+      include ../../img/logo.svg

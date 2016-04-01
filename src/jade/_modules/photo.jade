@@ -1,0 +1,51 @@
+mixin photo(item)
+
+  if item.best
+    +b.ARTICLE.photo--best
+      +e.SPAN.best= item.imgAlt
+      +e.A.photo-link(
+        href = item.link,
+        title = item.imgAlt
+      )
+        +e.IMG.img--best(
+          src = item.img,
+          alt = item.imgAlt
+        )
+      +e.container
+        +e.inner--best
+          header
+            +e.CITE.name= item.name
+            time= "(" + item.time + ")"
+
+          +e.P.comment!= item.comment
+
+          footer
+            +e.A.like-link(href="#" title="Like") Like
+              +e.SVG.like-svg.svg-icon-heart
+                use(xlink:href="img/svg-sprite.svg#icon-heart")
+            +e.SPAN.like= "Нравится: " + item.like
+
+
+  else
+    +b.ARTICLE.photo
+      +e.A.photo-link(
+        href = item.link,
+        title = item.imgAlt
+      )
+        +e.IMG.img(
+          src = item.img,
+          alt = item.imgAlt
+        )
+
+      +e.inner
+        header
+          +e.CITE.name= item.name
+          time= "(" + item.time + ")"
+
+        +e.P.comment= item.comment
+
+        footer
+          +e.A.like-link(href="#" title="Like") Like
+            +e.SVG.like-svg.svg-icon-heart
+              use(xlink:href="img/svg-sprite.svg#icon-heart")
+          +e.SPAN.like= "Нравится: " + item.like

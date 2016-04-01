@@ -9,4 +9,4 @@ Thumbs.db
 css/*.css
 build/
 *.todo
-sass/_global/svg-sprite.scss
+src/sass/_global/svg-sprite.scss

@@ -1,0 +1,45 @@
+$break-mobile: 320px;
+$break-tablet: 700px;
+$break-desktop: 1020px;
+
+$offset-mobile: 20px;
+$offset-tablet: 40px;
+$offset-desktop: 40px;
+
+$mobile: "only screen and (max-width: "$break-tablet - 1")";
+$mobile-tablet: "only screen and (max-width: "$break-desktop - 1")";
+$tablet: "only screen and (min-width: "$break-tablet") and (max-width: "$break-desktop - 1")";
+$tablet-desktop: "only screen and (min-width: "$break-tablet")";
+$desktop: "only screen and (min-width: "$break-desktop")";
+
+$retina2x: "(min-resolution: 1.5dppx)";
+
+
+$fz_base: 18px;
+$fz_xsmall: ceil($fz_base * 0.77);   /* 14px */
+$fz_small: ceil($fz_base * 0.88);   /* 16px */
+$fz_medium: ceil($fz_base * 1.33);  /* 24px */
+$fz_large: ceil($fz_base * 1.66);   /* 30px */
+$fz_xlarge: ceil($fz_base * 2.22);  /* 40px */
+$fz_xxlarge: ceil($fz_base * 2.77); /* 50px */
+
+
+$bg_gray: #f2f2f2;
+$bg_pink: #d22856;
+$bg_blue: #283645;
+$bg_dark: #1d2631;
+$bg_pink-opacity: rgba(210, 40, 86, 0.3);
+$bg_white-opacity: rgba(255, 255, 255, 0.3);
+$bg_black-opacity: rgba(0, 0, 0, 0.3);
+
+
+$c_pink: $bg_pink;
+$c_blue: $bg_blue;
+$c_blue-opacity: rgba(40, 54, 69, 0.3);
+$c_pink-opacity: rgba(210, 40, 86, 0.3);
+
+$h_header-mobile: 66px;
+$h_header-tablet: 110px;
+$h_header-desktop: 110px;
+
+$gutter_nav: 82px;

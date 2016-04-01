@@ -1,0 +1,47 @@
+.photos {
+
+
+  &__grid {
+    @include grid;
+  }
+
+
+  &__item {
+    @include col;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .photos {
+
+
+    &__item {
+      @include col(6);
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+
+
+    &__item:nth-child(odd) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .photos {
+
+
+    &__item {
+      @include col(4);
+      margin-bottom: 54px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+mixin advantages
+  +b.advantages
+    each item in site.data.advantages
+      +e.item
+
+        picture
+          source(
+            media="(min-width: 1020px)",
+            srcset= item.imgDesktop + " 1x, " + item.imgDesktop2x + " 2x"
+          )
+          source(
+            media="(min-width: 700px)",
+            srcset= item.imgTablet + " 1x, " + item.imgTablet2x + " 2x"
+          )
+          img(
+            src= item.imgMobile,
+            srcset= item.imgMobile2x + " 2x",
+            alt= item.title,
+            class="advantages__img"
+          )
+        +e.content
+          +e.H3.title= item.title
+          +e.P.text= item.text

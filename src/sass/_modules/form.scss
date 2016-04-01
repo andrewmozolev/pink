@@ -1,0 +1,127 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+
+  &__fieldset {
+    position: relative;
+    min-height: 400px;
+    padding-top: 40px;
+    margin: 0;
+    align-items: stretch;
+  }
+
+
+  &__title {
+    position: relative;
+    top: 20px;
+    display: block;
+    outline: 1px solid red;
+    width: 100%;
+  }
+
+
+  &__btn-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    outline: 1px solid red;
+  }
+}
+
+
+@media #{$mobile} {
+  .form {
+    flex-direction: column;
+
+
+    &__fieldset {
+      border: none;
+      padding: 0;
+      padding-top: 40px;
+      width: 100%;
+      outline: 1px solid red;
+    }
+
+
+    &__fieldset--gray {
+      background-color: $bg_gray;
+      margin-left: - $offset-mobile;
+      margin-right: - $offset-mobile;
+      padding-right: $offset-mobile;
+      padding-left: $offset-mobile;
+      width: auto;
+    }
+
+
+    &__fieldset--name {
+      order: 1;
+    }
+
+
+    &__fieldset--os {
+      order: 4;
+    }
+
+
+    &__fieldset--contacts {
+      order: 3;
+    }
+
+
+    &__fieldset--achievements {
+      order: 2;
+
+    }
+
+
+    &__fieldset--textarea {
+      order: 5;
+    }
+
+
+    &__btn-wrap {
+      order: 6;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    &__title--contacts {
+      display: none;
+    }
+  }
+}
+
+
+@media #{$tablet} {
+  .form {
+
+
+    &__fieldset {
+      width: 100%;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .form {
+    &__fieldset {
+      width: 100%;
+    }
+
+
+    &__fieldset--name {
+      width: 50%;
+    }
+
+
+    &__fieldset--os {
+      width: 50%;
+    }
+  }
+}

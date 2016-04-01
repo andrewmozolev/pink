@@ -34,7 +34,7 @@
     "stylelint-config-standard": "^4.0.1"
   },
   "scripts": {
-    "test": "editorconfig-tools check jade/**/*.jade; gulp styletest",
+    "test": "editorconfig-tools check src/jade/**/*.jade; gulp styletest",
     "build": "gulp style",
     "start": "gulp serve"
   },
