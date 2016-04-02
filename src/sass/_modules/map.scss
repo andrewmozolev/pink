@@ -1,9 +1,10 @@
 .map {
   width: 100%;
-  background-image: url("../img/bg/bg-map.png");
+  background-image: url("../img/bg/map-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-color: $bg_gray;
+
 
   &__image {
     height: 300px;
@@ -16,6 +17,7 @@
 
 @media #{$tablet} {
   .map {
+    background-image: url("../img/bg/map-tablet-desktop.jpg");
 
 
     &__image {
@@ -27,6 +29,7 @@
 
 @media #{$desktop} {
   .map {
+    background-image: url("../img/bg/map-tablet-desktop.jpg");
 
 
     &__image {

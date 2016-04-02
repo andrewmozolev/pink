@@ -1,23 +1,20 @@
 @mixin container {
   margin: 0 auto;
   min-width: $break-mobile;
+  max-width: $break-desktop;
   padding-left: $offset-mobile;
   padding-right: $offset-mobile;
-  outline: 2px solid green;
 
 
   @media #{$tablet} {
     padding-left: $offset-tablet;
     padding-right: $offset-tablet;
-    outline: 2px solid orange;
   }
 
 
   @media #{$desktop} {
-    max-width: $break-desktop;
     padding-left: $offset-desktop;
     padding-right: $offset-desktop;
-    outline: 2px solid purple;
   }
 }
 
