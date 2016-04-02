@@ -1,0 +1,90 @@
+.photo {
+  font-size: $fz_small;
+  display: inline-block;
+  vertical-align: top;
+  max-width: $maw_photo-mobile;
+  background-color: $bg_gray;
+
+
+  &__best {
+    @include container;
+    display: block;
+    text-align: right;
+  }
+
+
+  &--best {
+    background-color: transparent;
+    max-width: none;
+  }
+
+
+  &__inner {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  &__container {
+    @include container;
+  }
+
+
+  &__inner--best {
+    background-color: $bg_gray;
+  }
+
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  &__img--best {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .photo {
+    min-width: $maw_photo-tablet;
+
+
+    &--best {
+      max-width: none;
+    }
+
+
+    &__inner {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .photo {
+    max-width: $maw_photo-desktop;
+
+
+    &--best {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      max-width: 1600px;
+    }
+
+
+    &__inner {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+}

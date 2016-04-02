@@ -1,0 +1,53 @@
+mixin add-photo
+  +b.add-photo
+    +e.image-wrap
+      +e.IMG.image(
+        src = "http://placebear.com/300/500",
+        alt = "edit pictures"
+      )
+
+    +e.wrap-tools
+      +e.tools
+        +e.INPUT.input--crop(
+          type = "radio",
+          name = "tool",
+          id = "tool-1",
+          checked
+        )
+        +e.LABEL.label(for = "tool-1") Crop
+          +e.SVG.tool-svg.svg-icon-editor-crop
+            use(xlink:href = "img/svg-sprite.svg#icon-editor-crop")
+          +e.scale--1
+            +e.toggle
+
+
+        +e.INPUT.input--fill(
+          type = "radio",
+          name = "tool",
+          id = "tool-2"
+        )
+        +e.LABEL.label(for = "tool-2") Fill
+          +e.SVG.tool-svg.svg-icon-editor-fill
+            use(xlink:href = "img/svg-sprite.svg#icon-editor-fill")
+          +e.scale--2
+            +e.toggle
+
+
+        +e.INPUT.input--contrast(
+          type = "radio",
+          name = "tool",
+          id = "tool-3"
+        )
+        +e.LABEL.label(for = "tool-3") Contrast
+          +e.SVG.tool-svg.svg-icon-editor-contrast
+            use(xlink:href = "img/svg-sprite.svg#icon-editor-contrast")
+          +e.scale--3
+            +e.toggle
+
+      //- +e.HR.line
+
+      +e.btns-wrap
+        +e.btn
+          +b.BUTTON.btn--submit(type = "submit") Запостить
+        +e.btn
+          +b.BUTTON.btn--reset(type = "reset") Отмена

@@ -1,0 +1,35 @@
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-style: normal;
+  font-size: $fz_base;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000;
+  background-color: #fff;
+}
+
+
+@mixin h1 {
+  font-size: $fz_xxlarge;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #000;
+}
+
+
+@mixin h2 {
+  font-size: $fz_large;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000;
+}
+
+
+h1 {
+  @include h1;
+}
+
+
+h2 {
+  @include h1;
+}

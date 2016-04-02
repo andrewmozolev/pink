@@ -1,0 +1,24 @@
+.description {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  text-align: center;
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .description {
+    padding-top: 98px;
+    padding-bottom: 78px;
+  }
+}
+
+
+@media #{$desktop} {
+  .description {
+    padding-top: 98px;
+    padding-bottom: 88px;
+  }
+}

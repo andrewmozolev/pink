@@ -1,0 +1,31 @@
+.btn {
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 3px solid #fff;
+  border-radius: 30px;
+
+
+  &:hover {
+    background-color: #fff;
+    color: $c_pink;
+  }
+
+
+  &:active {
+    color: $c_pink-opacity;
+  }
+
+
+  &--download {
+    color: #fff;
+  }
+}
+
+// @media #{$mobile} {}
+// @media #{$tablet} {}
+// @media #{$desktop} {}

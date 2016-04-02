@@ -1,0 +1,28 @@
+- var reviews = site.data.reviews
+
+mixin reviews
+  +b.reviews
+
+    each item,index in reviews
+
+      //- проверяем checked
+      - var checked = item.isChecked ? true : false
+
+      //- Добавляем inputs для переключения слайдов
+      +e.INPUT.input(
+        type = 'radio',
+        id = 'toggle-reviews-' + (index+1),
+        name = 'reviews',
+        checked = checked
+      )
+
+    each item,index in reviews
+      +e.item(class = "reviews__item--" + (index + 1))
+        +comment(item)
+
+    //- Добавляем labels переключатели
+    each item,index in reviews
+      +e.LABEL.toggle(
+        for='toggle-reviews-' + (index+1)
+      )
+        = 'Отзыв:' + (index+1)

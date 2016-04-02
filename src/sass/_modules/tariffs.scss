@@ -1,0 +1,119 @@
+.tariffs {
+  position: relative;
+  min-height: 470px;
+  outline: 1px solid red;
+
+  td {
+    background-color: #fff;
+    height: 60px;
+    border: 2px solid #ccc;
+  }
+
+
+  th:nth-child(n+2) {
+    color: #fff;
+    background-color: $bg_blue;
+  }
+
+
+  &__toggle {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+  }
+}
+
+
+@media #{$mobile} {
+  .tariffs {
+    overflow: hidden;
+    padding-left: $offset-mobile;
+    padding-right: $offset-mobile;
+    padding-top: 90px;
+
+
+    &__table {
+      position: relative;
+      width: 300%;
+      transition: transform 1s;
+    }
+
+    th:first-child,
+    td:first-child {
+      display: none;
+      background-color: #000;
+    }
+
+    td {
+      width: (100% / 3);
+      padding-right: 20px;
+    }
+
+
+    td {
+      position: relative;
+      text-align: right;
+    }
+
+
+    td::before {
+      position: absolute;
+      left: 20px;
+      content: attr(data-option);
+      display: inline-block;
+      padding-right: 10px;
+      outline: 1px solid green;
+    }
+
+
+    &__input[id="toggle-tariffs-1"]:checked ~ &__table {
+      transform: translateX(0%);
+    }
+
+
+    &__input[id="toggle-tariffs-2"]:checked ~ &__table {
+      transform: translateX(-33.33%);
+    }
+
+
+    &__input[id="toggle-tariffs-3"]:checked ~ &__table {
+      transform: translateX(-66.66%);
+    }
+  }
+}
+
+
+@media #{$tablet} {
+  .tariffs {
+    @include container;
+
+
+    &__table {
+      width: 100%;
+    }
+
+
+    td {
+      width: 25%;
+      height: 45px;
+
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .tariffs {
+    @include container;
+
+
+    &__table {
+      width: 100%;
+    }
+
+    td {
+      width: 25%;
+      height: 60px;
+    }
+  }
+}

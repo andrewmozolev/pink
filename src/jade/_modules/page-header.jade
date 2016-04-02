@@ -1,0 +1,9 @@
+mixin page-header
+  +b.HEADER.page-header(id = "header")
+    .container
+      +e.inner
+        //- если нужен svg в лого добавляем -> (true)
+        +logo(true)
+        +e.btn-burger.js-toggle
+          span
+        +navigation

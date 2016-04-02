@@ -1,0 +1,26 @@
+.reviews {
+
+
+  &__item {
+    display: none;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .reviews {
+    min-height: 290px;
+    padding-top: 35px;
+  }
+}
+
+
+@media #{$desktop} {
+  .reviews {
+    min-height: 415px;
+    padding-top: 180px;
+  }
+}

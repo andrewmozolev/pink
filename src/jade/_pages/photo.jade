@@ -1,0 +1,34 @@
+extends ../_layouts/base
+
+block variables
+   - var selected = "photo.html"
+
+block append style
+  style.
+    .add-photo__input[id="tool-1"]:checked + .add-photo__label .add-photo__scale--1,
+    .add-photo__input[id="tool-2"]:checked + .add-photo__label .add-photo__scale--2,
+    .add-photo__input[id="tool-3"]:checked + .add-photo__label .add-photo__scale--3 {
+      display: block;
+    }
+
+block content
+
+  +b.heading
+    +e.wrap
+      +e.H2.title Фотографии пользователей
+  .box
+    .container
+      +description("Взгляните на&nbsp;фотографии, которые выкладывают пользователи! Видите, как не&nbsp;хватает ваших?")
+
+    +photos
+
+    .container
+      +description("Затмите их&nbsp;всех! Выкладывайте все, что накопилось в&nbsp;телефоне!")
+
+  .box.box--gray.box--no-oblique.box--no-desktop
+    .container
+      form(
+        action="/echo",
+        method="post"
+      )
+        +add-photo

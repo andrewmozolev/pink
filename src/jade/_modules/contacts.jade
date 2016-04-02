@@ -1,0 +1,14 @@
+mixin contacts
+  +b.contacts
+    +e.H2.headling Остались вопросы? Свяжитесь с&nbsp;нами!
+    each item in site.data.contacts
+      +e.item(class= "--" + item.type)
+        +e.SPAN.title= item.title + ":"
+        case item.type
+          when "phone"
+            +e.A.description(href="tel:" + item.value)= item.description
+          when "email"
+            +e.A.description(href="mailto:" + item.value)= item.description
+          when "address"
+            +e.P.description= item.description
+

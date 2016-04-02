@@ -1,0 +1,41 @@
+.page-footer {
+
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+@media #{$mobile} {
+  .page-footer {
+
+
+    &--hide-mobile {
+      display: none;
+    }
+  }
+}
+
+
+@media #{$tablet} {
+  .page-footer {
+    &__inner {
+      flex-direction: row;
+      min-height: 127px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .page-footer {
+    &__inner {
+      flex-direction: row;
+      min-height: 197px;
+    }
+  }
+}

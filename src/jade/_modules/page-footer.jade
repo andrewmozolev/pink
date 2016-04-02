@@ -1,0 +1,14 @@
+mixin page-footer(classFooter)
+  +b.FOOTER.page-footer(class = classFooter)
+    .container
+      +e.inner
+
+        +e.item
+          //- если нужен svg в лого добавляем -> (true)
+          +logo("footer")
+
+        +e.item
+          +social
+
+        +e.item
+          +copyright

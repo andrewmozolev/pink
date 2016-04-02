@@ -1,0 +1,189 @@
+.add-photo {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+
+
+  &__image-wrap {
+    max-width: 280px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+  &__tools {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 100px;
+    padding-bottom: 30px;
+  }
+
+
+  &__label {
+    @include text-hide;
+    cursor: pointer;
+    margin-right: 35px;
+  }
+
+
+  &__label:last-of-type {
+    margin-right: 0;
+  }
+
+
+  &__input {
+    display: none;
+  }
+
+
+  &__scale {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    height: 2px;
+    width: 240px;
+    background-color: #0f0;
+  }
+
+
+  &__scale--2 {
+    background-color: #f00;
+  }
+
+
+  &__scale--3 {
+    background-color: #00f;
+  }
+
+
+  &__btns-wrap {
+    text-align: center;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .add-photo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 57px;
+    padding-bottom: 54px;
+
+
+    &__image-wrap {
+      max-width: 300px;
+      margin: 0;
+      margin-right: 20px;
+    }
+
+
+    &__image {
+      width: 100%;
+      height: auto;
+    }
+
+
+    &__wrap-tools {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 300px;
+      padding-left: 25px;
+    }
+
+
+    &__tools {
+      flex-direction: column;
+    }
+
+
+    &__label {
+      position: relative;
+      width: 100%;
+      padding-left: 3px;
+      cursor: default;
+    }
+
+
+    &__scale {
+      right: 18px;
+      transform: translateX(0);
+      display: block;
+      width: 202px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .add-photo {
+    display: flex;
+    flex-direction: row;
+    padding-top: 58px;
+    padding-bottom: 58px;
+    background-color: $bg_gray;
+
+
+    &__image-wrap {
+      max-width: 300px;
+      margin: 0;
+      margin-left: 80px;
+      margin-right: 90px;
+    }
+
+
+    &__image {
+      width: 300px;
+      height: auto;
+    }
+
+
+    &__wrap-tools {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 410px;
+    }
+
+
+    &__tools {
+      flex-direction: column;
+    }
+
+
+    &__label {
+      position: relative;
+      width: 100%;
+      padding-left: 3px;
+      cursor: default;
+    }
+
+
+    &__scale {
+      right: 30px;
+      transform: translateX(0);
+      display: block;
+      width: 290px;
+    }
+
+
+    &__btn {
+      display: inline-block;
+    }
+  }
+}

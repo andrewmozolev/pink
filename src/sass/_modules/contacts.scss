@@ -1,0 +1,56 @@
+.contacts {
+  min-height: 415px;
+  padding-top: 45px;
+  text-align: center;
+
+
+  &__headling {
+    width: 100%;
+  }
+
+
+  &__item {
+    outline: 1px solid red;
+  }
+}
+
+
+// @media #{$mobile} {}
+
+
+@media #{$tablet} {
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    &__item {
+      width: 50%;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    &__item {
+      width: 33.33%;
+    }
+
+
+    &__item--address {
+      order: 3;
+    }
+
+
+    &__item--email {
+      order: 4;
+    }
+  }
+}

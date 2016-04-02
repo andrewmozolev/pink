@@ -1,0 +1,44 @@
+extends ../_layouts/base
+
+block variables
+  - var isHideMobileFooter = true
+  - var isIndex = true
+  - var selected = "index.html"
+  - var isMap = true
+block append style
+  style.
+    .reviews__input[id="toggle-reviews-1"]:checked ~ .reviews__item--1,
+    .reviews__input[id="toggle-reviews-2"]:checked ~ .reviews__item--2,
+    .reviews__input[id="toggle-reviews-3"]:checked ~ .reviews__item--3 {
+      display: block;
+    }
+block content
+
+  +b.heading--index
+    +e.wrap--index
+      +e.H2.title--index Взгляните на&nbsp;жизнь иначе!
+    +downloads
+
+  .box
+    .container
+      +info-title
+
+  .box.box--gray
+    .container
+      +advantages
+
+  .box.box--gray-desktop
+    .container
+      +feature
+
+  .box
+    .container
+      +reviews
+
+  .box.box--gray
+    +tariffs
+
+  .box.box--triangle
+    .container
+      +contacts
+  +map
