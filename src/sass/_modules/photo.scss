@@ -1,10 +1,11 @@
 .photo {
   min-width: $w_photo-mobile;
   max-width: $w_photo-mobile;
-  padding-bottom: 22px;
   background-color: $bg_gray;
   font-size: $fz_xsmall;
   color: $c_blue;
+  display: flex;
+  flex-direction: column;
 
 
   &__identifier-wrap {
@@ -40,9 +41,11 @@
 
 
   &__inner {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    padding-top: 18px;
+    padding-bottom: 20px;
     padding-left: 18px;
     padding-right: 18px;
   }
@@ -62,6 +65,12 @@
   }
 
 
+  &__header {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
   &__name {
     font-size: $fz_xsmall;
     line-height: (24 / 14);
@@ -77,21 +86,34 @@
 
 
   &__comment {
-    margin-top: 3px;
+    margin: 0;
     margin-bottom: 10px;
     font-size: $fz_xsmall;
     line-height: (24 / 14);
   }
 
 
+  &__footer {
+    position: relative;
+    max-width: $w_photo-mobile;
+    padding-left: 31px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
   &__like-link {
     @include text-hide;
-    margin-right: 17px;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translate(100%, -50%);
   }
 
 
   &__like-svg {
     fill: $bg_pink;
+    transition: all 0.3s;
   }
 
 
@@ -133,11 +155,6 @@
     }
 
 
-    &__inner {
-      padding-left: $p_photo-tablet-desktop;
-      padding-right: $p_photo-tablet-desktop;
-    }
-
     &__inner--best {
       max-width: $break-tablet - ($offset-tablet * 2);
     }
@@ -148,30 +165,43 @@
 @media #{$tablet-desktop} {
   .photo {
     position: relative;
-    padding-bottom: 48px;
+
+
+    &__inner {
+      padding-top: 26px;
+      padding-bottom: 23px;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+
+    &__comment {
+      flex-grow: 1;
+    }
 
 
     &__footer {
-      position: absolute;
-      left: 0;
-      bottom: 24px;
-      width: 100%;
-      padding-right: 50px;
-      padding-left: $p_photo-tablet-desktop;
+      padding-left: 0;
+      padding-right: 25px;
     }
 
 
     &__like-link {
-      position: absolute;
-      right: $p_photo-tablet-desktop + 3px;
-      margin-right: 0;
+      right: 3px;
       top: 50%;
       transform: translateY(-50%);
     }
 
 
+    &--best  &__header {
+      max-width: 45%;
+    }
+
+
     &--best  &__footer {
       top: 0;
+      align-self: flex-start;
+      max-width: 45%;
       padding-left: 0;
       padding-right: 32px;
     }
@@ -186,6 +216,7 @@
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
+      padding-bottom: 13px;
     }
 
 
@@ -226,12 +257,6 @@
       margin: 0 auto;
       width: auto;
       max-width: 1600px;
-    }
-
-
-    &__inner {
-      padding-left: $p_photo-tablet-desktop;
-      padding-right: $p_photo-tablet-desktop;
     }
 
 

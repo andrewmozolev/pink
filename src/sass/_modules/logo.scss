@@ -2,7 +2,6 @@
   position: relative;
   color: #fff;
   width: 150px;
-  // margin-top: 21px;
 
 
   &__link {
@@ -26,6 +25,13 @@
   &__glasses,
   &__star {
     display: none;
+  }
+
+
+  &__letter,
+  &__glasses,
+  &__star {
+    transition: all 0.3s;
   }
 
 
@@ -56,6 +62,20 @@
   }
 
 
+  &__link--active:hover  &__star {
+    animation-name: colorPulse;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+  }
+
+
+  &__link--active.logo__link--footer:hover  &__star {
+    animation-name: colorPulse-dark;
+  }
+
+
   &__link--active:active  &__glasses,
   &__link--active:active  &__letter {
     fill: $bg_white-opacity;
@@ -74,10 +94,14 @@
 
 
 @media #{$mobile} {
-  .logo--header {
-    width: 76px;
-    overflow: hidden;
-    height: 23px;
+  .logo {
+
+
+    &__link--header {
+      width: 76px;
+      overflow: hidden;
+      height: 24px;
+    }
   }
 }
 

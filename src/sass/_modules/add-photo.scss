@@ -87,10 +87,11 @@
     border: 2px solid $bg_pink;
     background-color: #fff;
     cursor: pointer;
+    transition: all 0.3s;
   }
 
 
-  &__toggle:hover {
+  &__toggle:active {
     background-color: $bg_pink;
   }
 
@@ -150,6 +151,8 @@
     &__tools {
       flex-direction: column;
       align-items: stretch;
+      margin: 0;
+      padding-bottom: 20px;
     }
 
 

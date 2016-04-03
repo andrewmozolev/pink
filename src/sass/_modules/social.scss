@@ -15,6 +15,7 @@
     border-radius: 50px;
     border: 3px solid $bg_blue-opacity-light;
     background-color: #fff;
+    transition: all 0.3s;
   }
 
 
@@ -28,11 +29,6 @@
   }
 
 
-  &__link:active  &__svg {
-    fill-opacity: 0.1;
-  }
-
-
   &__svg {
     position: absolute;
     top: 50%;
@@ -40,6 +36,12 @@
     transform: translate(-50%, -50%);
     transform: 50px;
     fill: $bg_pink;
+    transition: all 0.3s;
+  }
+
+
+  &__link:active  &__svg {
+    fill-opacity: 0.1;
   }
 }
 // @media #{$mobile} {}

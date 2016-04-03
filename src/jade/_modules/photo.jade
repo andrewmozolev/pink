@@ -27,7 +27,7 @@ mixin photo(item)
       +e.inner--best
         +e.HEADER.header
           +e.CITE.name= item.name
-          +e.TIME.time= "(" + item.time + ")"
+          +e.TIME.time!= "(" + item.time + ")"
 
         +e.P.comment!= item.comment
 
@@ -35,7 +35,7 @@ mixin photo(item)
           +e.A.like-link(href="#" title="Like") Like
             +e.SVG.like-svg.svg-icon-heart
               use(xlink:href="img/svg-sprite.svg#icon-heart")
-          +e.SPAN.like= "Нравится: " + item.like
+          +e.SPAN.like!= "Нравится:&nbsp;" + item.like
 
 
   else
@@ -63,7 +63,7 @@ mixin photo(item)
       +e.inner
         +e.HEADER.header
           +e.CITE.name= item.name
-          +e.TIME.time= "(" + item.time + ")"
+          +e.TIME.time!= "(" + item.time + ")"
 
         +e.P.comment= item.comment
 
@@ -71,4 +71,4 @@ mixin photo(item)
           +e.A.like-link(href="#" title="Like") Like
             +e.SVG.like-svg.svg-icon-heart
               use(xlink:href="img/svg-sprite.svg#icon-heart")
-          +e.SPAN.like= "Нравится: " + item.like
+          +e.SPAN.like!= "Нравится:&nbsp;" + item.like

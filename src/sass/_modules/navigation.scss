@@ -60,6 +60,26 @@
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       border-bottom: 1px solid #000;
       text-decoration: none;
+      transition: all 0.3s;
+    }
+
+
+    &__link:hover {
+      color: $c_pink;
+      background-color: $bg_black-opacity-light;
+    }
+
+
+    &__link:active {
+      color: $c_pink;
+      background-color: $bg_black-opacity;
+    }
+
+
+    &__link--active:active,
+    &__link--active:hover {
+      color: #fff;
+      background-color: $bg_blue;
     }
   }
 }
@@ -101,6 +121,7 @@
       padding: 0;
       text-decoration: none;
       line-height: 1;
+      transition: all 0.3s;
     }
 
 
@@ -114,14 +135,24 @@
     }
 
 
-    &__link:hover::after {
+    &__link::after {
       content: "";
       position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      opacity: 0;
+      background-color: #fff;
+      transition: all 0.3s;
+    }
+
+
+    &__link:hover::after {
       left: 0;
       bottom: -10px;
       width: 100%;
-      height: 2px;
-      background-color: #fff;
+      opacity: 1;
     }
 
 

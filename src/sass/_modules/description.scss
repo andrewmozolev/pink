@@ -1,8 +1,14 @@
 .description {
-  padding-top: 44px;
-  padding-bottom: 44px;
+  padding-top: 45px;
+  padding-bottom: 49px;
   text-align: center;
   color: $c_blue;
+
+
+  &--small {
+    padding-top: 39px;
+    padding-bottom: 42px;
+  }
 
 
   &__title {
@@ -19,8 +25,16 @@
 
 @media #{$tablet} {
   .description {
-    padding-top: 95px;
-    padding-bottom: 77px;
+    padding-top: 93px;
+    padding-bottom: 75px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+
+    &--small {
+      padding-top: 66px;
+      padding-bottom: 68px;
+    }
 
 
     &__title {
@@ -37,6 +51,12 @@
     padding-bottom: 85px;
     padding-left: 80px;
     padding-right: 80px;
+
+
+    &--small {
+      padding-top: 62px;
+      padding-bottom: 63px;
+    }
 
 
     &__title {
