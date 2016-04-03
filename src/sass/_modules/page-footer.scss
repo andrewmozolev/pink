@@ -12,6 +12,22 @@
 
 @media #{$mobile} {
   .page-footer {
+    padding-top: 40px;
+
+
+    &__item {
+      margin-bottom: 38px;
+    }
+
+
+    &__item--social {
+      margin-bottom: 36px;
+    }
+
+
+    &__item--copyright {
+      margin-bottom: 55px;
+    }
 
 
     &--hide-mobile {
@@ -23,9 +39,20 @@
 
 @media #{$tablet} {
   .page-footer {
+
+
     &__inner {
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       min-height: 127px;
+      padding-top: 39px;
+      padding-bottom: 25px;
+    }
+
+
+    &__item--logo {
+      padding-bottom: 14px;
     }
   }
 }
@@ -33,9 +60,18 @@
 
 @media #{$desktop} {
   .page-footer {
+
+
     &__inner {
       flex-direction: row;
-      min-height: 197px;
+      min-height: 225px;
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+
+    &__item--logo {
+      padding-bottom: 14px;
     }
   }
 }

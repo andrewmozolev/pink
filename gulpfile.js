@@ -212,7 +212,7 @@ gulp.task('styletest', function() {
       throwError: true
     })
   ];
-  return gulp.src(['!sass/_global/svg-sprite.scss', 'sass/**/*.scss'])
+  return gulp.src(['!src/sass/_global/svg-sprite.scss', 'src/sass/**/*.scss'])
   .pipe(plumber({
     errorHandler: notify.onError({
       message: 'Error: <%= error.message %>',

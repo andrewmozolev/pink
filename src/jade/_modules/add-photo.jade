@@ -1,10 +1,21 @@
 mixin add-photo
   +b.add-photo
     +e.image-wrap
-      +e.IMG.image(
-        src = "http://placebear.com/300/500",
-        alt = "edit pictures"
-      )
+      picture
+        source(
+          media="(min-width: 1020px)",
+          srcset= "img/photos/photo-7-desktop.jpg 1x, img/photos/photo-7-desktop@2x.jpg 2x"
+        )
+        source(
+          media="(min-width: 700px)",
+          srcset= "img/photos/photo-7-tablet.jpg 1x, img/photos/photo-7-tablet@2x.jpg 2x"
+        )
+        img(
+          src= "img/photos/photo-7-mobile.jpg",
+          srcset= "img/photo-7-mobile@2x.jpg 2x",
+          alt= "edit photo",
+          class="add-photo__image"
+        )
 
     +e.wrap-tools
       +e.tools
@@ -15,8 +26,9 @@ mixin add-photo
           checked
         )
         +e.LABEL.label(for = "tool-1") Crop
-          +e.SVG.tool-svg.svg-icon-editor-crop
-            use(xlink:href = "img/svg-sprite.svg#icon-editor-crop")
+          +e.DIV.svg-wrap
+            +e.SVG.tool-svg--crop.svg-icon-editor-crop
+              use(xlink:href = "img/svg-sprite.svg#icon-editor-crop")
           +e.scale--1
             +e.toggle
 
@@ -27,8 +39,9 @@ mixin add-photo
           id = "tool-2"
         )
         +e.LABEL.label(for = "tool-2") Fill
-          +e.SVG.tool-svg.svg-icon-editor-fill
-            use(xlink:href = "img/svg-sprite.svg#icon-editor-fill")
+          +e.DIV.svg-wrap
+            +e.SVG.tool-svg--fill.svg-icon-editor-fill
+              use(xlink:href = "img/svg-sprite.svg#icon-editor-fill")
           +e.scale--2
             +e.toggle
 
@@ -39,8 +52,9 @@ mixin add-photo
           id = "tool-3"
         )
         +e.LABEL.label(for = "tool-3") Contrast
-          +e.SVG.tool-svg.svg-icon-editor-contrast
-            use(xlink:href = "img/svg-sprite.svg#icon-editor-contrast")
+          +e.DIV.svg-wrap
+            +e.SVG.tool-svg--contrast.svg-icon-editor-contrast
+              use(xlink:href = "img/svg-sprite.svg#icon-editor-contrast")
           +e.scale--3
             +e.toggle
 

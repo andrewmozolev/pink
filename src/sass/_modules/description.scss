@@ -1,7 +1,16 @@
 .description {
-  padding-top: 55px;
-  padding-bottom: 55px;
+  padding-top: 44px;
+  padding-bottom: 44px;
   text-align: center;
+  color: $c_blue;
+
+
+  &__title {
+    margin: 0;
+    font-size: $fz_xsmall;
+    font-weight: 400;
+    line-height: (30 / 14);
+  }
 }
 
 
@@ -10,15 +19,29 @@
 
 @media #{$tablet} {
   .description {
-    padding-top: 98px;
-    padding-bottom: 78px;
+    padding-top: 95px;
+    padding-bottom: 77px;
+
+
+    &__title {
+      font-size: $fz_base;
+      line-height: (30 / 18);
+    }
   }
 }
 
 
 @media #{$desktop} {
   .description {
-    padding-top: 98px;
-    padding-bottom: 88px;
+    padding-top: 95px;
+    padding-bottom: 85px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+
+    &__title {
+      font-size: $fz_base;
+      line-height: (30 / 18);
+    }
   }
 }

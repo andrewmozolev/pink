@@ -23,10 +23,13 @@
   color: $c_pink;
   text-decoration: none;
 
+
   &:hover {
     color: $c_blue;
     text-decoration: underline;
   }
+
+
   &:active {
     color: $c_blue-opacity;
     text-decoration: none;

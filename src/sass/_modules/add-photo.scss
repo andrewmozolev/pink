@@ -1,5 +1,6 @@
 .add-photo {
   padding-top: 20px;
+  padding-bottom: 29px;
   display: flex;
   flex-direction: column;
 
@@ -22,15 +23,17 @@
     position: relative;
     display: flex;
     justify-content: center;
-    min-height: 100px;
-    padding-bottom: 30px;
+    align-items: flex-start;
+    min-height: 120px;
+    padding-bottom: 50px;
+    margin-bottom: 39px;
   }
 
 
   &__label {
     @include text-hide;
-    cursor: pointer;
     margin-right: 35px;
+    cursor: pointer;
   }
 
 
@@ -44,35 +47,155 @@
   }
 
 
+  &__svg-wrap {
+    position: relative;
+    width: 45px;
+    height: 45px;
+  }
+
+
+  &__tool-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $bg_gray-dark;
+  }
+
+
   &__scale {
     display: none;
     position: absolute;
-    bottom: 20px;
+    bottom: 34px;
     right: 50%;
     transform: translateX(50%);
     height: 2px;
     width: 240px;
-    background-color: #0f0;
+    background-color: $bg_blue;
+    cursor: default;
   }
 
 
-  &__scale--2 {
-    background-color: #f00;
+  &__toggle {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50px;
+    border: 2px solid $bg_pink;
+    background-color: #fff;
+    cursor: pointer;
   }
 
 
-  &__scale--3 {
-    background-color: #00f;
+  &__toggle:hover {
+    background-color: $bg_pink;
   }
 
 
   &__btns-wrap {
     text-align: center;
   }
+
+  &__btn {
+    width: $break-mobile - ($offset-mobile * 2);
+    margin: 0 auto;
+  }
 }
 
 
-// @media #{$mobile} {}
+@media #{$mobile} {
+  .add-photo {
+
+
+    &__label:hover  &__tool-svg {
+      fill: $bg_black-opacity-dark;
+    }
+
+
+    &__tools::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: - $offset-mobile;
+      right: - $offset-mobile;
+      height: 1px;
+      width: auto;
+      background-color: $bg_gray-darker;
+    }
+
+
+    &__btn {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+
+@media #{$tablet-desktop} {
+  .add-photo {
+
+
+    &__wrap-tools {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 300px;
+      padding-left: 25px;
+    }
+
+
+    &__tools {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+
+    &__label {
+      position: relative;
+      height: 72px;
+      width: 100%;
+      padding-left: 3px;
+      cursor: default;
+    }
+
+
+    &__label::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 1px;
+      width: 100%;
+      background-color: $bg_gray-darker;
+    }
+
+
+    &__scale {
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      transform: translateX(0);
+      display: block;
+      width: 202px;
+    }
+
+
+    &__svg-wrap {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+
+    &__tool-svg {
+      position: absolute;
+      fill: $bg_pink;
+    }
+  }
+}
 
 
 @media #{$tablet} {
@@ -98,33 +221,34 @@
     }
 
 
-    &__wrap-tools {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 300px;
-      padding-left: 25px;
+    &__svg-wrap {
+      width: 28px;
+      height: 28px;
     }
 
 
-    &__tools {
-      flex-direction: column;
+    &__tool-svg--crop {
+      width: 24px;
     }
 
 
-    &__label {
-      position: relative;
-      width: 100%;
-      padding-left: 3px;
-      cursor: default;
+    &__tool-svg--fill {
+      width: 24px;
     }
 
 
-    &__scale {
-      right: 18px;
-      transform: translateX(0);
-      display: block;
-      width: 202px;
+    &__tool-svg--contrast {
+      width: 18px;
+    }
+
+
+    &__btn {
+      margin-bottom: 24px;
+    }
+
+
+    &__btn:last-child {
+      margin-bottom: 0;
     }
   }
 }
@@ -154,36 +278,31 @@
 
 
     &__wrap-tools {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding-left: 0;
       width: 410px;
     }
 
 
-    &__tools {
-      flex-direction: column;
-    }
-
-
     &__label {
-      position: relative;
-      width: 100%;
-      padding-left: 3px;
-      cursor: default;
+      height: 70px;
     }
 
 
     &__scale {
       right: 30px;
-      transform: translateX(0);
-      display: block;
       width: 290px;
     }
 
 
+    &__btns-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+
     &__btn {
-      display: inline-block;
+      width: 183px;
     }
   }
 }

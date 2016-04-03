@@ -18,6 +18,11 @@
   }
 
 
+  &__logo {
+    margin-top: 21px;
+  }
+
+
   &__btn-burger {
     position: absolute;
     top: 0;
@@ -131,6 +136,11 @@
     }
 
 
+    &__logo {
+      margin-top: 27px;
+    }
+
+
     &__btn-burger {
       height: $h_header-tablet;
     }
@@ -149,6 +159,11 @@
       flex-direction: row;
       justify-content: space-between;
       min-height: $h_header-desktop;
+    }
+
+
+    &__logo {
+      margin-top: 27px;
     }
 
 

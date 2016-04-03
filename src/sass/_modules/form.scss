@@ -70,7 +70,6 @@
 
     &__fieldset--achievements {
       order: 2;
-
     }
 
 
@@ -106,6 +105,8 @@
 
 @media #{$desktop} {
   .form {
+
+
     &__fieldset {
       width: 100%;
     }

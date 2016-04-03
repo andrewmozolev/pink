@@ -1,49 +1,114 @@
 .photo {
-  font-size: $fz_small;
-  display: inline-block;
-  vertical-align: top;
-  max-width: $maw_photo-mobile;
+  min-width: $w_photo-mobile;
+  max-width: $w_photo-mobile;
+  padding-bottom: 22px;
   background-color: $bg_gray;
+  font-size: $fz_xsmall;
+  color: $c_blue;
 
 
-  &__best {
+  &__identifier-wrap {
     @include container;
+    position: relative;
+  }
+
+
+  &__identifier {
+    position: absolute;
+    right: $offset-mobile;
+    top: 0;
     display: block;
-    text-align: right;
+    min-width: 140px;
+    height: 36px;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: $fz_xxsmall;
+    line-height: (24 / 12);
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $bg_pink;
   }
 
 
   &--best {
     background-color: transparent;
+    width: 100%;
     max-width: none;
   }
 
 
   &__inner {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
     padding-left: 18px;
     padding-right: 18px;
   }
 
 
-  &__container {
-    @include container;
-  }
-
-
   &__inner--best {
+    max-width: $w_photo-mobile;
+    margin: 0 auto;
     background-color: $bg_gray;
   }
 
 
   &__img {
+    display: block;
     width: 100%;
     height: auto;
   }
 
 
-  &__img--best {
-    width: 100%;
-    height: auto;
+  &__name {
+    font-size: $fz_xsmall;
+    line-height: (24 / 14);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+  &__time {
+    font-size: $fz_xxsmall;
+    text-transform: uppercase;
+  }
+
+
+  &__comment {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    font-size: $fz_xsmall;
+    line-height: (24 / 14);
+  }
+
+
+  &__like-link {
+    @include text-hide;
+    margin-right: 17px;
+  }
+
+
+  &__like-svg {
+    fill: $bg_pink;
+  }
+
+
+  &__like-link:hover  &__like-svg {
+    fill: $c_blue;
+  }
+
+  &__like-link:active  &__like-svg {
+    fill: $c_blue-opacity;
+  }
+
+
+  &__like {
+    font-size: $fz_xxsmall;
+    line-height: (24/ 12);
+    text-transform: uppercase;
+    color: $c_pink;
   }
 }
 
@@ -53,17 +118,93 @@
 
 @media #{$tablet} {
   .photo {
-    min-width: $maw_photo-tablet;
+    max-width: $w_photo-tablet;
+
+
+    &__identifier {
+      top: 57px;
+      right: $offset-tablet;
+    }
 
 
     &--best {
       max-width: none;
+      width: 100%;
     }
 
 
     &__inner {
-      padding-left: 28px;
-      padding-right: 28px;
+      padding-left: $p_photo-tablet-desktop;
+      padding-right: $p_photo-tablet-desktop;
+    }
+
+    &__inner--best {
+      max-width: $break-tablet - ($offset-tablet * 2);
+    }
+  }
+}
+
+
+@media #{$tablet-desktop} {
+  .photo {
+    position: relative;
+    padding-bottom: 48px;
+
+
+    &__footer {
+      position: absolute;
+      left: 0;
+      bottom: 24px;
+      width: 100%;
+      padding-right: 50px;
+      padding-left: $p_photo-tablet-desktop;
+    }
+
+
+    &__like-link {
+      position: absolute;
+      right: $p_photo-tablet-desktop + 3px;
+      margin-right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+
+    &--best  &__footer {
+      top: 0;
+      padding-left: 0;
+      padding-right: 32px;
+    }
+
+
+    &--best  &__like-link {
+      right: 0;
+    }
+
+
+    &__inner--best {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+
+    &__inner--best  &__header {
+      order: 1;
+      width: auto;
+    }
+
+
+    &__inner--best  &__footer {
+      position: relative;
+      order: 2;
+      width: auto;
+    }
+
+
+    &__inner--best  &__comment {
+      order: 3;
+      width: 100%;
     }
   }
 }
@@ -71,7 +212,13 @@
 
 @media #{$desktop} {
   .photo {
-    max-width: $maw_photo-desktop;
+    max-width: $w_photo-desktop;
+
+
+    &__identifier {
+      top: 54px;
+      right: $offset-desktop;
+    }
 
 
     &--best {
@@ -83,8 +230,13 @@
 
 
     &__inner {
-      padding-left: 28px;
-      padding-right: 28px;
+      padding-left: $p_photo-tablet-desktop;
+      padding-right: $p_photo-tablet-desktop;
+    }
+
+
+    &__inner--best {
+      max-width: $break-desktop - ($offset-desktop * 2);
     }
   }
 }

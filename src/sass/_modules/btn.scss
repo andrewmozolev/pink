@@ -1,5 +1,6 @@
 .btn {
   display: inline-block;
+  width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 30px;
@@ -23,6 +24,43 @@
 
   &--download {
     color: #fff;
+  }
+
+
+  &--submit {
+    background-color: #fff;
+    border-color: $bg_pink;
+    color: $c_pink;
+  }
+
+
+  &--submit:hover {
+    background-color: $bg_pink;
+    color: #fff;
+  }
+
+  &--submit:active {
+    background-color: $bg_pink;
+    color: $c_white-opacity;
+  }
+
+
+  &--reset {
+    background-color: #fff;
+    border-color: $bg_black-opacity-light;
+    color: $c_black-opacity-light;
+  }
+
+
+  &--reset:hover {
+    border-color: $bg_black-opacity;
+    color: $c_black-opacity;
+  }
+
+  &--reset:active {
+    background-color: $bg_black-opacity;
+    border-color: $bg_black-opacity;
+    color: $c_white-opacity;
   }
 }
 

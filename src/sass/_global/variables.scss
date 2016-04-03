@@ -16,7 +16,8 @@ $retina2x: "(min-resolution: 1.5dppx)";
 
 
 $fz_base: 18px;
-$fz_xsmall: ceil($fz_base * 0.77);   /* 14px */
+$fz_xxsmall: ceil($fz_base * 0.66); /* 12px */
+$fz_xsmall: ceil($fz_base * 0.77);  /* 14px */
 $fz_small: ceil($fz_base * 0.88);   /* 16px */
 $fz_medium: ceil($fz_base * 1.33);  /* 24px */
 $fz_large: ceil($fz_base * 1.66);   /* 30px */
@@ -25,16 +26,24 @@ $fz_xxlarge: ceil($fz_base * 2.77); /* 50px */
 
 
 $bg_gray: #f2f2f2;
+$bg_gray-darker: #dddfe0;
+$bg_gray-dark: #b5b9be;
 $bg_pink: #d22856;
 $bg_blue: #283645;
 $bg_dark: #1d2631;
+$bg_blue-opacity-light: rgba(40, 54, 69, 0.1);
 $bg_pink-opacity: rgba(210, 40, 86, 0.3);
 $bg_white-opacity: rgba(255, 255, 255, 0.3);
 $bg_black-opacity: rgba(0, 0, 0, 0.3);
+$bg_black-opacity-light: rgba(0, 0, 0, 0.1);
+$bg_black-opacity-dark: rgba(0, 0, 0, 0.5);
 
 
 $c_pink: $bg_pink;
 $c_blue: $bg_blue;
+$c_white-opacity: rgba(255, 255, 255, 0.3);
+$c_black-opacity: rgba(0, 0, 0, 0.3);
+$c_black-opacity-light: rgba(0, 0, 0, 0.1);
 $c_blue-opacity: rgba(40, 54, 69, 0.3);
 $c_pink-opacity: rgba(210, 40, 86, 0.3);
 
@@ -44,6 +53,8 @@ $h_header-desktop: 110px;
 
 $gutter_nav: 82px;
 
-$maw_photo-mobile: 280px;
-$maw_photo-tablet: 300px;
-$maw_photo-desktop: 300px;
+$w_photo-mobile: 280px;
+$w_photo-tablet: 300px;
+$w_photo-desktop: 300px;
+
+$p_photo-tablet-desktop: 28px;

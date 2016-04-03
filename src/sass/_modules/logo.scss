@@ -2,11 +2,12 @@
   position: relative;
   color: #fff;
   width: 150px;
-  margin-top: 21px;
+  // margin-top: 21px;
 
 
   &__link {
     @include text-hide;
+    display: block;
   }
 
 
@@ -83,7 +84,6 @@
 
 @media #{$tablet} {
   .logo {
-    margin-top: 27px;
 
 
     &__letter--mobile {
@@ -105,7 +105,6 @@
 
 @media #{$desktop} {
   .logo {
-    margin-top: 27px;
 
 
     &__letter--mobile {
