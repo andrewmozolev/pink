@@ -8,7 +8,7 @@
   &__image-wrap {
     max-width: 280px;
     margin: 0 auto;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
   }
 
 
@@ -26,7 +26,7 @@
     align-items: flex-start;
     min-height: 120px;
     padding-bottom: 50px;
-    margin-bottom: 39px;
+    margin-bottom: 38px;
   }
 
 
@@ -59,14 +59,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    fill: $bg_gray-dark;
+    fill: $bg_blue-opacity;
   }
 
 
   &__scale {
     display: none;
     position: absolute;
-    bottom: 34px;
+    bottom: 35px;
     right: 50%;
     transform: translateX(50%);
     height: 2px;
@@ -91,6 +91,7 @@
   }
 
 
+  &__toggle--active,
   &__toggle:active {
     background-color: $bg_pink;
   }
@@ -112,7 +113,7 @@
 
 
     &__label:hover  &__tool-svg {
-      fill: $bg_black-opacity-dark;
+      fill: $bg_blue-opacity-darker;
     }
 
 
@@ -153,6 +154,7 @@
       align-items: stretch;
       margin: 0;
       padding-bottom: 20px;
+      margin-top: -17px;
     }
 
 
@@ -183,6 +185,21 @@
       transform: translateX(0);
       display: block;
       width: 202px;
+    }
+
+
+    &__scale--1  &__toggle {
+      left: 72%;
+    }
+
+
+    &__scale--2  &__toggle {
+      left: 13%;
+    }
+
+
+    &__scale--3  &__toggle {
+      left: 48%;
     }
 
 
@@ -246,6 +263,8 @@
 
 
     &__btn {
+      width: 260px;
+      margin-right: 13px;
       margin-bottom: 24px;
     }
 
@@ -286,14 +305,34 @@
     }
 
 
+    &__tools {
+      margin-top: -16px;
+    }
+
+
     &__label {
-      height: 70px;
+      height: 71px;
     }
 
 
     &__scale {
       right: 30px;
       width: 290px;
+    }
+
+
+    &__scale--1  &__toggle {
+      left: 25%;
+    }
+
+
+    &__scale--2  &__toggle {
+      left: 86%;
+    }
+
+
+    &__scale--3  &__toggle {
+      left: 56%;
     }
 
 
@@ -306,6 +345,7 @@
 
     &__btn {
       width: 183px;
+      margin: 0;
     }
   }
 }

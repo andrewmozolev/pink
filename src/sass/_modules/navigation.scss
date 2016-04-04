@@ -66,20 +66,17 @@
 
     &__link:hover {
       color: $c_pink;
-      background-color: $bg_black-opacity-light;
     }
 
 
     &__link:active {
-      color: $c_pink;
-      background-color: $bg_black-opacity;
+      color: $c_pink-opacity;
     }
 
 
     &__link--active:active,
     &__link--active:hover {
       color: #fff;
-      background-color: $bg_blue;
     }
   }
 }

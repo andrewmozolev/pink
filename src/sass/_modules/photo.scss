@@ -168,10 +168,16 @@
 
 
     &__inner {
+      min-height: 155px;
       padding-top: 26px;
       padding-bottom: 23px;
       padding-left: 28px;
       padding-right: 28px;
+    }
+
+
+    &__inner--best {
+      min-height: auto;
     }
 
 

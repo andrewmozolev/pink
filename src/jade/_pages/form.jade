@@ -5,6 +5,14 @@ block variables
   - var isPopupSuccess = true
   - var selected = "form.html"
 
+block append style
+  style.
+    .radio__input[id="radio-OS-1"]:checked ~ .radio__label[for="radio-OS-1"]::before,
+    .radio__input[id="radio-OS-2"]:checked ~ .radio__label[for="radio-OS-2"]::before,
+    .radio__input[id="radio-OS-3"]:checked ~ .radio__label[for="radio-OS-3"]::before {
+      background-color: #d22856;
+    }
+
 block content
 
   +b.heading

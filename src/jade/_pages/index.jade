@@ -12,6 +12,27 @@ block append style
     .reviews__input[id="toggle-reviews-3"]:checked ~ .reviews__item--3 {
       display: block;
     }
+    .reviews__input[id="toggle-reviews-1"]:checked ~ .reviews__toggles .reviews__toggle--1,
+    .reviews__input[id="toggle-reviews-2"]:checked ~ .reviews__toggles .reviews__toggle--2,
+    .reviews__input[id="toggle-reviews-3"]:checked ~ .reviews__toggles .reviews__toggle--3 {
+      box-shadow: 0 0 0 3px #283645;
+    }
+    .tariffs__input[id="toggle-tariffs-1"]:checked ~ .tariffs__toggles .tariffs__toggle--1,
+    .tariffs__input[id="toggle-tariffs-2"]:checked ~ .tariffs__toggles .tariffs__toggle--2,
+    .tariffs__input[id="toggle-tariffs-3"]:checked ~ .tariffs__toggles .tariffs__toggle--3 {
+      box-shadow: 0 0 0 3px #283645;
+    }
+    @media only screen and (max-width: 699px) {
+      .tariffs__input[id="toggle-tariffs-1"]:checked ~ .tariffs__table {
+        transform: translateX(0%);
+      }
+      .tariffs__input[id="toggle-tariffs-2"]:checked ~ .tariffs__table {
+        transform: translateX(-33.33%);
+      }
+      .tariffs__input[id="toggle-tariffs-3"]:checked ~ .tariffs__table {
+        transform: translateX(-66.66%);
+      }
+    }
 block content
 
   +b.heading--index

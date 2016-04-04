@@ -23,6 +23,7 @@
 @mixin link {
   color: $c_pink;
   text-decoration: none;
+  transition: all 0.3s;
 
 
   &:hover {

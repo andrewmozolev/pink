@@ -1,6 +1,22 @@
 .comment {
-  margin: 0;
+  max-width: 700px;
+  margin: 0 auto;
   text-align: center;
+  color: $c_blue;
+
+
+  &__text {
+    font-size: $fz_xsmall;
+    line-height: (30 / 14);
+  }
+
+  &__author {
+    font-size: $fz_base;
+    line-height: (30 / 18);
+    font-style: normal;
+    font-weight: 700;
+    color: #000;
+  }
 }
 
 
@@ -25,5 +41,49 @@
 }
 
 
-// @media #{$tablet} {}
-// @media #{$desktop} {}
+@media #{$tablet} {
+  .comment {
+
+
+    &__text {
+      font-size: $fz_base;
+      line-height: (30 / 18);
+    }
+
+
+    &__author {
+      font-size: $fz_medium;
+      line-height: (30 / 20);
+    }
+
+
+    &__about-author {
+      font-size: $fz_xsmall;
+      line-height: (30 / 14);
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .comment {
+
+
+    &__text {
+      font-size: $fz_base;
+      line-height: (30 / 18);
+    }
+
+
+    &__author {
+      font-size: $fz_xmedium;
+      line-height: (30 / 24);
+    }
+
+
+    &__about-author {
+      font-size: $fz_base;
+      line-height: (30 / 18);
+    }
+  }
+}

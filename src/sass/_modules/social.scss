@@ -19,6 +19,11 @@
   }
 
 
+  &__link:last-child {
+    margin-right: 0;
+  }
+
+
   &__link:hover {
     border-color: $bg_blue;
   }

@@ -19,19 +19,23 @@ $fz_base: 18px;
 $fz_xxsmall: ceil($fz_base * 0.66); /* 12px */
 $fz_xsmall: ceil($fz_base * 0.77);  /* 14px */
 $fz_small: ceil($fz_base * 0.88);   /* 16px */
-$fz_medium: ceil($fz_base * 1.33);  /* 24px */
+$fz_medium: ceil($fz_base * 1.11);  /* 20px */
+$fz_xmedium: ceil($fz_base * 1.33);  /* 24px */
 $fz_large: ceil($fz_base * 1.66);   /* 30px */
 $fz_xlarge: ceil($fz_base * 2.22);  /* 40px */
 $fz_xxlarge: ceil($fz_base * 2.77); /* 50px */
 
 
 $bg_gray: #f2f2f2;
+$bg_gray-light: #e5e5e5;
 $bg_gray-darker: #dddfe0;
-$bg_gray-dark: #b5b9be;
 $bg_pink: #d22856;
 $bg_blue: #283645;
 $bg_dark: #1d2631;
 $bg_blue-opacity-light: rgba(40, 54, 69, 0.1);
+$bg_blue-opacity: rgba(40, 54, 69, 0.3);
+$bg_blue-opacity-darker: rgba(40, 54, 69, 0.5);
+$bg_blue-opacity-dark: rgba(40, 54, 69, 0.6);
 $bg_pink-opacity: rgba(210, 40, 86, 0.3);
 $bg_white-opacity: rgba(255, 255, 255, 0.3);
 $bg_black-opacity: rgba(0, 0, 0, 0.3);
@@ -51,7 +55,7 @@ $h_header-mobile: 66px;
 $h_header-tablet: 110px;
 $h_header-desktop: 110px;
 
-$gutter_nav: 82px;
+$gutter_nav: 80px;
 
 $w_photo-mobile: 280px;
 $w_photo-tablet: 300px;

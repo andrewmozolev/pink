@@ -12,7 +12,7 @@ mixin add-photo
         )
         img(
           src= "img/photos/photo-7-mobile.jpg",
-          srcset= "img/photo-7-mobile@2x.jpg 2x",
+          srcset= "img/photos/photo-7-mobile@2x.jpg 2x",
           alt= "edit photo",
           class="add-photo__image"
         )
@@ -60,7 +60,5 @@ mixin add-photo
 
 
       +e.btns-wrap
-        +e.btn
-          +b.BUTTON.btn--submit(type = "submit") Запостить
-        +e.btn
-          +b.BUTTON.btn--reset(type = "reset") Отмена
+        +e.BUTTON.btn.btn--submit(type = "submit") Запостить
+        +e.BUTTON.btn.btn--reset(type = "reset") Отмена

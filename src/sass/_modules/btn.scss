@@ -1,6 +1,5 @@
 .btn {
   display: inline-block;
-  width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 30px;
@@ -28,6 +27,13 @@
   }
 
 
+  &--submit,
+  &--reset {
+    padding-top: 13px;
+    padding-bottom: 15px;
+  }
+
+
   &--submit {
     background-color: #fff;
     border-color: $bg_pink;
@@ -39,6 +45,7 @@
     background-color: $bg_pink;
     color: #fff;
   }
+
 
   &--submit:active {
     background-color: $bg_pink;
@@ -57,6 +64,7 @@
     border-color: $bg_black-opacity;
     color: $c_black-opacity;
   }
+
 
   &--reset:active {
     background-color: $bg_black-opacity;
