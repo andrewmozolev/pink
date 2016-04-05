@@ -1,4 +1,46 @@
-// .copyright {}
+.copyright {
+
+
+  &__link {
+    position: relative;
+    padding-right: 42px;
+    font-size: $fz_xsmall;
+    line-height: (18 / 14);
+    text-decoration: none;
+    color: $c_blue;
+  }
+
+
+  &__logo-svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -42px;
+    fill: $bg_pink;
+    transition: all 0.3s;
+  }
+
+
+  &__link:hover  &__logo-svg {
+    fill: $bg_blue;
+  }
+
+
+  &__link:active  &__logo-svg {
+    fill: $bg_blue;
+    fill-opacity: 0.3;
+  }
+}
 // @media #{$mobile} {}
 // @media #{$tablet} {}
-// @media #{$desktop} {}
+
+
+@media #{$desktop} {
+  .copyright {
+
+
+    &__link {
+      font-size: $fz_base;
+    }
+  }
+}
