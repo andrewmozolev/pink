@@ -1,7 +1,7 @@
 [
   {
     "title": "Поднимает настроение",
-    "text": "Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!",
+    "text": "Приложение позволит вам победить осеннюю хандру и&nbsp;деперессию буквально в&nbsp;несколько кликов!",
     "imgMobile": "img/features/iphone-screen-mobile.png",
     "imgMobile2x": "img/features/iphone-screen-mobile@2x.png",
     "imgTablet": "img/features/iphone-screen-tablet-1@1x.png",
@@ -11,7 +11,7 @@
   },
   {
     "title": "Меняет мир вокруг",
-    "text": "Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект",
+    "text": "Сделайте снимок и&nbsp;украсьте его смайликом или текстовой подписью, чтобы усилить&nbsp;эффект",
     "imgMobile": "img/features/iphone-screen-mobile.png",
     "imgMobile2x": "img/features/iphone-screen-mobile@2x.png",
     "imgTablet": "img/features/iphone-screen-tablet-2@1x.png",
@@ -21,7 +21,7 @@
   },
   {
     "title": "Заводит новых друзей",
-    "text": "Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых",
+    "text": "Ставьте лайки, комментируте, делитесь фотографиями с&nbsp;друзьями и&nbsp;заводите новых",
     "imgMobile": "img/features/iphone-screen-mobile.png",
     "imgMobile2x": "img/features/iphone-screen-mobile@2x.png",
     "imgTablet": "img/features/iphone-screen-tablet-3@1x.png",

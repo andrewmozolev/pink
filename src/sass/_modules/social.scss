@@ -8,11 +8,11 @@
   &__link {
     position: relative;
     display: block;
-    width: 52px;
-    height: 52px;
+    width: 51px;
+    height: 51px;
     margin-right: 12px;
     margin-bottom: 12px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: 3px solid $bg_blue-opacity-light;
     background-color: #fff;
     transition: all 0.3s;
@@ -42,6 +42,17 @@
     transform: 50px;
     fill: $bg_pink;
     transition: all 0.3s;
+  }
+
+
+  &__svg--facebook {
+    margin-top: -1px;
+  }
+
+
+  &__svg--youtube {
+    margin-top: -1px;
+    margin-left: 2px;
   }
 
 

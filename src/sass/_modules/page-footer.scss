@@ -76,18 +76,18 @@
     &__inner {
       flex-direction: row;
       min-height: 225px;
-      padding-top: 95px;
+      padding-top: 45px;
       padding-bottom: 65px;
     }
 
 
     &__item--logo {
-      margin-bottom: 25px;
+      margin-top: -25px;
     }
 
 
     &__item--social {
-      margin-top: 4px;
+      margin-top: 5px;
       margin-left: 11px;
     }
 

@@ -61,15 +61,16 @@
     @include container;
     min-height: 330px;
     padding-top: $h_header-tablet + 48px;
+    padding-bottom: 139px;
     background-image: url("../img/bg/bg-back-tablet@1x.jpg");
     background-repeat: repeat;
     background-position: top 0 left 50%;
-    padding-bottom: 139px;
 
 
     &--index {
-      min-height: 730px;
+      min-height: 729px;
       padding-top: $h_header-tablet + 70px;
+      padding-bottom: 40px;
       background-image: url("../img/intro/iphone-hand-tablet@1x.png"), url("../img/bg/bg-back-tablet@1x.jpg");
       background-repeat: no-repeat, repeat;
       background-size: auto 545px, cover;
@@ -142,7 +143,7 @@
       background-image: url("../img/intro/iphone-hand-desktop@1x.png");
       background-repeat: no-repeat;
       background-size: auto 645px;
-      background-position: bottom 0 right -120px;
+      background-position: bottom 0 right -85px;
     }
 
 
@@ -173,7 +174,7 @@
       width: 300px;
       padding-left: 0;
       padding-right: 0;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
       margin-left: 0;
     }
   }

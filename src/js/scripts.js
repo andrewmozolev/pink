@@ -25,7 +25,8 @@ function handleMenu(menu, togglers) {
   var menu = document.getElementById('nav');
   var header = document.getElementById('header');
 
-  header.classList.add('page-header--active');
+  header.classList.add('page-header--js');
+  header.classList.remove('page-header--active');
   menu.classList.add('navigation--closed');
   menu.classList.add('navigation--positioned');
   handleMenu(menu, btns);

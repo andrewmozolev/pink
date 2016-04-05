@@ -23,12 +23,22 @@
 @media #{$mobile} {
   .comment {
     position: relative;
-    padding-top: 90px;
+    padding-top: 29px;
+
+
+    &__text::before {
+      content: "«";
+    }
+
+
+    &__text::after {
+      content: "»";
+    }
 
 
     &__author {
       position: absolute;
-      top: 50px;
+      top: 0;
       left: 0;
       right: 0;
     }
@@ -46,12 +56,25 @@
 
 
     &__text {
+      margin-bottom: 35px;
       font-size: $fz_base;
       line-height: (30 / 18);
     }
 
 
+    &__text::before {
+      content: "«";
+    }
+
+
+    &__text::after {
+      content: "»";
+    }
+
+
     &__author {
+      display: block;
+      margin-bottom: 2px;
       font-size: $fz_medium;
       line-height: (30 / 20);
     }
@@ -70,12 +93,15 @@
 
 
     &__text {
+      margin-bottom: 36px;
       font-size: $fz_base;
       line-height: (30 / 18);
     }
 
 
     &__author {
+      display: block;
+      margin-bottom: 2px;
       font-size: $fz_xmedium;
       line-height: (30 / 24);
     }

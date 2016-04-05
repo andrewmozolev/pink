@@ -1,5 +1,6 @@
 .reviews {
-
+  padding-top: 41px;
+  padding-bottom: 30px;
 
   &__input {
     display: none;
@@ -17,7 +18,7 @@
 
 
   &__toggles {
-    margin-top: 43px;
+    margin-top: 36px;
     text-align: center;
   }
 
@@ -28,11 +29,16 @@
     vertical-align: top;
     width: 6px;
     height: 6px;
-    margin-right: 19px;
+    margin-right: 14px;
     border-radius: 50%;
     background-color: $bg_blue-opacity;
     cursor: pointer;
     transition: all 0.3s;
+  }
+
+
+  &__toggle:last-child {
+    margin-right: 0;
   }
 
 
@@ -53,7 +59,12 @@
 @media #{$tablet} {
   .reviews {
     min-height: 290px;
-    padding-top: 35px;
+    padding-top: 21px;
+    padding-bottom: 0;
+
+    &__toggles {
+      margin-top: 37px;
+    }
   }
 }
 
@@ -61,8 +72,8 @@
 @media #{$desktop} {
   .reviews {
     position: relative;
-    min-height: 415px;
-    padding-top: 180px;
+    padding-top: 167px;
+    padding-bottom: 35px;
     background-image: url("../img/bg/quotes.svg");
     background-repeat: no-repeat;
     background-position: 50% 72px;

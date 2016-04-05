@@ -77,7 +77,7 @@
 
 
     &__link {
-      margin-bottom: 37px;
+      margin-bottom: 21px;
     }
   }
 }
@@ -87,8 +87,13 @@
   .downloads {
     background-color: transparent;
 
-
     &__wrap {
+      width: 300px;
+      padding-top: 30px;
+    }
+
+
+    &__btn {
       width: 300px;
     }
 
@@ -107,7 +112,7 @@
 
 
     &__btn {
-      margin-bottom: 66px;
+      margin-bottom: 65px;
     }
 
 

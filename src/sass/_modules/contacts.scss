@@ -1,5 +1,5 @@
 .contacts {
-  padding-top: 40px;
+  padding-top: 42px;
   padding-bottom: 36px;
   text-align: center;
 
@@ -37,7 +37,7 @@
 
 
   &__item--phone {
-    margin-bottom: 17px;
+    margin-bottom: 14px;
   }
 
 
@@ -55,8 +55,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 45px;
-    padding-bottom: 25px;
+    padding-top: 46px;
+    padding-bottom: 21px;
 
 
     &__headling {
@@ -66,10 +66,26 @@
     }
 
 
+    &__title {
+      margin-bottom: 2px;
+    }
+
+
     &__item {
       width: 50%;
-      margin-bottom: 42px;
+      margin-bottom: 43px;
     }
+
+
+    &__item--phone {
+      padding-right: 10px;
+    }
+
+
+    &__item--email {
+      padding-left: 10px;
+    }
+
 
     &__item--address {
       margin-bottom: 0;
@@ -82,25 +98,25 @@
   .contacts {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 65px;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 
 
     &__headling {
-      margin-bottom: 54px;
+      margin-bottom: 53px;
       font-size: $fz_xxlarge;
       line-height: (60 / 50);
     }
 
 
     &__title {
-      margin-bottom: 18px;
+      margin-bottom: 21px;
     }
 
 
     &__item {
-      width: 33.33%;
+      width: 300px;
       margin-bottom: 0;
     }
 

@@ -1,5 +1,5 @@
 .feature {
-  padding-top: 100px;
+  padding-top: 96px;
   background-image: url("../img/bg/timer.svg");
   background-repeat: no-repeat;
   background-size: 240px 278px;
@@ -21,6 +21,7 @@
 
   &__link {
     @include link;
+    text-decoration: underline;
   }
 }
 
@@ -40,7 +41,7 @@
 
     &__title {
       padding-right: 120px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       font-size: $fz_large;
     }
 
@@ -62,19 +63,24 @@
 
 @media #{$desktop} {
   .feature {
-    min-height: 430px;
-    padding-left: 370px;
-    padding-top: 135px;
+    min-height: 448px;
+    padding-left: 366px;
+    padding-top: 130px;
     background-size: 300px 345px;
+    background-position: left 0 top 35px;
+
 
 
     &__title {
-      padding-bottom: 21px;
+      margin-bottom: 24px;
+      font-size: $fz_large;
+      line-height: 1;
     }
 
 
     &__text {
       padding-right: 40px;
+      margin-bottom: 30px;
       font-size: $fz_base;
       line-height: (30 / 18);
     }

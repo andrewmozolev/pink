@@ -1,8 +1,8 @@
 .tariffs {
   position: relative;
   color: $c_blue;
-  padding-top: 90px;
-  padding-bottom: 40px;
+  padding-top: 91px;
+  padding-bottom: 35px;
 
   &__input {
     display: none;
@@ -26,12 +26,16 @@
     height: 98px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 14px;
+    padding-bottom: 17px;
     color: #fff;
     background-color: $bg_blue;
-    border: 2px solid $bg_gray-light;
-    border-bottom: none;
+    border-right: 2px solid $bg_gray-light;
+  }
+
+
+  th:last-child {
+    border-right: none;
   }
 
 
@@ -48,10 +52,10 @@
   &__hit::before {
     content: "Хит";
     position: absolute;
-    top: 11px;
-    left: -25px;
+    top: 12px;
+    left: -24px;
     width: 102px;
-    height: 30px;
+    height: 28px;
     transform: rotate(-45deg);
     font-size: $fz_xsmall;
     line-height: (30 / 14);
@@ -62,18 +66,8 @@
   }
 
 
-  &__option {
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: $fz_xsmall;
-    line-height: (30 / 14);
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-
   &__title {
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: $fz_base;
@@ -94,10 +88,23 @@
 
   td {
     position: relative;
-    height: 60px;
+    height: 61px;
     background-color: #fff;
     border: 2px solid $bg_gray-light;
     border-top: none;
+  }
+
+
+  td:first-child {
+    border-top: 2px solid $bg_gray-light;
+  }
+
+
+  &__option {
+    font-size: $fz_xsmall;
+    line-height: (30 / 14);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 
@@ -105,13 +112,13 @@
     @include text-hide;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 19px;
     transform: translate(0, -50%);
   }
 
 
   &__toggles {
-    margin-top: 43px;
+    margin-top: 42px;
     text-align: center;
   }
 
@@ -122,11 +129,16 @@
     vertical-align: top;
     width: 6px;
     height: 6px;
-    margin-right: 19px;
+    margin-right: 14px;
     border-radius: 50%;
     background-color: $bg_blue-opacity;
     cursor: pointer;
     transition: all 0.3s;
+  }
+
+
+  &__toggle:last-child {
+    margin-right: 0;
   }
 
 
@@ -163,8 +175,8 @@
 
     td {
       width: 100%;
-      padding-top: 25px;
-      padding-bottom: 23px;
+      padding-top: 14px;
+      padding-bottom: 13px;
       padding-right: 70px;
       padding-left: 22px;
     }
@@ -183,8 +195,8 @@
 @media #{$tablet-desktop} {
   .tariffs {
     @include container;
-    padding-top: 90px;
-    padding-bottom: 68px;
+    padding-top: 91px;
+    padding-bottom: 67px;
 
 
     &__table {
@@ -193,8 +205,13 @@
 
 
     td {
-      width: 25%;
-      height: 45px;
+      position: relative;
+      height: 47px;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: #fff;
+      border: 2px solid $bg_gray-light;
+      border-top: none;
     }
 
 
@@ -223,7 +240,19 @@
   .tariffs {
 
 
+    th {
+      position: relative;
+      width: 25%;
+      height: 79px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 5px;
+      padding-bottom: 0;
+    }
+
+
     &__title {
+      margin-bottom: -3px;
       font-size: $fz_small;
       line-height: (30 / 16);
     }
@@ -245,18 +274,18 @@
 
 @media #{$desktop} {
   .tariffs {
-    padding-top: 148px;
-    padding-bottom: 95px;
+    padding-top: 154px;
+    padding-bottom: 96px;
 
 
     td {
       height: 60px;
+      padding-left: 21px;
+      padding-right: 21px;
     }
 
 
     &__option {
-      padding-left: 24px;
-      padding-right: 24px;
       font-size: $fz_base;
       line-height: (30 / 18);
     }

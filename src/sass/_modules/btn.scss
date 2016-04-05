@@ -2,8 +2,8 @@
   display: inline-block;
   padding-top: 13px;
   padding-bottom: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
   text-decoration: none;
   font-weight: 700;
   border: 3px solid #fff;
@@ -69,4 +69,15 @@
 
 // @media #{$mobile} {}
 // @media #{$tablet} {}
-// @media #{$desktop} {}
+
+
+@media #{$desktop} {
+  .btn {
+
+
+    &--download {
+      font-size: $fz_medium-btn;
+      line-height: 1;
+    }
+  }
+}
