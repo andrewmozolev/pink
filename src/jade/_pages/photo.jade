@@ -10,29 +10,20 @@ block append style
     .add-photo__input[id="tool-3"]:checked + .add-photo__label .add-photo__scale--3 {
       display: block;
     }
-    .add-photo__input[id="tool-1"]:checked + .add-photo__label .add-photo__tool-svg,
-    .add-photo__input[id="tool-2"]:checked + .add-photo__label .add-photo__tool-svg,
-    .add-photo__input[id="tool-3"]:checked + .add-photo__label .add-photo__tool-svg {
-      fill: #d22856;
-    }
 
 block content
 
   +b.heading
     +e.wrap
-      +e.H2.title Фотографии<br>пользователей
-
+      +e.H2.title Фотографии пользователей
   .box
     .container
-      +b.description
-        +e.H2.title Взгляните на&nbsp;фотографии, которые выкладывают пользователи! Видите,&nbsp;как&nbsp;не&nbsp;хватает&nbsp;ваших?
+      +description("Взгляните на&nbsp;фотографии, которые выкладывают пользователи! Видите, как не&nbsp;хватает ваших?")
 
     +photos
 
     .container
-      +b.description--small
-        +e.H2.title Затмите их&nbsp;всех!<br>Выкладывайте все, что накопилось&nbsp;в телефоне!
-
+      +description("Затмите их&nbsp;всех! Выкладывайте все, что накопилось в&nbsp;телефоне!")
 
   .box.box--gray.box--no-oblique.box--no-desktop
     .container
