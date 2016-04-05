@@ -71,6 +71,28 @@
     border-color: $bg_black-opacity;
     color: $c_white-opacity;
   }
+
+  &--form {
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border: none;
+    border-radius: $bdrs_form;
+    background-color: $bg_green;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+
+  &--form:hover {
+    background-color: $bg_green-darker;
+    color: #fff;
+  }
+
+
+  &--form:active {
+    background-color: $bg_green-darker;
+    color: $c_white-opacity;
+  }
 }
 
 

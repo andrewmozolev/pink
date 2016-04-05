@@ -33,6 +33,8 @@ $bg_gray-darker: #dddfe0;
 $bg_pink: #d22856;
 $bg_blue: #283645;
 $bg_dark: #1d2631;
+$bg_green: #2aab6d;
+$bg_green-darker: #1c9b5e;
 $bg_blue-opacity-light: rgba(40, 54, 69, 0.1);
 $bg_blue-opacity: rgba(40, 54, 69, 0.3);
 $bg_blue-opacity-darker: rgba(40, 54, 69, 0.5);
@@ -61,3 +63,6 @@ $gutter_nav: 80px;
 $w_photo-mobile: 280px;
 $w_photo-tablet: 300px;
 $w_photo-desktop: 300px;
+
+$bd_form: 2px solid $bg_gray-light;
+$bdrs_form: 2px;

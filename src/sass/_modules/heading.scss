@@ -61,7 +61,7 @@
     @include container;
     min-height: 330px;
     padding-top: $h_header-tablet + 48px;
-    padding-bottom: 139px;
+    padding-bottom: 79px;
     background-image: url("../img/bg/bg-back-tablet@1x.jpg");
     background-repeat: repeat;
     background-position: top 0 left 50%;
@@ -163,8 +163,8 @@
 
 
     &__title {
-      padding-left: 110px;
-      padding-right: 110px;
+      padding-left: 90px;
+      padding-right: 90px;
       font-size: $fz_xxlarge;
       line-height: (60 / 50);
     }

@@ -20,7 +20,15 @@
 }
 
 
-// @media #{$mobile} {}
+@media #{$mobile} {
+  .description {
+
+
+    &__addition {
+      display: none;
+    }
+  }
+}
 
 
 @media #{$tablet} {

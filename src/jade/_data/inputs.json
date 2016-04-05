@@ -21,16 +21,16 @@
   ],
   "contactInputs": [
     {
-      "label": "Номерок телефончика",
+      "label": "Номер телефона",
       "inputType": "tel",
       "name": "user-phone",
-      "placeholder": "Номер, пожалуйста"
+      "placeholder": "+7 ХХХ ХХХ-ХХ-ХХ"
     },
     {
-      "label": "Адресок почты",
+      "label": "Адрес почты",
       "inputType": "email",
       "name": "user-email",
-      "placeholder": "E-mail, пожалуйста"
+      "placeholder": "Введите почту"
     }
   ],
   "achievementsCheckboxes": [

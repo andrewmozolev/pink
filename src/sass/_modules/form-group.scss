@@ -4,7 +4,7 @@
   &__label {
     display: block;
     margin-left: 22px;
-    margin-bottom: 5px;
+    margin-top: -5px;
     font-size: $fz_xsmall;
     line-height: (30 / 14);
     text-transform: uppercase;
@@ -19,8 +19,8 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 0;
-    border: 2px solid $bg_gray-light;
-    border-radius: 1px;
+    border: $bd_form;
+    border-radius: $bdrs_form;
     outline: none;
     font-size: $fz_base;
     line-height: (30 / 18);
@@ -48,13 +48,7 @@
 }
 
 
-// @media #{$mobile} {
-//   .form-group {
-
-//   }
-// }
-
-
+// @media #{$mobile} {}
 // @media #{$tablet} {}
 
 
@@ -66,8 +60,31 @@
 
 
     &__label {
+      margin-top: 2px;
       margin-left: 0;
-      margin-right: 20px;
+      margin-right: 19px;
+    }
+
+
+    &--reverse {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    &--reverse  &__input {
+      order: 1;
+    }
+
+
+    &--reverse  &__label {
+      order: 2;
+      margin: 0;
+      font-size: $fz_xsmall;
+      line-height: (30 / 14);
+      text-transform: uppercase;
+      cursor: pointer;
+      color: $c_pink;
     }
   }
 }
@@ -75,6 +92,12 @@
 
 @media #{$desktop} {
   .form-group {
-    margin-right: 35px;
+
+
+    &--reverse  &__label {
+      margin: 0;
+      margin-top: 10px;
+      margin-left: 19px;
+    }
   }
 }

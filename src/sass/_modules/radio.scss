@@ -3,7 +3,6 @@
   display: inline-block;
   vertical-align: top;
   min-height: 39px;
-  margin-bottom: 36px;
   padding-top: 4px;
   padding-bottom: 5px;
 
@@ -14,7 +13,7 @@
 
 
   &__label {
-    margin-left: 70px;
+    margin-left: 69px;
     font-size: $fz_base;
     line-height: (30 / 18);
     cursor: pointer;
@@ -25,7 +24,7 @@
     content: "";
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 2px;
     width: 35px;
     height: 35px;
     transform: translateY(-50%);
@@ -79,5 +78,25 @@
 }
 
 // @media #{$mobile} {}
-// @media #{$tablet} {}
-// @media #{$desktop} {}
+
+
+@media #{$tablet} {
+  .radio {
+
+
+    &__label {
+      margin-left: 59px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .radio {
+
+
+    &__label {
+      margin-left: 59px;
+    }
+  }
+}

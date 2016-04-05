@@ -29,9 +29,11 @@
     height: 35px;
     transform: translateY(-50%);
     box-shadow: 0 0 0 2px $bg_gray-light;
-    border-radius: 2px;
+    border-radius: $bdrs_form;
     background-color: #fff;
     transition: all 0.3s;
+    outline: none;
+
   }
 
 
@@ -94,5 +96,25 @@
 }
 
 // @media #{$mobile} {}
-// @media #{$tablet} {}
-// @media #{$desktop} {}
+
+
+@media #{$tablet} {
+  .checkbox {
+
+
+    &__label {
+      margin-left: 59px;
+    }
+  }
+}
+
+
+@media #{$desktop} {
+  .checkbox {
+
+
+    &__label {
+      margin-left: 59px;
+    }
+  }
+}

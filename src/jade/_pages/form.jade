@@ -9,44 +9,46 @@ block content
 
   +b.heading
     +e.wrap
-      +e.H2.title Конкурс на&nbsp;самое безбашеное путешествие с&nbsp;Пинк
+      +e.H2.title Конкурс на&nbsp;самое безбашенное путешествие с&nbsp;Пинк
 
   .container
     +b.description
-        +e.H2.title Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на&nbsp;вашу бонусную карту!
+        +e.H2.title Поделитесь своей историей и&nbsp;получите шанс выиграть ценный приз&nbsp;&mdash; 1000 миль на вашу бонусную карту!
+          +e.SPAN.addition  Пожалуйста, заполните форму ниже:
 
     +b.FORM.form(
       action="/echo",
       method="post"
     )
-      +e.fieldset--name
-        each item in site.data.inputs.nameInputs
-          +e.DIV.item--name
-            +form-group(item)
+      +e.fieldset-wrap
+        +e.fieldset--name
+          each item in site.data.inputs.nameInputs
+            +e.DIV.item--name
+              +form-group(item)
 
-      +e.fieldset--os.form__fieldset--gray
-        +e.H2.title С&nbsp;каким приложением путешествовали?
-        each item in site.data.inputs.osRadios
-          +e.DIV.item--radio
-            +radio(item)
+        +e.fieldset--os.form__fieldset--gray
+          +e.H2.title--os С&nbsp;каким приложением путешествовали?
+          each item in site.data.inputs.osRadios
+            +e.DIV.item--os
+              +radio(item)
 
 
       +e.fieldset--contacts
         +e.H2.title--contacts Контантная информация
         each item in site.data.inputs.contactInputs
-          +e.DIV.item--contact
-            +form-group(item)
+          +e.DIV.item--contacts
+            +form-group(item,"revers")
 
       +e.fieldset--achievements.form__fieldset--gray
-        +e.H2.title Ваши безбашенные достижения в&nbsp;путешествии
+        +e.H2.title--achievements Ваши безбашенные достижения в&nbsp;путешествии
         each item in site.data.inputs.achievementsCheckboxes
-          +e.DIV.item--checkbox
+          +e.DIV.item--achievements
             +checkbox(item)
 
 
 
       +e.fieldset--textarea
-        +e.H2.title(for="user-racall") Опишите свои эмоции
+        +e.H2.title--textarea(for="user-racall") Опишите свои эмоции
         +e.TEXTAREA.textarea(
           placeholder="Можно прям в красках, не стесняясь в выражениях",
           name="user-recall",
@@ -54,9 +56,8 @@ block content
         )
 
       +e.btn-wrap
-        +e.btn
-          +b.BUTTON.btn--form(type = "submit") Отправить форму
+        +e.BUTTON.btn.btn--form(type = "submit") Отправить форму
 
         +e.SPAN.footnote
           +e.SPAN.color *
-          |— обязательные поля
+          |&nbsp;— обязательные поля
