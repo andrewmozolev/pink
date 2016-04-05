@@ -2,28 +2,40 @@ mixin photo(item)
 
   if item.best
     +b.ARTICLE.photo--best
-      +e.SPAN.best= item.imgAlt
+      +e.identifier-wrap
+        +e.SPAN.identifier= item.imgAlt
       +e.A.photo-link(
         href = item.link,
         title = item.imgAlt
       )
-        +e.IMG.img--best(
-          src = item.img,
-          alt = item.imgAlt
-        )
-      +e.container
-        +e.inner--best
-          header
-            +e.CITE.name= item.name
-            time= "(" + item.time + ")"
+        picture
+          source(
+            media="(min-width: 1020px)",
+            srcset= item.imgDesktop + " 1x, " + item.imgDesktop2x + " 2x"
+          )
+          source(
+            media="(min-width: 700px)",
+            srcset= item.imgTablet + " 1x, " + item.imgTablet2x + " 2x"
+          )
+          img(
+            src= item.imgMobile,
+            srcset= item.imgMobile2x + " 2x",
+            alt= item.title,
+            class="photo__img",
+            class="photo__img--best"
+          )
+      +e.inner--best
+        +e.HEADER.header
+          +e.CITE.name= item.name
+          +e.TIME.time!= "(" + item.time + ")"
 
-          +e.P.comment!= item.comment
+        +e.P.comment!= item.comment
 
-          footer
-            +e.A.like-link(href="#" title="Like") Like
-              +e.SVG.like-svg.svg-icon-heart
-                use(xlink:href="img/svg-sprite.svg#icon-heart")
-            +e.SPAN.like= "Нравится: " + item.like
+        +e.FOOTER.footer
+          +e.A.like-link(href="#" title="Like") Like
+            +e.SVG.like-svg.svg-icon-heart
+              use(xlink:href="img/svg-sprite.svg#icon-heart")
+          +e.SPAN.like!= "Нравится:&nbsp;" + item.like
 
 
   else
@@ -32,20 +44,31 @@ mixin photo(item)
         href = item.link,
         title = item.imgAlt
       )
-        +e.IMG.img(
-          src = item.img,
-          alt = item.imgAlt
-        )
+        picture
+          source(
+            media="(min-width: 1020px)",
+            srcset= item.imgDesktop + " 1x, " + item.imgDesktop2x + " 2x"
+          )
+          source(
+            media="(min-width: 700px)",
+            srcset= item.imgTablet + " 1x, " + item.imgTablet2x + " 2x"
+          )
+          img(
+            src= item.imgMobile,
+            srcset= item.imgMobile2x + " 2x",
+            alt= item.title,
+            class="photo__img"
+          )
 
       +e.inner
-        header
+        +e.HEADER.header
           +e.CITE.name= item.name
-          time= "(" + item.time + ")"
+          +e.TIME.time!= "(" + item.time + ")"
 
         +e.P.comment= item.comment
 
-        footer
+        +e.FOOTER.footer
           +e.A.like-link(href="#" title="Like") Like
             +e.SVG.like-svg.svg-icon-heart
               use(xlink:href="img/svg-sprite.svg#icon-heart")
-          +e.SPAN.like= "Нравится: " + item.like
+          +e.SPAN.like!= "Нравится:&nbsp;" + item.like

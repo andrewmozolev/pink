@@ -6,17 +6,23 @@
 
   &__fieldset {
     position: relative;
-    padding-top: 40px;
     margin: 0;
+    padding: 0;
+    border: 2px solid $bg_gray-light;
     align-items: stretch;
+    outline: 1px solid red;
+  }
+
+
+  &__fieldset--name {
+    border: none;
   }
 
 
   &__title {
-    position: relative;
-    top: 20px;
-    display: block;
-    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
   }
 
 
@@ -70,7 +76,6 @@
 
     &__fieldset--achievements {
       order: 2;
-
     }
 
 
@@ -96,7 +101,6 @@
 @media #{$tablet} {
   .form {
 
-
     &__fieldset {
       width: 100%;
     }
@@ -106,18 +110,23 @@
 
 @media #{$desktop} {
   .form {
+    justify-content: space-between;
+
+
     &__fieldset {
       width: 100%;
     }
 
 
     &__fieldset--name {
-      width: 50%;
+      width: 470px;
+      flex-shrink: 1;
     }
 
 
     &__fieldset--os {
-      width: 50%;
+      width: 434px;
+      margin-left: 36px;
     }
   }
 }

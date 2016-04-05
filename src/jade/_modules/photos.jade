@@ -3,7 +3,8 @@ mixin photos
 
     each item in site.data.photos
       if item.best
-        +photo(item)
+        +e.item-best
+          +photo(item)
     .container
       +e.grid
         each item in site.data.photos

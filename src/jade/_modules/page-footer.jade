@@ -3,12 +3,12 @@ mixin page-footer(classFooter)
     .container
       +e.inner
 
-        +e.item
+        +e.item--logo
           //- если нужен svg в лого добавляем -> (true)
           +logo("footer")
 
-        +e.item
+        +e.item--social
           +social
 
-        +e.item
+        +e.item--copyright
           +copyright

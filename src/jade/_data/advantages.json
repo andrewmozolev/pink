@@ -2,31 +2,31 @@
   {
     "title": "Поднимает настроение",
     "text": "Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!",
-    "imgMobile": "img/iphone-screen-mobile.png",
-    "imgMobile2x": "img/iphone-screen-mobile@2x.png",
-    "imgTablet": "img/iphone-screen-tablet-1@1x.png",
-    "imgTablet2x": "img/iphone-screen-tablet-1@2x.png",
-    "imgDesktop": "img/iphone-screen-desktop-1@1x.png",
-    "imgDesktop2x": "img/iphone-screen-desktop-1@2x.png"
+    "imgMobile": "img/features/iphone-screen-mobile.png",
+    "imgMobile2x": "img/features/iphone-screen-mobile@2x.png",
+    "imgTablet": "img/features/iphone-screen-tablet-1@1x.png",
+    "imgTablet2x": "img/features/iphone-screen-tablet-1@2x.png",
+    "imgDesktop": "img/features/iphone-screen-desktop-1@1x.png",
+    "imgDesktop2x": "img/features/iphone-screen-desktop-1@2x.png"
   },
   {
     "title": "Меняет мир вокруг",
     "text": "Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект",
-    "imgMobile": "img/iphone-screen-mobile.png",
-    "imgMobile2x": "img/iphone-screen-mobile@2x.png",
-    "imgTablet": "img/iphone-screen-tablet-2@1x.png",
-    "imgTablet2x": "img/iphone-screen-tablet-2@2x.png",
-    "imgDesktop": "img/iphone-screen-desktop-2@1x.png",
-    "imgDesktop2x": "img/iphone-screen-desktop-2@2x.png"
+    "imgMobile": "img/features/iphone-screen-mobile.png",
+    "imgMobile2x": "img/features/iphone-screen-mobile@2x.png",
+    "imgTablet": "img/features/iphone-screen-tablet-2@1x.png",
+    "imgTablet2x": "img/features/iphone-screen-tablet-2@2x.png",
+    "imgDesktop": "img/features/iphone-screen-desktop-2@1x.png",
+    "imgDesktop2x": "img/features/iphone-screen-desktop-2@2x.png"
   },
   {
     "title": "Заводит новых друзей",
     "text": "Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых",
-    "imgMobile": "img/iphone-screen-mobile.png",
-    "imgMobile2x": "img/iphone-screen-mobile@2x.png",
-    "imgTablet": "img/iphone-screen-tablet-3@1x.png",
-    "imgTablet2x": "img/iphone-screen-tablet-3@2x.png",
-    "imgDesktop": "img/iphone-screen-desktop-3@1x.png",
-    "imgDesktop2x": "img/iphone-screen-desktop-3@2x.png"
+    "imgMobile": "img/features/iphone-screen-mobile.png",
+    "imgMobile2x": "img/features/iphone-screen-mobile@2x.png",
+    "imgTablet": "img/features/iphone-screen-tablet-3@1x.png",
+    "imgTablet2x": "img/features/iphone-screen-tablet-3@2x.png",
+    "imgDesktop": "img/features/iphone-screen-desktop-3@1x.png",
+    "imgDesktop2x": "img/features/iphone-screen-desktop-3@2x.png"
   }
 ]

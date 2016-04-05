@@ -2,18 +2,21 @@
   {
     "tariffs": [
       {
-        "tariffName": "Бесплатный",
-        "tariffPrice": "3.00 USD",
+        "tariffName": "База",
+        "tariffPrice": "1,99 USD",
+        "hit": false,
         "isChecked": false
       },
       {
         "tariffName": "Стандарт",
-        "tariffPrice": "6.00 USD",
+        "tariffPrice": "3,99 USD",
+        "hit": true,
         "isChecked": true
       },
       {
-        "tariffName": "Премиум",
-        "tariffPrice": "9.00 USD",
+        "tariffName": "Анлим",
+        "tariffPrice": "9,99 USD",
+        "hit": false,
         "isChecked": false
       }
     ]
