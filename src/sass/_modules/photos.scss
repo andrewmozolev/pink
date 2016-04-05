@@ -1,8 +1,13 @@
 .photos {
-
+  margin-bottom: -20px;
 
   &__grid {
     @include grid;
+  }
+
+
+  &__item-best {
+    margin-bottom: 20px;
   }
 
 
@@ -19,6 +24,11 @@
 
 @media #{$tablet} {
   .photos {
+    margin-bottom: -20px;
+
+    &__item-best {
+      margin-bottom: 50px;
+    }
 
 
     &__item {
@@ -37,6 +47,12 @@
 
 @media #{$desktop} {
   .photos {
+    margin-bottom: -54px;
+
+
+    &__item-best {
+      margin-bottom: 50px;
+    }
 
 
     &__item {

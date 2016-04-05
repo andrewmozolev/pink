@@ -11,7 +11,9 @@ $gutter: $offset-mobile;
 }
 
 @mixin col($i: 12) {
-  flex: 0 0 #{$i / 12 * 100%};
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: #{$i / 12 * 100%};
   padding-left: $gutter / 2;
   padding-right: $gutter / 2;
   display: flex;
