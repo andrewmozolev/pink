@@ -5,14 +5,6 @@ block variables
   - var isPopupSuccess = true
   - var selected = "form.html"
 
-block append style
-  style.
-    .radio__input[id="radio-OS-1"]:checked ~ .radio__label[for="radio-OS-1"]::before,
-    .radio__input[id="radio-OS-2"]:checked ~ .radio__label[for="radio-OS-2"]::before,
-    .radio__input[id="radio-OS-3"]:checked ~ .radio__label[for="radio-OS-3"]::before {
-      background-color: #d22856;
-    }
-
 block content
 
   +b.heading
@@ -27,30 +19,34 @@ block content
       action="/echo",
       method="post"
     )
-      +e.FIELDSET.fieldset--name
+      +e.fieldset--name
         each item in site.data.inputs.nameInputs
-          +form-group(item)
+          +e.DIV.item--name
+            +form-group(item)
 
-      +e.FIELDSET.fieldset--os.form__fieldset--gray
-        +e.LEGEND.title С&nbsp;каким приложением путешествовали?
+      +e.fieldset--os.form__fieldset--gray
+        +e.H2.title С&nbsp;каким приложением путешествовали?
         each item in site.data.inputs.osRadios
-          +radio(item)
+          +e.DIV.item--radio
+            +radio(item)
 
 
-      +e.FIELDSET.fieldset--contacts
-        +e.LEGEND.title--contacts Контантная информация
+      +e.fieldset--contacts
+        +e.H2.title--contacts Контантная информация
         each item in site.data.inputs.contactInputs
-          +form-group(item)
+          +e.DIV.item--contact
+            +form-group(item)
 
-      +e.FIELDSET.fieldset--achievements.form__fieldset--gray
-        +e.LEGEND.title Ваши безбашенные достижения в&nbsp;путешествии
+      +e.fieldset--achievements.form__fieldset--gray
+        +e.H2.title Ваши безбашенные достижения в&nbsp;путешествии
         each item in site.data.inputs.achievementsCheckboxes
-          +checkbox(item)
+          +e.DIV.item--checkbox
+            +checkbox(item)
 
 
 
-      +e.FIELDSET.fieldset--textarea
-        +e.LEGEND.title(for="user-racall") Опишите свои эмоции
+      +e.fieldset--textarea
+        +e.H2.title(for="user-racall") Опишите свои эмоции
         +e.TEXTAREA.textarea(
           placeholder="Можно прям в красках, не стесняясь в выражениях",
           name="user-recall",

@@ -1,11 +1,10 @@
 .form-group {
-  margin-bottom: 18px;
 
 
   &__label {
     display: block;
-    margin-left: 23px;
-    margin-bottom: 7px;
+    margin-left: 22px;
+    margin-bottom: 5px;
     font-size: $fz_xsmall;
     line-height: (30 / 14);
     text-transform: uppercase;
@@ -17,12 +16,14 @@
   &__input {
     width: 100%;
     height: 63px;
-    padding-left: 21px;
-    padding-right: 21px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
     border: 2px solid $bg_gray-light;
     border-radius: 1px;
     outline: none;
     font-size: $fz_base;
+    line-height: (30 / 18);
     color: $c_blue;
   }
 
@@ -33,7 +34,6 @@
     text-overflow: ellipsis;
     opacity: 1;
     font-weight: 400;
-    line-height: 16px;
   }
 
 
@@ -46,7 +46,15 @@
     border-color: $bg_pink;
   }
 }
-// @media #{$mobile} {}
+
+
+// @media #{$mobile} {
+//   .form-group {
+
+//   }
+// }
+
+
 // @media #{$tablet} {}
 
 

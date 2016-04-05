@@ -38,37 +38,43 @@
       "label": "Сделал селфи с акулой",
       "type": "checkbox",
       "name": "achievements",
-      "isChecked":true
+      "isChecked":true,
+      "isDisabled": false
     },
     {
       "label": "Обгорел на пляже",
       "type": "checkbox",
       "name": "achievements",
-      "isChecked":true
+      "isChecked":true,
+      "isDisabled": false
     },
     {
       "label": "Видел Чака Норриса",
       "type": "checkbox",
       "name": "achievements",
-      "isChecked":false
+      "isChecked":false,
+      "isDisabled": false
     },
     {
       "label": "Накупил сувениров",
       "type": "checkbox",
       "name": "achievements",
-      "isChecked":false
+      "isChecked":false,
+      "isDisabled": false
     },
     {
       "label": "Удержал башню",
       "type": "checkbox",
       "name": "achievements",
-      "isChecked":true
+      "isChecked":true,
+      "isDisabled": false
     },
     {
       "label": "Разгромил отель",
       "type": "checkbox",
       "name": "achievements",
-      "isChecked":false
+      "isChecked":false,
+      "isDisabled": false
     }
   ],
   "osRadios": [
@@ -76,19 +82,22 @@
       "label": "Pink для iOS",
       "type": "radio",
       "name": "OS",
-      "isChecked":true
+      "isChecked": true,
+      "isDisabled": false
     },
     {
       "label": "Pink на Android",
       "type": "radio",
       "name": "OS",
-      "isChecked":false
+      "isChecked": false,
+      "isDisabled": false
     },
     {
       "label": "Windows Phone",
       "type": "radio",
       "name": "OS",
-      "isChecked":false
+      "isChecked": false,
+      "isDisabled": false
     }
   ]
 }

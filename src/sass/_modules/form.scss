@@ -5,12 +5,8 @@
 
 
   &__fieldset {
-    position: relative;
-    margin: 0;
-    padding: 0;
     border: 2px solid $bg_gray-light;
     align-items: stretch;
-    outline: 1px solid red;
   }
 
 
@@ -20,9 +16,19 @@
 
 
   &__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    margin-top: 36px;
+    margin-bottom: 41px;
     padding-left: 24px;
     padding-right: 24px;
     text-align: center;
+    font-size: $fz_xsmall;
+    line-height: (18 / 14);
+    color: $c_pink;
+    font-weight: 400;
+    text-transform: uppercase;
   }
 
 
@@ -43,8 +49,6 @@
 
     &__fieldset {
       border: none;
-      padding: 0;
-      padding-top: 40px;
       width: 100%;
     }
 
@@ -61,21 +65,50 @@
 
     &__fieldset--name {
       order: 1;
+      margin-top: -15px;
     }
 
 
-    &__fieldset--os {
-      order: 4;
+    &__item--name {
+      margin-bottom: 16px;
     }
 
 
-    &__fieldset--contacts {
-      order: 3;
+    &__item--name:nth-child(3) {
+      margin-top: 19px;
+    }
+
+
+    &__item--name:last-child {
+      margin-bottom: 43px;
     }
 
 
     &__fieldset--achievements {
       order: 2;
+      padding-bottom: 6px;
+    }
+
+
+    &__item--checkbox {
+      margin-bottom: 43px;
+    }
+
+
+    &__fieldset--contacts {
+      order: 3;
+      padding-top: 29px;
+      padding-bottom: 38px;
+    }
+
+
+    &__item--contact {
+      margin-bottom: 16px;
+    }
+
+
+    &__fieldset--os {
+      order: 4;
     }
 
 

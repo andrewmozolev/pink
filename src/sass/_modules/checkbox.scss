@@ -1,4 +1,98 @@
-// .checkbox {}
+.checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 39px;
+  padding-top: 4px;
+  padding-bottom: 5px;
+
+
+  &__input {
+    display: none;
+  }
+
+
+  &__label {
+    margin-left: 69px;
+    font-size: $fz_base;
+    line-height: (30 / 18);
+    cursor: pointer;
+  }
+
+
+  &__label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 35px;
+    height: 35px;
+    transform: translateY(-50%);
+    box-shadow: 0 0 0 2px $bg_gray-light;
+    border-radius: 2px;
+    background-color: #fff;
+    transition: all 0.3s;
+  }
+
+
+  &__label::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 9px;
+    width: 22px;
+    height: 11px;
+    margin-top: -3px;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: transparent;
+    border-left: 3px solid $bg_pink;
+    border-bottom: 3px solid $bg_pink;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+
+  &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_blue;
+  }
+
+
+  &__label:active::before {
+    box-shadow: 0 0 0 2px $bg_pink;
+  }
+
+
+  &__input:checked + &__label::after {
+    opacity: 1;
+  }
+
+  /* ================================
+  =            Disabled            =
+  ================================ */
+
+  &__input[disabled] + &__label {
+    cursor: default;
+    text-decoration: line-through;
+  }
+
+
+  &__input[disabled] + &__label::before,
+  &__input[disabled] + &__label:focus::before,
+  &__input[disabled] + &__label:active::before,
+  &__input[disabled] + &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_gray-light;
+    background-color: $bg_gray;
+  }
+
+
+  &__input:checked:disabled + &__label::after {
+    border-color: $bg_pink-opacity;
+  }
+
+  /* =====  End of Disabled  ====== */
+}
+
 // @media #{$mobile} {}
 // @media #{$tablet} {}
 // @media #{$desktop} {}

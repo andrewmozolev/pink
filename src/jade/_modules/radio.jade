@@ -2,11 +2,13 @@
 
 mixin radio(item)
 
-  //- порядковый номер увеличиваем на 1 для каждого последующего item
+  //- Порядковый номер увеличиваем на 1 для каждого последующего item
   - index = index + 1
 
-  //- проверяем checked
+  //- Проверяем checked
   - var checked = item.isChecked  ? true : false
+  //- Проверяем disabled
+  - var disabled = item.isDisabled  ? true : false
 
   +b.radio
     +e.INPUT.input(
@@ -14,7 +16,8 @@ mixin radio(item)
       name = item.name,
       id = item.type + "-" + item.name + "-" + index,
       value = item.type + "-" + item.name + "-" + index,
-      checked = checked
+      checked = checked,
+      disabled = disabled
     )
     +e.LABEL.label(for=item.type + "-" + item.name + "-" + index)= item.label
 

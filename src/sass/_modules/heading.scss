@@ -26,7 +26,7 @@
       @include container;
       min-height: 237px;
       padding-top: $h_header-mobile + 9px;
-      padding-bottom: 82px;
+      padding-bottom: 52px;
       background-image: url("../img/bg/bg-back-mobile.jpg");
       background-repeat: no-repeat;
       background-position: top 0 left 50%;
@@ -117,7 +117,7 @@
   .heading {
     min-height: 280px;
     padding-top: $h_header-desktop + 40px;
-    padding-bottom: 100px;
+    padding-bottom: 101px;
     background-image: url("../img/bg/bg-back-desktop.jpg");
     background-repeat: repeat;
     background-position: top 0 left 50%;

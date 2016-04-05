@@ -7,6 +7,8 @@ mixin checkbox(item)
 
   //- проверяем checked
   - var checked = item.isChecked  ? true : false
+  //- Проверяем disabled
+  - var disabled = item.isDisabled  ? true : false
 
   +b.checkbox
     +e.INPUT.input(
@@ -14,7 +16,8 @@ mixin checkbox(item)
       name = item.name,
       id = item.type + "-" + item.name + "-" + index,
       value = item.type + "-" + item.name + "-" + index,
-      checked = checked
+      checked = checked,
+      disabled = disabled
     )
     +e.LABEL.label(for=item.type + "-" + item.name + "-" + index)= item.label
 

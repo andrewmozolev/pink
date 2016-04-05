@@ -16,15 +16,15 @@ $retina2x: "(min-resolution: 1.5dppx)";
 
 
 $fz_base: 18px;
-$fz_xxsmall: ceil($fz_base * 0.66); /* 12px */
-$fz_xsmall: ceil($fz_base * 0.77);  /* 14px */
-$fz_small: ceil($fz_base * 0.88);   /* 16px */
-$fz_medium: ceil($fz_base * 1.11);  /* 20px */
-$fz_medium-btn: ceil($fz_base * 1.16);  /* 21px */
-$fz_xmedium: ceil($fz_base * 1.33);  /* 24px */
-$fz_large: ceil($fz_base * 1.66);   /* 30px */
-$fz_xlarge: ceil($fz_base * 2.22);  /* 40px */
-$fz_xxlarge: ceil($fz_base * 2.77); /* 50px */
+$fz_xxsmall: ceil($fz_base * 0.66);   /* 12px */
+$fz_xsmall: ceil($fz_base * 0.77);    /* 14px */
+$fz_small: ceil($fz_base * 0.88);     /* 16px */
+$fz_medium: ceil($fz_base * 1.11);    /* 20px */
+$fz_medium-btn: ceil($fz_base * 1.16);/* 21px */
+$fz_xmedium: ceil($fz_base * 1.33);   /* 24px */
+$fz_large: ceil($fz_base * 1.66);     /* 30px */
+$fz_xlarge: ceil($fz_base * 2.22);    /* 40px */
+$fz_xxlarge: ceil($fz_base * 2.77);   /* 50px */
 
 
 $bg_gray: #f2f2f2;

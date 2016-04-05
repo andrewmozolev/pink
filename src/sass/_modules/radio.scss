@@ -1,5 +1,11 @@
 .radio {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  min-height: 39px;
   margin-bottom: 36px;
+  padding-top: 4px;
+  padding-bottom: 5px;
 
 
   &__input {
@@ -8,17 +14,10 @@
 
 
   &__label {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    min-height: 39px;
-    padding-left: 70px;
-    padding-top: 4px;
-    padding-bottom: 5px;
+    margin-left: 70px;
     font-size: $fz_base;
     line-height: (30 / 18);
     cursor: pointer;
-    outline: 1px solid red;
   }
 
 
@@ -30,11 +29,53 @@
     width: 35px;
     height: 35px;
     transform: translateY(-50%);
-    box-shadow: 0 0 0 2px $bg-gray-light;
+    box-shadow: 0 0 0 2px $bg_gray-light;
     border: 10px solid #fff;
     border-radius: 50%;
     background-color: #fff;
+    transition: all 0.3s;
   }
+
+
+  &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_blue;
+  }
+
+
+  &__label:active::before {
+    box-shadow: 0 0 0 2px $bg_pink;
+  }
+
+
+  &__input:checked + &__label::before {
+    background-color: $bg_pink;
+  }
+
+  /* ================================
+  =            Disabled            =
+  ================================ */
+
+  &__input[disabled] + &__label {
+    cursor: default;
+    text-decoration: line-through;
+  }
+
+
+  &__input[disabled] + &__label::before,
+  &__input[disabled] + &__label:focus::before,
+  &__input[disabled] + &__label:active::before,
+  &__input[disabled] + &__label:hover::before {
+    box-shadow: 0 0 0 2px $bg_gray-light;
+    background-color: $bg_gray;
+    border-color: $bg_gray;
+  }
+
+
+  &__input:checked:disabled + &__label::before {
+    background-color: $bg_pink-opacity;
+  }
+
+  /* =====  End of Disabled  ====== */
 }
 
 // @media #{$mobile} {}
