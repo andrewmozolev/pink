@@ -10,24 +10,30 @@
   }
 
 
+  &__btn {
+    width: $break-mobile - ($offset-mobile * 2);
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+
+  &__link-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
   &__link {
     @include text-hide;
     display: inline-block;
     color: #fff;
-    margin-right: 55px;
-    margin-bottom: 27px;
+    margin-right: 35px;
+    margin-bottom: 24px;
   }
 
 
   &__link:last-of-type {
     margin-right: 0;
-  }
-
-
-  &__btn {
-    width: $break-mobile - ($offset-mobile * 2);
-    margin: 0 auto;
-    margin-bottom: 32px;
   }
 
 
