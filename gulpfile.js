@@ -32,24 +32,21 @@ var paths = {
     sass: 'build/css/',
     js: 'build/js/',
     svg: 'build/img/svg-sprite.svg',
-    img: 'build/img/',
-    fonts: 'build/fonts/'
+    img: 'build/img/'
   },
   src: {
     jade: 'src/jade/_pages/*.jade',
     sass: 'src/sass/style.scss',
     js: 'src/js/*.js',
     svg: 'src/img/svg-sprite/*.svg',
-    img: ['!src/img/svg-sprite/*.*','src/img/**/*.*'],
-    fonts: 'src/fonts/**/*.*'
+    img: ['!src/img/svg-sprite/*.*','src/img/**/*.*']
   },
   watch: {
     jade: 'src/jade/**/*.*',
     sass: 'src/sass/**/*.{scss,sass}',
     js: 'src/js/**/*.js',
     svg: 'src/img/svg-sprite/**/*.svg',
-    img: 'src/img/**/*.{jpg,png}',
-    fonts: 'src/fonts/**/*.*'
+    img: 'src/img/**/*.{jpg,png}'
   }
 };
 
@@ -215,7 +212,7 @@ gulp.task('styletest', function() {
       throwError: true
     })
   ];
-  return gulp.src(['!src/sass/_global/svg-sprite.scss', 'src/sass/**/*.scss'])
+  return gulp.src(['!sass/_global/svg-sprite.scss', 'sass/**/*.scss'])
   .pipe(plumber({
     errorHandler: notify.onError({
       message: 'Error: <%= error.message %>',
@@ -261,29 +258,11 @@ gulp.task('style',['styletest'], function() {
 
 
 
-/* ==================================
-=            Gulp Fonts            =
-================================== */
-
-gulp.task('fonts', function() {
-  return gulp.src(paths.src.fonts)
-  .pipe(gulp.dest(paths.build.fonts))
-})
-
-/* =====  End of Gulp Fonts  ====== */
-
-
-
-
-
-
-
-
 /*==================================
 =            Gulp Serve            =
 ==================================*/
 
-gulp.task('serve', ['style','jade','js','svg','images','fonts'], function() {
+gulp.task('serve', ['style','jade','js','svg','images'], function() {
   server.init({
     server: {
       baseDir: paths.build.jade
@@ -297,8 +276,7 @@ gulp.task('serve', ['style','jade','js','svg','images','fonts'], function() {
   gulp.watch(paths.watch.jade, ['jade', server.reload]);
   gulp.watch(paths.watch.js, ['js']);
   gulp.watch(paths.watch.svg, ['svg']);
-  gulp.watch(paths.watch.img, ['images']);
-  gulp.watch(paths.watch.fonts, ['fonts']);
+  gulp.watch(paths.watch.img, ['img']);
 });
 
 /*=====  End of Gulp Serve  ======*/

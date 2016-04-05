@@ -20,18 +20,16 @@ mixin tariffs
       //- Делаем цикл для вывода строк
       each item in site.data.tariffs
         //- Сами строки
-        +e.TR.tr
+        +e.TR.tr--empty
 
           //- Проверяем является ли строка тарифами <<<<<<<<<<<<<
           if item.tariffs
             //- Если да - то добавляем одну пустую <th>
-            th.tariffs__th--empty
+            th
             //- Далее крутим цикл по тарифам
             each val in item.tariffs
               //- Закидываем их так же в <th>
-              th(class = classHit)
-                if val.hit
-                  +e.hit
+              th
                 //- Вывоводим имя тарифа
                 +e.title= val.tariffName
                 //- Выводим цену тарифа
@@ -41,29 +39,23 @@ mixin tariffs
             //- Иначе проверяем является ли строка опциями <<<<<<<<<<<<<<
           else if item.option
             //- В первую ячейку <td> записываем опцию
-            +e.TD.option= item.option
+            td= item.option
             //- Далее крутим цикл по значениям тарифов для данной опции
             each val in item.tariffValues
               //- Закидываем их в <td>
               td(data-option=item.option)
                 //- Проверяем значение тарифа на true
                 if val.tariffValue
-                  +e.icon--true Есть
-                    +e.SVG.icon-svg.svg-icon-yes
-                      use(xlink:href="img/svg-sprite.svg#icon-yes")
+                  +e.SPAN.icon--true Есть
                 else
-                  +e.icon--false Нет
-                    +e.SVG.icon-svg.svg-icon-no
-                      use(xlink:href="img/svg-sprite.svg#icon-no")
+                  +e.SPAN.icon--false Нет
 
 
 
-    +e.toggles
-      //- Добавляем labels переключатели
-      each item,index in tariffs.tariffs
-        +e.LABEL.toggle(
-            class='tariffs__toggle--' + (index+1),
-            href='#' + (index+1),
-            for='toggle-tariffs-' + (index+1)
-          )
-          = 'tariff:' + (index+1)
+    //- Добавляем labels переключатели
+    each item,index in tariffs.tariffs
+      +e.LABEL.toggle(
+          href='#' + (index+1),
+          for='toggle-tariffs-' + (index+1)
+        )
+        = 'tariff:' + (index+1)

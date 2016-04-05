@@ -9,6 +9,7 @@ mixin radio(item)
   - var checked = item.isChecked  ? true : false
 
   +b.radio
+    +e.LABEL.label(for=item.type + "-" + item.name + "-" + index)= item.label
     +e.INPUT.input(
       type = item.type,
       name = item.name,
@@ -16,5 +17,4 @@ mixin radio(item)
       value = item.type + "-" + item.name + "-" + index,
       checked = checked
     )
-    +e.LABEL.label(for=item.type + "-" + item.name + "-" + index)= item.label
 

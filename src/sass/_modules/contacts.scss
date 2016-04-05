@@ -1,48 +1,16 @@
 .contacts {
-  padding-top: 40px;
-  padding-bottom: 36px;
+  min-height: 415px;
+  padding-top: 45px;
   text-align: center;
 
 
   &__headling {
     width: 100%;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: $fz_xmedium;
-    line-height: (30 / 24);
   }
 
 
-  &__title {
-    display: block;
-    font-size: $fz_base;
-    line-height: (30 / 18);
-    font-weight: 700;
-  }
-
-
-  &__description {
-    margin: 0;
-    text-decoration: none;
-    font-size: $fz_xmedium;
-    line-height: (30 / 24);
-    font-weight: 300;
-    color: $c_pink;
-  }
-
-
-  &__description--link {
-    @include link;
-  }
-
-
-  &__item--phone {
-    margin-bottom: 17px;
-  }
-
-
-  &__item--email {
-    margin-bottom: 21px;
+  &__item {
+    outline: 1px solid red;
   }
 }
 
@@ -55,24 +23,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 45px;
-    padding-bottom: 25px;
-
-
-    &__headling {
-      margin-bottom: 40px;
-      font-size: $fz_xlarge;
-      line-height: (48 / 40);
-    }
 
 
     &__item {
       width: 50%;
-      margin-bottom: 42px;
-    }
-
-    &__item--address {
-      margin-bottom: 0;
     }
   }
 }
@@ -83,25 +37,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 65px;
-    padding-bottom: 20px;
-
-
-    &__headling {
-      margin-bottom: 54px;
-      font-size: $fz_xxlarge;
-      line-height: (60 / 50);
-    }
-
-
-    &__title {
-      margin-bottom: 18px;
-    }
 
 
     &__item {
       width: 33.33%;
-      margin-bottom: 0;
     }
 
 

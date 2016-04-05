@@ -1,142 +1,25 @@
 .tariffs {
   position: relative;
-  color: $c_blue;
-  padding-top: 90px;
-  padding-bottom: 40px;
-
-  &__input {
-    display: none;
-  }
-
-
-  &__table {
-    table-layout: fixed;
-    border-collapse: collapse;
-  }
-
-
-  th:first-child {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-
-  th {
-    position: relative;
-    height: 98px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    color: #fff;
-    background-color: $bg_blue;
-    border: 2px solid $bg_gray-light;
-    border-bottom: none;
-  }
-
-
-  &__hit {
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: -2px;
-    width: 73px;
-    height: 73px;
-  }
-
-
-  &__hit::before {
-    content: "Хит";
-    position: absolute;
-    top: 11px;
-    left: -25px;
-    width: 102px;
-    height: 30px;
-    transform: rotate(-45deg);
-    font-size: $fz_xsmall;
-    line-height: (30 / 14);
-    font-weight: 300;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: $bg_pink;
-  }
-
-
-  &__option {
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: $fz_xsmall;
-    line-height: (30 / 14);
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-
-  &__title {
-    margin-bottom: 3px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: $fz_base;
-    line-height: (30 / 18);
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-
-  &__price {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: $fz_xmedium;
-    line-height: (30 / 24);
-    font-weight: 300;
-  }
-
+  min-height: 470px;
+  outline: 1px solid red;
 
   td {
-    position: relative;
-    height: 60px;
     background-color: #fff;
-    border: 2px solid $bg_gray-light;
-    border-top: none;
+    height: 60px;
+    border: 2px solid #ccc;
   }
 
 
-  &__icon {
-    @include text-hide;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translate(0, -50%);
-  }
-
-
-  &__toggles {
-    margin-top: 43px;
-    text-align: center;
+  th:nth-child(n+2) {
+    color: #fff;
+    background-color: $bg_blue;
   }
 
 
   &__toggle {
-    @include text-hide;
     display: inline-block;
     vertical-align: top;
-    width: 6px;
-    height: 6px;
-    margin-right: 19px;
-    border-radius: 50%;
-    background-color: $bg_blue-opacity;
     cursor: pointer;
-    transition: all 0.3s;
-  }
-
-
-  &__toggle:hover {
-    background-color: $bg_blue-opacity-dark;
-  }
-
-
-  &__toggle:active {
-    background-color: $bg_blue-opacity-light;
   }
 }
 
@@ -146,6 +29,7 @@
     overflow: hidden;
     padding-left: $offset-mobile;
     padding-right: $offset-mobile;
+    padding-top: 90px;
 
 
     &__table {
@@ -154,7 +38,6 @@
       transition: transform 1s;
     }
 
-
     th:first-child,
     td:first-child {
       display: none;
@@ -162,29 +45,47 @@
     }
 
     td {
-      width: 100%;
-      padding-top: 25px;
-      padding-bottom: 23px;
-      padding-right: 70px;
-      padding-left: 22px;
+      width: (100% / 3);
+      padding-right: 20px;
+    }
+
+
+    td {
+      position: relative;
+      text-align: right;
     }
 
 
     td::before {
+      position: absolute;
+      left: 20px;
       content: attr(data-option);
-      font-size: $fz_xsmall;
-      line-height: (30 / 14);
-      text-transform: uppercase;
+      display: inline-block;
+      padding-right: 10px;
+      outline: 1px solid green;
+    }
+
+
+    &__input[id="toggle-tariffs-1"]:checked ~ &__table {
+      transform: translateX(0%);
+    }
+
+
+    &__input[id="toggle-tariffs-2"]:checked ~ &__table {
+      transform: translateX(-33.33%);
+    }
+
+
+    &__input[id="toggle-tariffs-3"]:checked ~ &__table {
+      transform: translateX(-66.66%);
     }
   }
 }
 
 
-@media #{$tablet-desktop} {
+@media #{$tablet} {
   .tariffs {
     @include container;
-    padding-top: 90px;
-    padding-bottom: 68px;
 
 
     &__table {
@@ -195,49 +96,7 @@
     td {
       width: 25%;
       height: 45px;
-    }
 
-
-    &__toggles {
-      display: none;
-    }
-
-
-    &__icon {
-      @include text-hide;
-      position: absolute;
-      top: 50%;
-      right: 50%;
-      transform: translate(50%, -50%);
-    }
-
-
-    &__hit {
-      left: 0;
-    }
-  }
-}
-
-
-@media #{$tablet} {
-  .tariffs {
-
-
-    &__title {
-      font-size: $fz_small;
-      line-height: (30 / 16);
-    }
-
-
-    &__price {
-      font-size: $fz_base;
-      line-height: (30 / 18);
-    }
-
-
-    &__hit::before {
-      top: 5px;
-      left: -30px;
     }
   }
 }
@@ -245,20 +104,16 @@
 
 @media #{$desktop} {
   .tariffs {
-    padding-top: 148px;
-    padding-bottom: 95px;
+    @include container;
 
 
-    td {
-      height: 60px;
+    &__table {
+      width: 100%;
     }
 
-
-    &__option {
-      padding-left: 24px;
-      padding-right: 24px;
-      font-size: $fz_base;
-      line-height: (30 / 18);
+    td {
+      width: 25%;
+      height: 60px;
     }
   }
 }

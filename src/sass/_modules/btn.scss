@@ -8,7 +8,6 @@
   font-weight: 700;
   border: 3px solid #fff;
   border-radius: 30px;
-  transition: all 0.3s;
 
 
   &:hover {
@@ -24,52 +23,6 @@
 
   &--download {
     color: #fff;
-  }
-
-
-  &--submit,
-  &--reset {
-    padding-top: 13px;
-    padding-bottom: 15px;
-  }
-
-
-  &--submit {
-    background-color: #fff;
-    border-color: $bg_pink;
-    color: $c_pink;
-  }
-
-
-  &--submit:hover {
-    background-color: $bg_pink;
-    color: #fff;
-  }
-
-
-  &--submit:active {
-    background-color: $bg_pink;
-    color: $c_white-opacity;
-  }
-
-
-  &--reset {
-    background-color: #fff;
-    border-color: $bg_black-opacity-light;
-    color: $c_black-opacity-light;
-  }
-
-
-  &--reset:hover {
-    border-color: $bg_black-opacity;
-    color: $c_black-opacity;
-  }
-
-
-  &--reset:active {
-    background-color: $bg_black-opacity;
-    border-color: $bg_black-opacity;
-    color: $c_white-opacity;
   }
 }
 

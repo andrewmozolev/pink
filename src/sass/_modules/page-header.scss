@@ -1,6 +1,6 @@
 .page-header {
   position: relative;
-  z-index: 100;
+  z-index: 2;
   width: 100%;
   background-color: $bg_blue;
 
@@ -18,14 +18,9 @@
   }
 
 
-  &__logo {
-    margin-top: 21px;
-  }
-
-
   &__btn-burger {
     position: absolute;
-    top: 1px;
+    top: 0;
     right: -20px;
     display: none;
     height: $h_header-mobile;
@@ -75,13 +70,13 @@
 
   &__btn-burger span::after {
     right: 0;
-    top: -10px;
+    top: -11px;
   }
 
 
   &__btn-burger span::before {
     right: 0;
-    top: 10px;
+    top: 11px;
   }
 
 
@@ -136,11 +131,6 @@
     }
 
 
-    &__logo {
-      margin-top: 27px;
-    }
-
-
     &__btn-burger {
       height: $h_header-tablet;
     }
@@ -159,11 +149,6 @@
       flex-direction: row;
       justify-content: space-between;
       min-height: $h_header-desktop;
-    }
-
-
-    &__logo {
-      margin-top: 27px;
     }
 
 

@@ -1,7 +1,7 @@
 mixin form-group(item)
-  +b.form-group
-    +e.LABEL.label(for="form-" + item.name)= item.label
-    +e.INPUT.input(
+  .form__group
+    label.form__label(for="form-" + item.name)= item.label
+    input.form__field(
       type = item.inputType,
       name = "form-" + item.name,
       id = "form-" + item.name,
