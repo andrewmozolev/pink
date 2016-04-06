@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   vertical-align: top;
+  max-width: 100%;
   min-height: 39px;
   padding-top: 4px;
   padding-bottom: 5px;
@@ -13,10 +14,13 @@
 
 
   &__label {
+    display: block;
     margin-left: 69px;
     font-size: $fz_base;
     line-height: (30 / 18);
     cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 

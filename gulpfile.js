@@ -21,7 +21,7 @@ var svgSprite    = require('gulp-svg-sprite');
 var fs           = require('fs'); // встроенный в node модуль, устанавливать не надо
 var foldero      = require('foldero'); // плагин
 var jade         = require('gulp-jade');
-
+var imagemin     = require('gulp-imagemin')
 var dataPath     = 'src/jade/_data'; // Где лежат файлы
 
 var argv           = require('minimist')(process.argv.slice(2));
@@ -174,6 +174,9 @@ gulp.task('svg', function() {
 
 gulp.task('images', function() {
   return gulp.src(paths.src.img)
+  // .pipe(imagemin({
+  //   progressive: true
+  // }))
   .pipe(gulp.dest(paths.build.img))
 })
 
@@ -210,9 +213,11 @@ gulp.task('js', function() {
 
 
 
-/*=================================
-=            Gulp Sass            =
-=================================*/
+
+
+/* =================================
+=            StyleTest            =
+================================= */
 
 gulp.task('styletest', function() {
   var processors = [
@@ -231,17 +236,29 @@ gulp.task('styletest', function() {
   .pipe(postcss(processors, {syntax: syntax_scss}))
 });
 
+/* =====  End of StyleTest  ====== */
+
+
+
+
+
+
+
+
+/*=================================
+=            Gulp Sass            =
+=================================*/
 
 gulp.task('style',['styletest'], function() {
   return gulp.src(paths.src.sass)
-  .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
-  .pipe(sass.sync().on('error', sass.logError))
   .pipe(plumber({
     errorHandler: notify.onError({
       message: 'Error: <%= error.message %>',
       sound: 'notwork'
     })
   }))
+  .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
+  .pipe(sass().on('error', sass.logError))
   .pipe(postcss([
     flexboxfixer,
     autoprefixer({browsers: [
@@ -253,10 +270,10 @@ gulp.task('style',['styletest'], function() {
     ]})
   ]))
   .pipe(csscomb())
-  .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
   .pipe(gulp.dest(paths.build.sass))
   .pipe(cssnano({safe:true}))
   .pipe(rename('style.min.css'))
+  .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
   .pipe(gulp.dest(paths.build.sass))
   .pipe(server.stream())
   .pipe(notify({

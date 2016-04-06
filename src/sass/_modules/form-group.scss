@@ -72,6 +72,11 @@
     }
 
 
+    &__input {
+      min-width: 300px;
+    }
+
+
     &--reverse {
       flex-direction: column;
       align-items: flex-start;
