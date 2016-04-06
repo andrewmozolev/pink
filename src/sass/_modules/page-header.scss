@@ -163,7 +163,8 @@
 
 @media #{$desktop} {
   .page-header {
-    position: relative;
+    position: absolute;
+    top: 0;
     margin-bottom: - $h_header-desktop;
     min-height: $h_header-desktop;
     background-color: rgba(0, 0, 0, 0.3);

@@ -225,6 +225,7 @@
 
     &__title {
       position: absolute;
+      z-index: 10;
       top: -1px;
       left: 50%;
       display: inline-block;
@@ -416,7 +417,7 @@
 
 
     &__item--achievements {
-      width: 243px;
+      width: 263px;
       margin-bottom: 43px;
     }
 

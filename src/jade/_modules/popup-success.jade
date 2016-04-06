@@ -1,8 +1,10 @@
-mixin popup-success
-  +b.popup-success
-    .container
-      +e.H3.title Ваша заявка отправлена
+mixin popup-success(item)
+  - var className = item=="demo" ? "--demo" : null
 
-      +e.P.text Спасибо за&nbsp;ваше участие, ваша заявка уже поступила к&nbsp;нам. В&nbsp;ближайшее время мы&nbsp;рассмотрим ее&nbsp;и&nbsp;оповестим вас.
+  +b.popup--success(class=className)
+    +e.H3.title Ваша заявка отправлена
 
-      +b.BUTTON.btn--form(type = "button") Закрыть окно
+    +e.P.text Спасибо за&nbsp;ваше участие, ваша заявка уже поступила к&nbsp;нам. В ближайшее время мы&nbsp;рассмотрим ее&nbsp;и оповестим&nbsp;вас.
+
+    +e.btn-wrap
+      +e.BUTTON.btn.btn--form(type = "button") Закрыть окно

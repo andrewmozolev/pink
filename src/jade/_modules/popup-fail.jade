@@ -1,10 +1,12 @@
-mixin popup-fail
-  +b.popup-fail
-    .container
-      +e.H3.title Что-то пошло не&nbsp;так!
+mixin popup-fail(item)
+  - var className = item=="demo" ? "--demo" : null
 
-      +e.P.text Проверьте поля, выделенные красным, скорее всего вы&nbsp;забыли их&nbsp;заполнить
+  +b.popup--fail(class=className)
 
-      +b.BUTTON.btn--form(type = "button") Ок
+    +e.H3.title Что-то пошло не&nbsp;так!
+
+    +e.P.text Проверьте поля, выделенные красным, скорее всего вы&nbsp;забыли их&nbsp;заполнить
+
+    +e.BUTTON.btn.btn--form(type = "button") Ок
 
 

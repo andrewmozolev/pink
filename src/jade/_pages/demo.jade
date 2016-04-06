@@ -1,0 +1,17 @@
+extends ../_layouts/base
+
+block variables
+  - var selected = "demo.html"
+
+block content
+
+  +b.heading
+    +e.wrap
+      +e.H2.title Demo page
+
+  .container
+    +b.description--small
+        +e.H2.title Стилизация всплывающих окон.
+
+    +popup-fail("demo")
+    +popup-success("demo")
