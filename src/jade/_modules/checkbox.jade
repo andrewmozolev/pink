@@ -6,9 +6,9 @@ mixin checkbox(item)
   - index = index + 1
 
   //- проверяем checked
-  - var checked = item.isChecked  ? true : false
+  - var checked = item.isChecked  ? "checked" : false
   //- Проверяем disabled
-  - var disabled = item.isDisabled  ? true : false
+  - var disabled = item.isDisabled  ? "disabled" : false
 
   +b.checkbox
     +e.INPUT.input(

@@ -16,6 +16,7 @@
     "autoprefixer": "6.3.3",
     "bemto.jade": "git+https://github.com/kizu/bemto.git",
     "browser-sync": "2.11.1",
+    "css-mqpacker": "^4.0.1",
     "cssnano": "^3.5.2",
     "editorconfig-tools": "0.1.1",
     "foldero": "^0.1.1",

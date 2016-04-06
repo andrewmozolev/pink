@@ -20,14 +20,14 @@ mixin photo(item)
           img(
             src= item.imgMobile,
             srcset= item.imgMobile2x + " 2x",
-            alt= item.title,
+            alt= item.imgAlt,
             class="photo__img",
             class="photo__img--best"
           )
       +e.inner--best
         +e.HEADER.header
           +e.CITE.name= item.name
-          +e.TIME.time!= "(" + item.time + ")"
+          +e.TIME.time(datetime=item.datatime)!= "(" + item.time + ")"
 
         +e.P.comment!= item.comment
 
@@ -56,14 +56,14 @@ mixin photo(item)
           img(
             src= item.imgMobile,
             srcset= item.imgMobile2x + " 2x",
-            alt= item.title,
+            alt= item.imgAlt,
             class="photo__img"
           )
 
       +e.inner
         +e.HEADER.header
           +e.CITE.name= item.name
-          +e.TIME.time!= "(" + item.time + ")"
+          +e.TIME.time(datetime=item.datatime)!= "(" + item.time + ")"
 
         +e.P.comment= item.comment
 

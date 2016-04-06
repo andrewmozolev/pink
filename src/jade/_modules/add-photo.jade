@@ -23,10 +23,10 @@ mixin add-photo
           type = "radio",
           name = "tool",
           id = "tool-1",
-          checked
+          checked = "checked"
         )
         +e.LABEL.label(for = "tool-1") Crop
-          +e.DIV.svg-wrap
+          +e.svg-wrap
             +e.SVG.tool-svg--crop.svg-icon-editor-crop
               use(xlink:href = "img/svg-sprite.svg#icon-editor-crop")
           +e.scale--1
@@ -39,7 +39,7 @@ mixin add-photo
           id = "tool-2"
         )
         +e.LABEL.label(for = "tool-2") Fill
-          +e.DIV.svg-wrap
+          +e.svg-wrap
             +e.SVG.tool-svg--fill.svg-icon-editor-fill
               use(xlink:href = "img/svg-sprite.svg#icon-editor-fill")
           +e.scale--2
@@ -52,7 +52,7 @@ mixin add-photo
           id = "tool-3"
         )
         +e.LABEL.label(for = "tool-3") Contrast
-          +e.DIV.svg-wrap
+          +e.svg-wrap
             +e.SVG.tool-svg--contrast.svg-icon-editor-contrast
               use(xlink:href = "img/svg-sprite.svg#icon-editor-contrast")
           +e.scale--3

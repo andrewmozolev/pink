@@ -6,9 +6,9 @@ mixin radio(item)
   - index = index + 1
 
   //- Проверяем checked
-  - var checked = item.isChecked  ? true : false
+  - var checked = item.isChecked  ? "checked" : false
   //- Проверяем disabled
-  - var disabled = item.isDisabled  ? true : false
+  - var disabled = item.isDisabled  ? "disabled" : false
 
   +b.radio
     +e.INPUT.input(

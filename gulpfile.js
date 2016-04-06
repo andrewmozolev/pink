@@ -10,6 +10,7 @@ var reporter     = require('postcss-reporter');
 var syntax_scss  = require('postcss-scss');
 var flexboxfixer = require('postcss-flexboxfixer')
 var cssnano      = require('cssnano');
+var mqpacker     = require('css-mqpacker');
 var stylelint    = require('stylelint');
 var sourcemaps   = require('gulp-sourcemaps');
 var rename       = require('gulp-rename');
@@ -274,10 +275,9 @@ gulp.task('style',['styletest'], function() {
       'last 2 Opera versions',
       'last 2 Edge versions'
     ]}),
+    mqpacker(),
     cssnano({safe:true})
   ]))
-  .pipe(csscomb())
-  .pipe(gulp.dest(buildPath + '/css'))
   .pipe(rename('style.min.css'))
   .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
   .pipe(gulp.dest(buildPath + '/css'))
@@ -351,11 +351,11 @@ if (!isOnProduction) {
 
 gulp.task('default', allTasks, function() {
   if (!isOnProduction) {
-    gulp.watch('**/*.sass', {cwd: path.join(srcPath, "sass")}, ['style', server.stream]);
+    gulp.watch('**/*.scss', {cwd: path.join(srcPath, "sass")}, ['style', server.stream]);
     gulp.watch('**/*.jade', {cwd: path.join(srcPath, "jade")}, ['jade', server.reload]);
     gulp.watch('**/*.js', {cwd: path.join(srcPath, "js")}, ['js']);
     gulp.watch('**/*.*', {cwd: path.join(srcPath, "img/svg-sprite")}, ['svg']);
-    gulp.watch('**/*.*', {cwd: path.join(srcPath, "img")}, ['images']);
+    gulp.watch('**/*.*', {cwd: path.join(srcPath, "img")}, ['img']);
     gulp.watch('**/*.*', {cwd: path.join(srcPath, "fonts")}, ['fonts']);
   }
 })

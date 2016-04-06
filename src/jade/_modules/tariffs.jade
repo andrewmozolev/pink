@@ -5,7 +5,7 @@ mixin tariffs
     each item,index in tariffs.tariffs
 
       //- проверяем checked
-      - var checked = item.isChecked ? true : false
+      - var checked = item.isChecked ? "checked" : false
 
       //- Добавляем inputs для переключения слайдов
       +e.INPUT.input(
@@ -63,7 +63,6 @@ mixin tariffs
       each item,index in tariffs.tariffs
         +e.LABEL.toggle(
             class='tariffs__toggle--' + (index+1),
-            href='#' + (index+1),
             for='toggle-tariffs-' + (index+1)
           )
           = 'tariff:' + (index+1)

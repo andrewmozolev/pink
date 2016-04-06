@@ -6,7 +6,7 @@ mixin reviews
     each item,index in reviews
 
       //- проверяем checked
-      - var checked = item.isChecked ? true : false
+      - var checked = item.isChecked ? "checked" : false
 
       //- Добавляем inputs для переключения слайдов
       +e.INPUT.input(
