@@ -49,6 +49,7 @@
 
   &__svg-wrap {
     position: relative;
+    display: block;
     width: 45px;
     height: 45px;
   }
@@ -91,6 +92,20 @@
     transition: all 0.3s;
   }
 
+  &__scale--1  &__toggle {
+    left: 80%;
+  }
+
+
+  &__scale--2  &__toggle {
+    left: 13%;
+  }
+
+
+  &__scale--3  &__toggle {
+    left: 48%;
+  }
+
 
   &__toggle--active,
   &__toggle:active {
@@ -101,6 +116,7 @@
   &__btns-wrap {
     text-align: center;
   }
+
 
   &__btn {
     width: $break-mobile - ($offset-mobile * 2);
@@ -132,6 +148,13 @@
       height: 1px;
       width: auto;
       background-color: $bg_gray-darker;
+    }
+
+
+    &__btns-wrap {
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
     }
 
 
@@ -203,16 +226,6 @@
     }
 
 
-    &__scale--2  &__toggle {
-      left: 13%;
-    }
-
-
-    &__scale--3  &__toggle {
-      left: 48%;
-    }
-
-
     &__svg-wrap {
       position: absolute;
       bottom: 35px;
@@ -228,9 +241,11 @@
       fill: $bg_pink;
     }
 
+
     &__tool-svg--crop {
       left: 2px;
     }
+
 
     &__tool-svg--contrast {
       left: 8px;

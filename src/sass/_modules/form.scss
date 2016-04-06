@@ -214,14 +214,29 @@
   }
 }
 
-@media #{$tablet-desktop} {
+
+@media #{$tablet} {
   .form {
 
 
     &__fieldset {
-      width: 620px;
       width: 100%;
     }
+
+
+    &__fieldset--achievements {
+      padding-left: 58px;
+      padding-right: 58px;
+      padding-top: 52px;
+      padding-bottom: 48px;
+      margin-bottom: 65px;
+    }
+  }
+}
+
+
+@media #{$tablet-desktop} {
+  .form {
 
 
     &__title {
@@ -237,11 +252,6 @@
       transform: translate(-50%, -50%);
       white-space: nowrap;
       background-color: #fff;
-    }
-
-
-    &__fieldset-wrap {
-      width: 100%;
     }
 
 
@@ -299,15 +309,6 @@
     }
 
 
-    &__fieldset--achievements {
-      padding-left: 58px;
-      padding-right: 58px;
-      padding-top: 52px;
-      padding-bottom: 48px;
-      margin-bottom: 65px;
-    }
-
-
     &__item--achievements {
       margin-bottom: 43px;
     }
@@ -356,11 +357,6 @@
     padding-top: 2px;
 
 
-    &__fieldset {
-      width: 100%;
-    }
-
-
     &__fieldset--name {
       width: 435px;
       padding-bottom: 0;
@@ -389,6 +385,7 @@
     &__fieldset--contacts {
       display: flex;
       justify-content: space-between;
+      width: 100%;
       padding-top: 42px;
       padding-bottom: 8px;
     }
@@ -412,9 +409,11 @@
       flex-wrap: wrap;
       align-content: space-between;
       align-items: center;
-      padding-right: 0;
+      width: 100%;
       padding-top: 52px;
       padding-bottom: 12px;
+      padding-left: 58px;
+      margin-bottom: 65px;
     }
 
 
@@ -441,6 +440,7 @@
 
 
     &__fieldset--textarea {
+      width: 100%;
       padding-top: 42px;
       padding-bottom: 39px;
       margin-bottom: 65px;

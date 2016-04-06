@@ -256,7 +256,7 @@ gulp.task('styletest', function() {
 =            Gulp SASS            =
 =================================*/
 
-gulp.task('style',['styletest'], function() {
+gulp.task('style', function() {
   return gulp.src('style.scss', {cwd: path.join(srcPath, 'sass')})
   .pipe(plumber({
     errorHandler: notify.onError({
@@ -275,11 +275,10 @@ gulp.task('style',['styletest'], function() {
       'last 2 Opera versions',
       'last 2 Edge versions'
     ]}),
-    mqpacker(),
     cssnano({safe:true})
   ]))
   .pipe(rename('style.min.css'))
-  .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
+  .pipe(gulpIf(!isOnProduction, sourcemaps.write('./')))
   .pipe(gulp.dest(buildPath + '/css'))
   .pipe(server.stream())
   .pipe(notify({
