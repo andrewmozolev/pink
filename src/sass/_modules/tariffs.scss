@@ -162,6 +162,7 @@
 
     &__table {
       position: relative;
+      min-width: (280px * 3);
       width: 300%;
       transition: transform 1s;
     }

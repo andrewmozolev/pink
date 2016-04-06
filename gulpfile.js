@@ -8,7 +8,12 @@ var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var reporter     = require('postcss-reporter');
 var syntax_scss  = require('postcss-scss');
+var flexboxfixer = require('postcss-flexboxfixer')
+var cssnano      = require('gulp-cssnano');
 var stylelint    = require('stylelint');
+var sourcemaps   = require('gulp-sourcemaps');
+var rename       = require('gulp-rename');
+var gulpIf       = require('gulp-if');
 var server       = require('browser-sync');
 var notify       = require('gulp-notify');
 var uglify       = require('gulp-uglify');
@@ -19,7 +24,8 @@ var jade         = require('gulp-jade');
 
 var dataPath     = 'src/jade/_data'; // Где лежат файлы
 
-
+var argv           = require('minimist')(process.argv.slice(2));
+var isOnProduction = !!argv.production
 
 
 /*=============================
@@ -210,10 +216,10 @@ gulp.task('js', function() {
 
 gulp.task('styletest', function() {
   var processors = [
-    stylelint(),
-    reporter({
-      throwError: true
-    })
+  stylelint(),
+  reporter({
+    throwError: true
+  })
   ];
   return gulp.src(['!src/sass/_global/svg-sprite.scss', 'src/sass/**/*.scss'])
   .pipe(plumber({
@@ -225,25 +231,32 @@ gulp.task('styletest', function() {
   .pipe(postcss(processors, {syntax: syntax_scss}))
 });
 
+
 gulp.task('style',['styletest'], function() {
-  gulp.src(paths.src.sass)
+  return gulp.src(paths.src.sass)
+  .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
+  .pipe(sass.sync().on('error', sass.logError))
   .pipe(plumber({
     errorHandler: notify.onError({
       message: 'Error: <%= error.message %>',
       sound: 'notwork'
     })
   }))
-  .pipe(sass())
   .pipe(postcss([
+    flexboxfixer,
     autoprefixer({browsers: [
       'last 1 version',
       'last 2 Chrome versions',
       'last 2 Firefox versions',
       'last 2 Opera versions',
       'last 2 Edge versions'
-      ]})
-    ]))
+    ]})
+  ]))
   .pipe(csscomb())
+  .pipe(gulpIf(!isOnProduction, sourcemaps.write()))
+  .pipe(gulp.dest(paths.build.sass))
+  .pipe(cssnano({safe:true}))
+  .pipe(rename('style.min.css'))
   .pipe(gulp.dest(paths.build.sass))
   .pipe(server.stream())
   .pipe(notify({

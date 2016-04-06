@@ -2,6 +2,11 @@
 // @include media(tablet) {}
 // @include media(desktop) {}
 
+
+/* ==============================
+=            Global            =
+============================== */
+
 @import "../../node_modules/normalize.css/normalize";
 @import "_global/variables";
 @import "_global/fonts";
@@ -13,12 +18,26 @@
 @import "_global/svg-sprite";
 @import "_modules/btn";
 
-//- Header
+/* =====  End of Global  ====== */
+
+
+
+/* ==============================
+=            Header            =
+============================== */
+
 @import "_modules/page-header";
 @import "_modules/logo";
 @import "_modules/navigation";
 
-//- Content
+/* =====  End of Header  ====== */
+
+
+
+/* ===============================
+=            Content            =
+=============================== */
+
 @import "_modules/box";
 @import "_modules/heading";
 @import "_modules/downloads";
@@ -39,10 +58,26 @@
 @import "_modules/checkbox";
 @import "_modules/radio";
 
-//- Footer
+/* =====  End of Content  ====== */
+
+
+
+/* ==============================
+=            Footer            =
+============================== */
+
 @import "_modules/page-footer";
 @import "_modules/social";
 @import "_modules/copyright";
 
-//- Popup
+/* =====  End of Footer  ====== */
+
+
+
+/* =============================
+=            Popup            =
+============================= */
+
 @import "_modules/popup";
+
+/* =====  End of Popup  ====== */
