@@ -16,11 +16,11 @@
     "autoprefixer": "6.3.3",
     "bemto.jade": "git+https://github.com/kizu/bemto.git",
     "browser-sync": "2.11.1",
+    "cssnano": "^3.5.2",
     "editorconfig-tools": "0.1.1",
     "foldero": "^0.1.1",
     "gulp": "3.9.1",
     "gulp-csscomb": "^3.0.6",
-    "gulp-cssnano": "^2.1.1",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-jade": "^1.1.0",
@@ -42,8 +42,8 @@
   },
   "scripts": {
     "test": "editorconfig-tools check src/jade/**/*.jade; gulp styletest",
-    "build": "gulp style",
-    "start": "gulp serve"
+    "build": "gulp --production",
+    "start": "gulp"
   },
   "engines": {
     "node": "^5.0.0"

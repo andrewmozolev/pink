@@ -8,5 +8,6 @@ Thumbs.db
 *.ai
 css/*.css
 build/
+tmp/
 *.todo
 src/sass/_global/svg-sprite.scss
