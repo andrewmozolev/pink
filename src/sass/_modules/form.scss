@@ -6,8 +6,8 @@
 
   &__fieldset {
     position: relative;
-    border: 2px solid $bg_gray-light;
     align-items: stretch;
+    border: 2px solid $bg_gray-light;
   }
 
 
@@ -88,8 +88,8 @@
 
 
     &__fieldset {
-      border: none;
       width: 100%;
+      border: none;
     }
 
 
@@ -105,17 +105,17 @@
 
     &__fieldset--name {
       order: 1;
-      margin-top: -15px;
+      margin-top: -10px;
     }
 
 
     &__item--name {
-      margin-bottom: 16px;
+      margin-bottom: 21px;
     }
 
 
-    &__item--name:nth-child(3) {
-      margin-top: 19px;
+    &__item--name:nth-child(2) {
+      margin-bottom: 24px;
     }
 
 
@@ -131,33 +131,40 @@
 
 
     &__item--achievements {
+      width: 280px;
+      margin: 0 auto;
       margin-bottom: 43px;
     }
 
 
     &__fieldset--contacts {
       order: 3;
-      padding-top: 29px;
-      padding-bottom: 38px;
+      padding-top: 34px;
+      padding-bottom: 33px;
     }
 
 
     &__item--contacts {
-      margin-bottom: 16px;
+      margin-bottom: 21px;
     }
 
 
     &__fieldset--os {
       order: 4;
+      padding-top: 36px;
       padding-bottom: 6px;
     }
 
+
     &__title--os {
+      margin: 0;
       margin-bottom: 37px;
     }
 
 
     &__item--os {
+      width: 280px;
+      margin: 0 auto;
       margin-bottom: 36px;
     }
 
@@ -174,9 +181,11 @@
 
 
     &__textarea {
-      width: 280px;
+      display: block;
+      width: 100%;
       height: 201px;
-      margin-bottom: 43px;
+      margin: 0 auto;
+      margin-bottom: 47px;
     }
 
 
@@ -210,6 +219,7 @@
 
     &__fieldset {
       width: 620px;
+      width: 100%;
     }
 
 
@@ -228,9 +238,14 @@
     }
 
 
+    &__fieldset-wrap {
+      width: 100%;
+    }
+
+
     &__fieldset--name {
       margin-top: -5px;
-      margin-bottom: 13px;
+      margin-bottom: 65px;
     }
 
 
@@ -251,9 +266,9 @@
 
     &__fieldset--os {
       padding-left: 58px;
-      padding-top: 52px;
+      padding-top: 51px;
       padding-bottom: 18px;
-      margin-bottom: 64px;
+      margin-bottom: 65px;
     }
 
 
@@ -266,13 +281,13 @@
       padding-top: 46px;
       padding-left: 58px;
       padding-right: 58px;
-      padding-bottom: 36px;
+      padding-bottom: 26px;
       margin-bottom: 65px;
     }
 
 
     &__item--contacts {
-      margin-bottom: 39px;
+      margin-bottom: 29px;
     }
 
 
@@ -340,28 +355,32 @@
     }
 
 
-    &__fieldset-wrap {
-      display: flex;
-      margin-bottom: 52px;
-    }
-
-
     &__fieldset--name {
-      width: 470px;
-      flex-shrink: 1;
+      width: 435px;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding-bottom: 0;
+      margin-bottom: 65px;
     }
 
 
     &__fieldset--os {
-      width: 434px;
+      align-self: stretch;
+      width: 435px;
       margin: 0;
       padding: 0;
       margin-top: -12px;
-      margin-bottom: 12px;
-      margin-left: 36px;
-      padding-top: 54px;
+      margin-bottom: 65px;
+      padding-top: 55px;
+      padding-bottom: 16px;
       padding-left: 73px;
+    }
+
+
+    &__item--os {
+      margin-bottom: 35px;
     }
 
 

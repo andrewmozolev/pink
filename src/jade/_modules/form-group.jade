@@ -5,11 +5,31 @@ mixin form-group(item,order)
 
   +b.form-group(class=className)
     +e.LABEL.label(for="form-" + item.name)= item.label
-    +e.INPUT.input(
-      class=className2,
-      class=className3,
-      type = item.inputType,
-      name = "form-" + item.name,
-      id = "form-" + item.name,
-      placeholder = item.placeholder
-    )
+
+    if item.inputType == "tel"
+      +e.DIV.wrap--phone
+        +e.INPUT.input(
+          type = item.inputType,
+          name = "form-" + item.name,
+          id = "form-" + item.name,
+          placeholder = item.placeholder
+        )
+
+
+    else if item.inputType == "email"
+      +e.DIV.wrap--email
+        +e.INPUT.input(
+          type = item.inputType,
+          name = "form-" + item.name,
+          id = "form-" + item.name,
+          placeholder = item.placeholder
+        )
+
+
+    else
+      +e.INPUT.input(
+          type = item.inputType,
+          name = "form-" + item.name,
+          id = "form-" + item.name,
+          placeholder = item.placeholder
+        )

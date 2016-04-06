@@ -20,17 +20,16 @@ block content
       action="/echo",
       method="post"
     )
-      +e.fieldset-wrap
-        +e.fieldset--name
-          each item in site.data.inputs.nameInputs
-            +e.DIV.item--name
-              +form-group(item)
+      +e.fieldset--name
+        each item in site.data.inputs.nameInputs
+          +e.DIV.item--name
+            +form-group(item)
 
-        +e.fieldset--os.form__fieldset--gray
-          +e.H2.title--os С&nbsp;каким приложением путешествовали?
-          each item in site.data.inputs.osRadios
-            +e.DIV.item--os
-              +radio(item)
+      +e.fieldset--os.form__fieldset--gray
+        +e.H2.title--os С&nbsp;каким приложением путешествовали?
+        each item in site.data.inputs.osRadios
+          +e.DIV.item--os
+            +radio(item)
 
 
       +e.fieldset--contacts
