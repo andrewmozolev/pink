@@ -23,6 +23,7 @@ var fs           = require('fs'); // встроенный в node модуль, 
 var foldero      = require('foldero'); // плагин
 var jade         = require('gulp-jade');
 var imagemin     = require('gulp-imagemin')
+var runSequence  = require('run-sequence');
 var dataPath     = 'src/jade/_data'; // Где лежат файлы
 
 var argv           = require('minimist')(process.argv.slice(2));
@@ -333,7 +334,16 @@ gulp.task('serve', function() {
 
 
 
-
+gulp.task('build', function (callback) {
+  runSequence(
+    'svg',
+    'jade',
+    'js',
+    'img',
+    'fonts',
+    'style',
+    callback);
+})
 
 
 
@@ -342,7 +352,7 @@ gulp.task('serve', function() {
 =            DEFAULT            =
 =============================== */
 
-var allTasks = ['style','jade','js','svg','img','fonts']
+var allTasks = ['build']
 
 if (!isOnProduction) {
   allTasks.push('serve');
