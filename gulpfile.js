@@ -22,7 +22,6 @@ var svgSprite    = require('gulp-svg-sprite');
 var fs           = require('fs'); // встроенный в node модуль, устанавливать не надо
 var foldero      = require('foldero'); // плагин
 var jade         = require('gulp-jade');
-var imagemin     = require('gulp-imagemin')
 var runSequence  = require('run-sequence');
 var dataPath     = 'src/jade/_data'; // Где лежат файлы
 
@@ -181,9 +180,6 @@ gulp.task('svg', function() {
 
 gulp.task('img', function() {
   return gulp.src(['!svg-sprite/*.*', '**/*.*'], {cwd: path.join(srcPath, 'img')})
-  .pipe(imagemin({
-    progressive: true
-  }))
   .pipe(gulp.dest(buildPath + '/img'))
 })
 
