@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Пинк</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <style scoped>
+      .reviews__input[id="toggle-reviews-1"]:checked ~ .reviews__item--1,
+      .reviews__input[id="toggle-reviews-2"]:checked ~ .reviews__item--2,
+      .reviews__input[id="toggle-reviews-3"]:checked ~ .reviews__item--3 {
+        display: block;
+      }
+      .reviews__input[id="toggle-reviews-1"]:checked ~ .reviews__toggles .reviews__toggle--1,
+      .reviews__input[id="toggle-reviews-2"]:checked ~ .reviews__toggles .reviews__toggle--2,
+      .reviews__input[id="toggle-reviews-3"]:checked ~ .reviews__toggles .reviews__toggle--3 {
+        box-shadow: 0 0 0 3px #283645;
+      }
+      .tariffs__input[id="toggle-tariffs-1"]:checked ~ .tariffs__toggles .tariffs__toggle--1,
+      .tariffs__input[id="toggle-tariffs-2"]:checked ~ .tariffs__toggles .tariffs__toggle--2,
+      .tariffs__input[id="toggle-tariffs-3"]:checked ~ .tariffs__toggles .tariffs__toggle--3 {
+        box-shadow: 0 0 0 3px #283645;
+      }
+      @media only screen and (max-width: 699px) {
+        .tariffs__input[id="toggle-tariffs-1"]:checked ~ .tariffs__table {
+          transform: translateX(0%);
+        }
+        .tariffs__input[id="toggle-tariffs-2"]:checked ~ .tariffs__table {
+          transform: translateX(-33.33%);
+        }
+        .tariffs__input[id="toggle-tariffs-3"]:checked ~ .tariffs__table {
+          transform: translateX(-66.66%);
+        }
+      }
+    </style>
+    <header id="header" class="page-header">
+      <div class="container">
+        <div class="page-header__inner">
+          <div class="page-header__logo">
+            <div class="logo"><a class="logo__link logo__link--header">Pink<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   class="logo__svg" width="146.3px" height="40.375px" viewBox="0 0 146.3 40.375" enable-background="new 0 0 146.3 40.375" xml:space="preserve">
+  <g>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M71.874,18.661c0-0.708,0.58-1.288,1.256-1.288h7.18c5.087,0,8.436,2.704,8.436,7.146v0.064
+      c0,4.861-4.057,7.373-8.854,7.373h-5.475v6.825c0,0.708-0.58,1.288-1.288,1.288c-0.676,0-1.256-0.58-1.256-1.288V18.661z
+       M79.988,29.641c3.734,0,6.182-1.996,6.182-4.959v-0.063c0-3.22-2.414-4.894-6.053-4.894h-5.699v9.917H79.988L79.988,29.641z"/>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M93.603,18.5c0-0.708,0.579-1.288,1.255-1.288c0.709,0,1.288,0.58,1.288,1.288v20.283
+      c0,0.708-0.579,1.287-1.288,1.287c-0.676,0-1.255-0.579-1.255-1.287V18.5z"/>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M102.744,18.532c0-0.676,0.58-1.256,1.256-1.256h0.354c0.58,0,0.935,0.29,1.288,0.74l13.684,17.45V18.468
+      c0-0.676,0.547-1.256,1.256-1.256c0.676,0,1.224,0.58,1.224,1.256v20.349c0,0.676-0.481,1.19-1.158,1.19h-0.129
+      c-0.548,0-0.935-0.321-1.319-0.772l-13.975-17.868v17.45c0,0.676-0.547,1.256-1.256,1.256c-0.676,0-1.223-0.58-1.223-1.256V18.532
+      H102.744z"/>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M128.173,18.5c0-0.708,0.58-1.288,1.257-1.288c0.708,0,1.286,0.58,1.286,1.288v12.331l12.848-13.168
+      c0.29-0.257,0.579-0.451,0.998-0.451c0.676,0,1.225,0.612,1.225,1.256c0,0.354-0.162,0.644-0.42,0.901l-7.984,7.92l8.564,10.561
+      c0.225,0.291,0.354,0.547,0.354,0.935c0,0.676-0.578,1.288-1.286,1.288c-0.483,0-0.806-0.258-1.03-0.58l-8.402-10.463l-4.863,4.861
+      v4.894c0,0.708-0.578,1.288-1.286,1.288c-0.677,0-1.257-0.58-1.257-1.288V18.5H128.173z"/>
+  </g>
+  <g>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M0,1.449c0-0.708,0.58-1.288,1.256-1.288h7.18c5.087,0,8.436,2.704,8.436,7.147v0.064
+      c0,4.861-4.057,7.373-8.854,7.373H2.544v6.825c0,0.708-0.58,1.288-1.288,1.288C0.58,22.859,0,22.279,0,21.571V1.449z M8.114,12.428
+      c3.734,0,6.182-1.996,6.182-4.958V7.405c0-3.22-2.415-4.894-6.054-4.894H2.544v9.917H8.114z"/>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M21.729,1.288C21.729,0.58,22.308,0,22.983,0c0.709,0,1.288,0.58,1.288,1.288v20.283
+      c0,0.708-0.579,1.288-1.288,1.288c-0.676,0-1.255-0.58-1.255-1.288V1.288z"/>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M30.87,1.32c0-0.676,0.579-1.256,1.256-1.256h0.354c0.58,0,0.934,0.29,1.288,0.74l13.684,17.45V1.256
+      C47.451,0.58,47.998,0,48.707,0c0.676,0,1.223,0.58,1.223,1.256v20.348c0,0.676-0.482,1.191-1.158,1.191h-0.129
+      c-0.548,0-0.934-0.322-1.32-0.772L33.349,4.153v17.45c0,0.676-0.547,1.256-1.255,1.256c-0.677,0-1.224-0.58-1.224-1.256V1.32z"/>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M56.3,1.288C56.3,0.58,56.879,0,57.556,0c0.708,0,1.287,0.58,1.287,1.288v12.331L71.689,0.451
+      C71.979,0.193,72.269,0,72.688,0c0.676,0,1.224,0.612,1.224,1.256c0,0.354-0.161,0.644-0.419,0.901l-7.984,7.92l8.564,10.561
+      c0.225,0.29,0.354,0.547,0.354,0.934c0,0.676-0.579,1.288-1.287,1.288c-0.483,0-0.806-0.258-1.03-0.58l-8.403-10.463l-4.862,4.861
+      v4.894c0,0.708-0.579,1.288-1.287,1.288c-0.677,0-1.256-0.58-1.256-1.288V1.288z"/>
+  </g>
+  <path class="logo__star" fill="#D22856" d="M98.498,9.875c-2.002,0-3.623-1.623-3.623-3.624c0,2.001-1.623,3.624-3.625,3.624
+    c2.002,0,3.625,1.623,3.625,3.624C94.875,11.498,96.496,9.875,98.498,9.875z"/>
+  <g>
+    <path class="logo__glasses logo__glasses--desktop" fill="#FFFFFF" d="M43.094,19.313c0.246,0,0.489,0.014,0.73,0.033c-0.437-0.728-1.227-1.221-2.136-1.221
+      c-0.877,0-1.614-0.568-1.884-1.354c-0.727,0.208-1.425,0.482-2.089,0.816c0.062,0.017,0.122,0.038,0.188,0.038c1.104,0,2,0.896,2,2
+      c0,0.096-0.015,0.188-0.028,0.281C40.875,19.524,41.959,19.313,43.094,19.313z"/>
+    <path class="logo__glasses logo__glasses--desktop" fill="#FFFFFF" d="M60.462,28.016c-0.002-0.009-5.175-21.365-5.175-21.365C54.926,4.303,52.694,0,46.688,0
+      c-0.829,0-1.5,0.671-1.5,1.5s0.671,1.5,1.5,1.5c4.856,0,5.575,3.729,5.639,4.143l4.767,19.701h-2.073
+      c-0.445-3.557-2.453-6.628-5.305-8.522c-0.897,0.379-1.529,1.269-1.529,2.303c0,0.088-0.015,0.171-0.026,0.256
+      c1.991,1.358,3.415,3.489,3.829,5.964c0.082,0.489,0.135,0.988,0.135,1.5s-0.053,1.012-0.135,1.5
+      c-0.716,4.272-4.421,7.531-8.896,7.531c-4.475,0-8.181-3.259-8.896-7.531c-0.082-0.488-0.135-0.988-0.135-1.5
+      s0.053-1.011,0.135-1.5c0.147-0.878,0.427-1.711,0.808-2.483c-1.034-0.078-1.852-0.932-1.852-1.985
+      c0-0.189-0.077-0.357-0.192-0.489c-0.938,1.469-1.569,3.15-1.795,4.958h-1.82c-0.741-5.927-5.802-10.531-11.927-10.531
+      S6.235,20.917,5.493,26.844H3.42L8.187,7.143C8.25,6.729,8.97,3,13.826,3c0.829,0,1.5-0.671,1.5-1.5S14.655,0,13.826,0
+      C7.82,0,5.588,4.303,5.227,6.651c0,0-5.173,21.356-5.175,21.365c-0.266,1.109,0.531,1.826,1.426,1.826
+      c0.012,0,0.023,0.004,0.036,0.004h3.982c0.079,0.628,0.215,1.237,0.387,1.831c0.059-0.106,0.102-0.224,0.102-0.354
+      c0-1.104,0.896-2,2-2c0.166,0,0.324,0.025,0.478,0.063c-0.043-0.343-0.074-0.688-0.074-1.042c0-0.512,0.053-1.011,0.135-1.5
+      c0.715-4.271,4.421-7.531,8.896-7.531s8.18,3.26,8.896,7.531c0.082,0.489,0.135,0.988,0.135,1.5s-0.053,1.012-0.135,1.5
+      c-0.715,4.272-4.421,7.531-8.896,7.531c-2.022,0-3.883-0.67-5.386-1.794c-0.35,0.302-0.8,0.491-1.299,0.491
+      c-0.413,0-0.749,0.336-0.749,0.748c0,0.29-0.065,0.564-0.176,0.812c2.075,1.708,4.722,2.743,7.614,2.743
+      c6.125,0,11.185-4.604,11.927-10.53h1.814c0.742,5.926,5.802,10.53,11.927,10.53s11.186-4.604,11.927-10.53H59
+      c0.012,0,0.023-0.004,0.036-0.004C59.931,29.842,60.728,29.125,60.462,28.016z"/>
+  </g>
+  <g>
+    <g>
+      <path class="logo__star  logo__star--footer" fill="#D22856" d="M50.686,16.125c-2.485,0-4.499-2.014-4.499-4.499c0,2.485-2.014,4.499-4.499,4.499
+        c2.485,0,4.499,2.014,4.499,4.499C46.187,18.139,48.2,16.125,50.686,16.125z"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <path class="logo__star  logo__star--footer" fill="#D22856" d="M37.904,19.626c-1.519,0-2.749-1.23-2.749-2.749c0,1.519-1.23,2.749-2.749,2.749
+        c1.519,0,2.749,1.229,2.749,2.749C35.155,20.855,36.386,19.626,37.904,19.626z"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <path class="logo__star  logo__star--footer" fill="#D22856" d="M10.734,34.072c-1.519,0-2.749-1.23-2.749-2.75c0,1.52-1.23,2.75-2.749,2.75
+        c1.519,0,2.749,1.229,2.749,2.748C7.985,35.303,9.215,34.072,10.734,34.072z"/>
+    </g>
+  </g>
+  <g>
+    <path class="logo__glasses logo__glasses--tablet" fill="#FFFFFF" d="M60.462,28.016c-0.002-0.009-5.175-21.365-5.175-21.365C54.926,4.303,52.694,0,46.688,0
+      c-0.829,0-1.5,0.671-1.5,1.5s0.671,1.5,1.5,1.5c4.856,0,5.575,3.729,5.639,4.143l4.767,19.701h-2.073
+      c-0.742-5.927-5.802-10.531-11.927-10.531s-11.186,4.604-11.927,10.531h-1.82c-0.741-5.927-5.802-10.531-11.927-10.531
+      S6.235,20.917,5.493,26.844H3.42L8.187,7.143C8.25,6.729,8.97,3,13.826,3c0.829,0,1.5-0.671,1.5-1.5S14.655,0,13.826,0
+      C7.82,0,5.588,4.303,5.227,6.651c0,0-5.173,21.356-5.175,21.365c-0.266,1.109,0.531,1.826,1.426,1.826
+      c0.012,0,0.023,0.004,0.036,0.004h3.982c0.741,5.926,5.802,10.53,11.927,10.53s11.185-4.604,11.927-10.53h1.814
+      c0.742,5.926,5.802,10.53,11.927,10.53s11.186-4.604,11.927-10.53H59c0.012,0,0.023-0.004,0.036-0.004
+      C59.931,29.842,60.728,29.125,60.462,28.016z M26.315,29.844c-0.715,4.272-4.421,7.531-8.896,7.531c-4.475,0-8.18-3.259-8.896-7.531
+      c-0.082-0.488-0.135-0.988-0.135-1.5s0.053-1.011,0.135-1.5c0.715-4.271,4.421-7.531,8.896-7.531c4.475,0,8.18,3.26,8.896,7.531
+      c0.082,0.489,0.135,0.988,0.135,1.5S26.397,29.355,26.315,29.844z M51.99,29.844c-0.716,4.272-4.421,7.531-8.896,7.531
+      c-4.475,0-8.181-3.259-8.896-7.531c-0.082-0.488-0.135-0.988-0.135-1.5s0.053-1.011,0.135-1.5c0.716-4.271,4.421-7.531,8.896-7.531
+      c4.475,0,8.181,3.26,8.896,7.531c0.082,0.489,0.135,0.988,0.135,1.5S52.072,29.355,51.99,29.844z"/>
+  </g>
+</svg>
+</a>
+            </div>
+          </div>
+          <div class="page-header__btn-burger js-toggle"><span></span>
+          </div>
+          <nav id="nav" class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item"><a class="navigation__link navigation__link--active">Главная</a>
+              </li>
+              <li class="navigation__item"><a href="photo.html" class="navigation__link">Фотографии</a>
+              </li>
+              <li class="navigation__item"><a href="form.html" class="navigation__link">Конкурс</a>
+              </li>
+              <li class="navigation__item"><a href="#" class="navigation__link">HTML Academy</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="page-content">
+      <div class="heading heading--index">
+        <div class="heading__wrap heading__wrap--index">
+          <h2 class="heading__title heading__title--index">Взгляните на&nbsp;жизнь иначе!
+          </h2>
+        </div>
+        <div class="downloads">
+          <div class="downloads__wrap"><a href="#" class="downloads__btn btn btn--download">Скачать приложение</a>
+            <div class="downloads__link-wrap"><a href="#" title="itunes" class="downloads__link">apple
+              <svg class="downloads__svg downloads__svg--itunes svg-logo-apple">
+                <use xlink:href="img/svg-sprite.svg#logo-apple"></use>
+              </svg></a><a href="#" title="android" class="downloads__link">android
+              <svg class="downloads__svg downloads__svg--itunes svg-logo-android">
+                <use xlink:href="img/svg-sprite.svg#logo-android"></use>
+              </svg></a><a href="#" title="windows" class="downloads__link">windows
+              <svg class="downloads__svg downloads__svg--itunes svg-logo-microsoft">
+                <use xlink:href="img/svg-sprite.svg#logo-microsoft"></use>
+              </svg></a>
+            </div>
+            <p class="downloads__text">Доступно для iPhone, iPad, Android, Windows Phone, OS&nbsp;X, Windows&nbsp;8
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="container">
+          <div class="info-title">
+            <h2 class="info-title__title"><span class="info-title__part">Устали от&nbsp;серости мегаполиса?</span><span class="info-title__part">Нам есть, что вам<br>предложить!</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="box box--gray">
+        <div class="container">
+          <div class="advantages">
+            <div class="advantages__item">
+              <picture>
+                <source media="(min-width: 1020px)" srcset="img/features/iphone-screen-desktop-1@1x.png 1x, img/features/iphone-screen-desktop-1@2x.png 2x"/>
+                <source media="(min-width: 700px)" srcset="img/features/iphone-screen-tablet-1@1x.png 1x, img/features/iphone-screen-tablet-1@2x.png 2x"/><img src="img/features/iphone-screen-mobile.png" srcset="img/features/iphone-screen-mobile@2x.png 2x" alt="Поднимает настроение" class="advantages__img"/>
+              </picture>
+              <div class="advantages__content">
+                <h3 class="advantages__title">Поднимает настроение
+                </h3>
+                <p class="advantages__text">Приложение позволит вам победить осеннюю хандру и&nbsp;деперессию буквально в&nbsp;несколько кликов!
+                </p>
+              </div>
+            </div>
+            <div class="advantages__item">
+              <picture>
+                <source media="(min-width: 1020px)" srcset="img/features/iphone-screen-desktop-2@1x.png 1x, img/features/iphone-screen-desktop-2@2x.png 2x"/>
+                <source media="(min-width: 700px)" srcset="img/features/iphone-screen-tablet-2@1x.png 1x, img/features/iphone-screen-tablet-2@2x.png 2x"/><img src="img/features/iphone-screen-mobile.png" srcset="img/features/iphone-screen-mobile@2x.png 2x" alt="Меняет мир вокруг" class="advantages__img"/>
+              </picture>
+              <div class="advantages__content">
+                <h3 class="advantages__title">Меняет мир вокруг
+                </h3>
+                <p class="advantages__text">Сделайте снимок и&nbsp;украсьте его смайликом или текстовой подписью, чтобы усилить&nbsp;эффект
+                </p>
+              </div>
+            </div>
+            <div class="advantages__item">
+              <picture>
+                <source media="(min-width: 1020px)" srcset="img/features/iphone-screen-desktop-3@1x.png 1x, img/features/iphone-screen-desktop-3@2x.png 2x"/>
+                <source media="(min-width: 700px)" srcset="img/features/iphone-screen-tablet-3@1x.png 1x, img/features/iphone-screen-tablet-3@2x.png 2x"/><img src="img/features/iphone-screen-mobile.png" srcset="img/features/iphone-screen-mobile@2x.png 2x" alt="Заводит новых друзей" class="advantages__img"/>
+              </picture>
+              <div class="advantages__content">
+                <h3 class="advantages__title">Заводит новых друзей
+                </h3>
+                <p class="advantages__text">Ставьте лайки, комментируте, делитесь фотографиями с&nbsp;друзьями и&nbsp;заводите новых
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box box--gray-desktop">
+        <div class="container">
+          <div class="feature">
+            <h3 class="feature__title">Эффект на&nbsp;24&nbsp;часа!
+            </h3>
+            <p class="feature__text">
+              Британские ученые провели исследования и&nbsp;доказали,
+              что&nbsp;положительный эффект от&nbsp;использования приложения длится целые сутки!
+            </p><a href="#" class="feature__link">Узнать больше об&nbsp;исследовании</a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="container">
+          <div class="reviews"><input type="radio" id="toggle-reviews-1" name="reviews" checked="checked" class="reviews__input"/><input type="radio" id="toggle-reviews-2" name="reviews" class="reviews__input"/><input type="radio" id="toggle-reviews-3" name="reviews" class="reviews__input"/>
+            <div class="reviews__item reviews__item reviews__item--1">
+              <blockquote class="comment">
+                <p class="comment__text">Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!
+                </p>
+                <cite class="comment__author">Николай Петров
+                </cite>
+                <div class="comment__about-author"><span class="comment__age">25 лет,&nbsp;</span><span class="comment__job">водитель трамвая</span>
+                </div>
+              </blockquote>
+            </div>
+            <div class="reviews__item reviews__item reviews__item--2">
+              <blockquote class="comment">
+                <p class="comment__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Обеспечивает большой предложения наш одна своего осталось города оксмокс свою, свое все языкового даль продолжил.
+                </p>
+                <cite class="comment__author">Иван Сидоров
+                </cite>
+                <div class="comment__about-author"><span class="comment__age">95 лет,&nbsp;</span><span class="comment__job">электрик</span>
+                </div>
+              </blockquote>
+            </div>
+            <div class="reviews__item reviews__item reviews__item--3">
+              <blockquote class="comment">
+                <p class="comment__text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Его ведущими что вершину продолжил прямо бросил послушавшись снова текст это если!
+                </p>
+                <cite class="comment__author">Петр Иванов
+                </cite>
+                <div class="comment__about-author"><span class="comment__age">18 лет,&nbsp;</span><span class="comment__job">дворник</span>
+                </div>
+              </blockquote>
+            </div>
+            <div class="reviews__toggles">
+              <label for="toggle-reviews-1" class="reviews__toggle reviews__toggle reviews__toggle--1">Отзыв:1
+              </label>
+              <label for="toggle-reviews-2" class="reviews__toggle reviews__toggle reviews__toggle--2">Отзыв:2
+              </label>
+              <label for="toggle-reviews-3" class="reviews__toggle reviews__toggle reviews__toggle--3">Отзыв:3
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box box--gray">
+        <div class="tariffs"><input type="radio" id="toggle-tariffs-1" name="tariffs" class="tariffs__input"/><input type="radio" id="toggle-tariffs-2" name="tariffs" checked="checked" class="tariffs__input"/><input type="radio" id="toggle-tariffs-3" name="tariffs" class="tariffs__input"/>
+          <table class="tariffs__table">
+            <tr class="tariffs__tr">
+              <th class="tariffs__th--empty"></th>
+              <th>
+                <div class="tariffs__title">База
+                </div>
+                <div class="tariffs__price">1,99 USD
+                </div>
+              </th>
+              <th>
+                <div class="tariffs__hit">
+                </div>
+                <div class="tariffs__title">Стандарт
+                </div>
+                <div class="tariffs__price">3,99 USD
+                </div>
+              </th>
+              <th>
+                <div class="tariffs__title">Анлим
+                </div>
+                <div class="tariffs__price">9,99 USD
+                </div>
+              </th>
+            </tr>
+            <tr class="tariffs__tr">
+              <td class="tariffs__option">Розовый фильтр
+              </td>
+              <td data-option="Розовый фильтр">
+                <div class="tariffs__icon tariffs__icon--true">Есть
+                  <svg class="tariffs__icon-svg svg-icon-yes">
+                    <use xlink:href="img/svg-sprite.svg#icon-yes"></use>
+                  </svg>
+                </div>
+              </td>
+              <td data-option="Розовый фильтр">
+                <div class="tariffs__icon tariffs__icon--true">Есть
+                  <svg class="tariffs__icon-svg svg-icon-yes">
+                    <use xlink:href="img/svg-sprite.svg#icon-yes"></use>
+                  </svg>
+                </div>
+              </td>
+              <td data-option="Розовый фильтр">
+                <div class="tariffs__icon tariffs__icon--true">Есть
+                  <svg class="tariffs__icon-svg svg-icon-yes">
+                    <use xlink:href="img/svg-sprite.svg#icon-yes"></use>
+                  </svg>
+                </div>
+              </td>
+            </tr>
+            <tr class="tariffs__tr">
+              <td class="tariffs__option">Смайлики
+              </td>
+              <td data-option="Смайлики">
+                <div class="tariffs__icon tariffs__icon--false">Нет
+                  <svg class="tariffs__icon-svg svg-icon-no">
+                    <use xlink:href="img/svg-sprite.svg#icon-no"></use>
+                  </svg>
+                </div>
+              </td>
+              <td data-option="Смайлики">
+                <div class="tariffs__icon tariffs__icon--true">Есть
+                  <svg class="tariffs__icon-svg svg-icon-yes">
+                    <use xlink:href="img/svg-sprite.svg#icon-yes"></use>
+                  </svg>
+                </div>
+              </td>
+              <td data-option="Смайлики">
+                <div class="tariffs__icon tariffs__icon--true">Есть
+                  <svg class="tariffs__icon-svg svg-icon-yes">
+                    <use xlink:href="img/svg-sprite.svg#icon-yes"></use>
+                  </svg>
+                </div>
+              </td>
+            </tr>
+            <tr class="tariffs__tr">
+              <td class="tariffs__option">Комментарии
+              </td>
+              <td data-option="Комментарии">
+                <div class="tariffs__icon tariffs__icon--false">Нет
+                  <svg class="tariffs__icon-svg svg-icon-no">
+                    <use xlink:href="img/svg-sprite.svg#icon-no"></use>
+                  </svg>
+                </div>
+              </td>
+              <td data-option="Комментарии">
+                <div class="tariffs__icon tariffs__icon--false">Нет
+                  <svg class="tariffs__icon-svg svg-icon-no">
+                    <use xlink:href="img/svg-sprite.svg#icon-no"></use>
+                  </svg>
+                </div>
+              </td>
+              <td data-option="Комментарии">
+                <div class="tariffs__icon tariffs__icon--true">Есть
+                  <svg class="tariffs__icon-svg svg-icon-yes">
+                    <use xlink:href="img/svg-sprite.svg#icon-yes"></use>
+                  </svg>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div class="tariffs__toggles">
+            <label for="toggle-tariffs-1" class="tariffs__toggle tariffs__toggle tariffs__toggle--1">tariff:1
+            </label>
+            <label for="toggle-tariffs-2" class="tariffs__toggle tariffs__toggle tariffs__toggle--2">tariff:2
+            </label>
+            <label for="toggle-tariffs-3" class="tariffs__toggle tariffs__toggle tariffs__toggle--3">tariff:3
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="box box--triangle">
+        <div class="container">
+          <div class="contacts">
+            <h2 class="contacts__headling">Остались вопросы?<br>Свяжитесь с&nbsp;нами!
+            </h2>
+            <div class="contacts__item contacts__item--phone"><span class="contacts__title">Звоните:</span><a href="tel:+78125556666" class="contacts__description contacts__description--link">+7 (812) 555-66-66</a>
+            </div>
+            <div class="contacts__item contacts__item--email"><span class="contacts__title">Пишите:</span><a href="mailto:mail@htmlacademy.ru" class="contacts__description contacts__description--link">mail@htmlacademy.ru</a>
+            </div>
+            <div class="contacts__item contacts__item--address"><span class="contacts__title">Приезжайте в гости:</span>
+              <p class="contacts__description">ул. Большая Конюшенная,&nbsp;19/8
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map">
+        <div id="map" data-latitude="59.938794" data-longitude="30.323082" class="map__image">
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer page-footer--hide-mobile">
+      <div class="container">
+        <div class="page-footer__inner">
+          <div class="page-footer__item page-footer__item--logo">
+            <div class="logo"><a class="logo__link logo__link--footer">Pink<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   class="logo__svg" width="146.3px" height="40.375px" viewBox="0 0 146.3 40.375" enable-background="new 0 0 146.3 40.375" xml:space="preserve">
+  <g>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M71.874,18.661c0-0.708,0.58-1.288,1.256-1.288h7.18c5.087,0,8.436,2.704,8.436,7.146v0.064
+      c0,4.861-4.057,7.373-8.854,7.373h-5.475v6.825c0,0.708-0.58,1.288-1.288,1.288c-0.676,0-1.256-0.58-1.256-1.288V18.661z
+       M79.988,29.641c3.734,0,6.182-1.996,6.182-4.959v-0.063c0-3.22-2.414-4.894-6.053-4.894h-5.699v9.917H79.988L79.988,29.641z"/>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M93.603,18.5c0-0.708,0.579-1.288,1.255-1.288c0.709,0,1.288,0.58,1.288,1.288v20.283
+      c0,0.708-0.579,1.287-1.288,1.287c-0.676,0-1.255-0.579-1.255-1.287V18.5z"/>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M102.744,18.532c0-0.676,0.58-1.256,1.256-1.256h0.354c0.58,0,0.935,0.29,1.288,0.74l13.684,17.45V18.468
+      c0-0.676,0.547-1.256,1.256-1.256c0.676,0,1.224,0.58,1.224,1.256v20.349c0,0.676-0.481,1.19-1.158,1.19h-0.129
+      c-0.548,0-0.935-0.321-1.319-0.772l-13.975-17.868v17.45c0,0.676-0.547,1.256-1.256,1.256c-0.676,0-1.223-0.58-1.223-1.256V18.532
+      H102.744z"/>
+    <path class="logo__letter  logo__letter--tablet-desktop" fill="#FFFFFF" d="M128.173,18.5c0-0.708,0.58-1.288,1.257-1.288c0.708,0,1.286,0.58,1.286,1.288v12.331l12.848-13.168
+      c0.29-0.257,0.579-0.451,0.998-0.451c0.676,0,1.225,0.612,1.225,1.256c0,0.354-0.162,0.644-0.42,0.901l-7.984,7.92l8.564,10.561
+      c0.225,0.291,0.354,0.547,0.354,0.935c0,0.676-0.578,1.288-1.286,1.288c-0.483,0-0.806-0.258-1.03-0.58l-8.402-10.463l-4.863,4.861
+      v4.894c0,0.708-0.578,1.288-1.286,1.288c-0.677,0-1.257-0.58-1.257-1.288V18.5H128.173z"/>
+  </g>
+  <g>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M0,1.449c0-0.708,0.58-1.288,1.256-1.288h7.18c5.087,0,8.436,2.704,8.436,7.147v0.064
+      c0,4.861-4.057,7.373-8.854,7.373H2.544v6.825c0,0.708-0.58,1.288-1.288,1.288C0.58,22.859,0,22.279,0,21.571V1.449z M8.114,12.428
+      c3.734,0,6.182-1.996,6.182-4.958V7.405c0-3.22-2.415-4.894-6.054-4.894H2.544v9.917H8.114z"/>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M21.729,1.288C21.729,0.58,22.308,0,22.983,0c0.709,0,1.288,0.58,1.288,1.288v20.283
+      c0,0.708-0.579,1.288-1.288,1.288c-0.676,0-1.255-0.58-1.255-1.288V1.288z"/>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M30.87,1.32c0-0.676,0.579-1.256,1.256-1.256h0.354c0.58,0,0.934,0.29,1.288,0.74l13.684,17.45V1.256
+      C47.451,0.58,47.998,0,48.707,0c0.676,0,1.223,0.58,1.223,1.256v20.348c0,0.676-0.482,1.191-1.158,1.191h-0.129
+      c-0.548,0-0.934-0.322-1.32-0.772L33.349,4.153v17.45c0,0.676-0.547,1.256-1.255,1.256c-0.677,0-1.224-0.58-1.224-1.256V1.32z"/>
+    <path class="logo__letter  logo__letter--mobile" fill="#FFFFFF" d="M56.3,1.288C56.3,0.58,56.879,0,57.556,0c0.708,0,1.287,0.58,1.287,1.288v12.331L71.689,0.451
+      C71.979,0.193,72.269,0,72.688,0c0.676,0,1.224,0.612,1.224,1.256c0,0.354-0.161,0.644-0.419,0.901l-7.984,7.92l8.564,10.561
+      c0.225,0.29,0.354,0.547,0.354,0.934c0,0.676-0.579,1.288-1.287,1.288c-0.483,0-0.806-0.258-1.03-0.58l-8.403-10.463l-4.862,4.861
+      v4.894c0,0.708-0.579,1.288-1.287,1.288c-0.677,0-1.256-0.58-1.256-1.288V1.288z"/>
+  </g>
+  <path class="logo__star" fill="#D22856" d="M98.498,9.875c-2.002,0-3.623-1.623-3.623-3.624c0,2.001-1.623,3.624-3.625,3.624
+    c2.002,0,3.625,1.623,3.625,3.624C94.875,11.498,96.496,9.875,98.498,9.875z"/>
+  <g>
+    <path class="logo__glasses logo__glasses--desktop" fill="#FFFFFF" d="M43.094,19.313c0.246,0,0.489,0.014,0.73,0.033c-0.437-0.728-1.227-1.221-2.136-1.221
+      c-0.877,0-1.614-0.568-1.884-1.354c-0.727,0.208-1.425,0.482-2.089,0.816c0.062,0.017,0.122,0.038,0.188,0.038c1.104,0,2,0.896,2,2
+      c0,0.096-0.015,0.188-0.028,0.281C40.875,19.524,41.959,19.313,43.094,19.313z"/>
+    <path class="logo__glasses logo__glasses--desktop" fill="#FFFFFF" d="M60.462,28.016c-0.002-0.009-5.175-21.365-5.175-21.365C54.926,4.303,52.694,0,46.688,0
+      c-0.829,0-1.5,0.671-1.5,1.5s0.671,1.5,1.5,1.5c4.856,0,5.575,3.729,5.639,4.143l4.767,19.701h-2.073
+      c-0.445-3.557-2.453-6.628-5.305-8.522c-0.897,0.379-1.529,1.269-1.529,2.303c0,0.088-0.015,0.171-0.026,0.256
+      c1.991,1.358,3.415,3.489,3.829,5.964c0.082,0.489,0.135,0.988,0.135,1.5s-0.053,1.012-0.135,1.5
+      c-0.716,4.272-4.421,7.531-8.896,7.531c-4.475,0-8.181-3.259-8.896-7.531c-0.082-0.488-0.135-0.988-0.135-1.5
+      s0.053-1.011,0.135-1.5c0.147-0.878,0.427-1.711,0.808-2.483c-1.034-0.078-1.852-0.932-1.852-1.985
+      c0-0.189-0.077-0.357-0.192-0.489c-0.938,1.469-1.569,3.15-1.795,4.958h-1.82c-0.741-5.927-5.802-10.531-11.927-10.531
+      S6.235,20.917,5.493,26.844H3.42L8.187,7.143C8.25,6.729,8.97,3,13.826,3c0.829,0,1.5-0.671,1.5-1.5S14.655,0,13.826,0
+      C7.82,0,5.588,4.303,5.227,6.651c0,0-5.173,21.356-5.175,21.365c-0.266,1.109,0.531,1.826,1.426,1.826
+      c0.012,0,0.023,0.004,0.036,0.004h3.982c0.079,0.628,0.215,1.237,0.387,1.831c0.059-0.106,0.102-0.224,0.102-0.354
+      c0-1.104,0.896-2,2-2c0.166,0,0.324,0.025,0.478,0.063c-0.043-0.343-0.074-0.688-0.074-1.042c0-0.512,0.053-1.011,0.135-1.5
+      c0.715-4.271,4.421-7.531,8.896-7.531s8.18,3.26,8.896,7.531c0.082,0.489,0.135,0.988,0.135,1.5s-0.053,1.012-0.135,1.5
+      c-0.715,4.272-4.421,7.531-8.896,7.531c-2.022,0-3.883-0.67-5.386-1.794c-0.35,0.302-0.8,0.491-1.299,0.491
+      c-0.413,0-0.749,0.336-0.749,0.748c0,0.29-0.065,0.564-0.176,0.812c2.075,1.708,4.722,2.743,7.614,2.743
+      c6.125,0,11.185-4.604,11.927-10.53h1.814c0.742,5.926,5.802,10.53,11.927,10.53s11.186-4.604,11.927-10.53H59
+      c0.012,0,0.023-0.004,0.036-0.004C59.931,29.842,60.728,29.125,60.462,28.016z"/>
+  </g>
+  <g>
+    <g>
+      <path class="logo__star  logo__star--footer" fill="#D22856" d="M50.686,16.125c-2.485,0-4.499-2.014-4.499-4.499c0,2.485-2.014,4.499-4.499,4.499
+        c2.485,0,4.499,2.014,4.499,4.499C46.187,18.139,48.2,16.125,50.686,16.125z"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <path class="logo__star  logo__star--footer" fill="#D22856" d="M37.904,19.626c-1.519,0-2.749-1.23-2.749-2.749c0,1.519-1.23,2.749-2.749,2.749
+        c1.519,0,2.749,1.229,2.749,2.749C35.155,20.855,36.386,19.626,37.904,19.626z"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <path class="logo__star  logo__star--footer" fill="#D22856" d="M10.734,34.072c-1.519,0-2.749-1.23-2.749-2.75c0,1.52-1.23,2.75-2.749,2.75
+        c1.519,0,2.749,1.229,2.749,2.748C7.985,35.303,9.215,34.072,10.734,34.072z"/>
+    </g>
+  </g>
+  <g>
+    <path class="logo__glasses logo__glasses--tablet" fill="#FFFFFF" d="M60.462,28.016c-0.002-0.009-5.175-21.365-5.175-21.365C54.926,4.303,52.694,0,46.688,0
+      c-0.829,0-1.5,0.671-1.5,1.5s0.671,1.5,1.5,1.5c4.856,0,5.575,3.729,5.639,4.143l4.767,19.701h-2.073
+      c-0.742-5.927-5.802-10.531-11.927-10.531s-11.186,4.604-11.927,10.531h-1.82c-0.741-5.927-5.802-10.531-11.927-10.531
+      S6.235,20.917,5.493,26.844H3.42L8.187,7.143C8.25,6.729,8.97,3,13.826,3c0.829,0,1.5-0.671,1.5-1.5S14.655,0,13.826,0
+      C7.82,0,5.588,4.303,5.227,6.651c0,0-5.173,21.356-5.175,21.365c-0.266,1.109,0.531,1.826,1.426,1.826
+      c0.012,0,0.023,0.004,0.036,0.004h3.982c0.741,5.926,5.802,10.53,11.927,10.53s11.185-4.604,11.927-10.53h1.814
+      c0.742,5.926,5.802,10.53,11.927,10.53s11.186-4.604,11.927-10.53H59c0.012,0,0.023-0.004,0.036-0.004
+      C59.931,29.842,60.728,29.125,60.462,28.016z M26.315,29.844c-0.715,4.272-4.421,7.531-8.896,7.531c-4.475,0-8.18-3.259-8.896-7.531
+      c-0.082-0.488-0.135-0.988-0.135-1.5s0.053-1.011,0.135-1.5c0.715-4.271,4.421-7.531,8.896-7.531c4.475,0,8.18,3.26,8.896,7.531
+      c0.082,0.489,0.135,0.988,0.135,1.5S26.397,29.355,26.315,29.844z M51.99,29.844c-0.716,4.272-4.421,7.531-8.896,7.531
+      c-4.475,0-8.181-3.259-8.896-7.531c-0.082-0.488-0.135-0.988-0.135-1.5s0.053-1.011,0.135-1.5c0.716-4.271,4.421-7.531,8.896-7.531
+      c4.475,0,8.181,3.26,8.896,7.531c0.082,0.489,0.135,0.988,0.135,1.5S52.072,29.355,51.99,29.844z"/>
+  </g>
+</svg>
+</a>
+            </div>
+          </div>
+          <div class="page-footer__item page-footer__item--social">
+            <div class="social"><a href="#" title="twitter" class="social__link">twitter
+              <svg class="social__svg social__svg--twitter svg-icon-twitter">
+                <use xlink:href="img/svg-sprite.svg#icon-twitter"></use>
+              </svg></a><a href="#" title="facebook" class="social__link">facebook
+              <svg class="social__svg social__svg--facebook svg-icon-facebook">
+                <use xlink:href="img/svg-sprite.svg#icon-facebook"></use>
+              </svg></a><a href="#" title="youtube" class="social__link">youtube
+              <svg class="social__svg social__svg--youtube svg-icon-youtube">
+                <use xlink:href="img/svg-sprite.svg#icon-youtube"></use>
+              </svg></a>
+            </div>
+          </div>
+          <div class="page-footer__item page-footer__item--copyright">
+            <div class="copyright"><a href="#" title="HTML Academy" class="copyright__link">Разработано
+              <svg class="copyright__logo-svg svg-logo-htmlacademy">
+                <use xlink:href="img/svg-sprite.svg#logo-htmlacademy"></use>
+              </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/scripts.min.js"></script>
+    <script async defer src="http://maps.google.com/maps/api/js?key=AIzaSyAC349Oh0rR9acZB3s5NyfROUcDBWhxoWs&amp;callback=mapHandler"></script>
+  </body>
+</html>

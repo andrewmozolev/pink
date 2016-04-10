@@ -1,9 +1,0 @@
-mixin form-group(item)
-  +b.form-group
-    +e.LABEL.label(for="form-" + item.name)= item.label
-    +e.INPUT.input(
-      type = item.inputType,
-      name = "form-" + item.name,
-      id = "form-" + item.name,
-      placeholder = item.placeholder
-    )
