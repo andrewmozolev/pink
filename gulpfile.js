@@ -1,82 +1,66 @@
 'use strict';
 
 var gulp         = require('gulp');
+
 var sass         = require('gulp-sass');
-var csscomb      = require('gulp-csscomb');
 var plumber      = require('gulp-plumber');
 var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var reporter     = require('postcss-reporter');
 var syntax_scss  = require('postcss-scss');
-var flexboxfixer = require('postcss-flexboxfixer')
+var flexboxfixer = require('postcss-flexboxfixer');
 var cssnano      = require('cssnano');
 var mqpacker     = require('css-mqpacker');
 var stylelint    = require('stylelint');
 var sourcemaps   = require('gulp-sourcemaps');
+
 var rename       = require('gulp-rename');
 var gulpIf       = require('gulp-if');
-var server       = require('browser-sync');
+var browserSync  = require('browser-sync');
 var notify       = require('gulp-notify');
+var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify');
+var imagemin     = require('gulp-imagemin');
+var pngquant     = require('imagemin-pngquant');
 var svgSprite    = require('gulp-svg-sprite');
 var fs           = require('fs'); // встроенный в node модуль, устанавливать не надо
 var foldero      = require('foldero'); // плагин
 var jade         = require('gulp-jade');
 var runSequence  = require('run-sequence');
+var del          = require('del');
+var ghPages      = require('gulp-gh-pages');
 var dataPath     = 'src/jade/_data'; // Где лежат файлы
 
-var argv           = require('minimist')(process.argv.slice(2));
+var argv = require('minimist')(process.argv.slice(2));
 
 var path = require('path');
 
-var isOnProduction = !!argv.production
-var buildPath = isOnProduction ? 'build' : 'tmp';
-var srcPath = 'src/';
-
-
-/*=============================
-=            PATHS            =
-=============================*/
-
-var paths = {
-  build: {
-    jade: 'build/',
-    sass: 'build/css/',
-    js: 'build/js/',
-    svg: 'build/img/svg-sprite.svg',
-    img: 'build/img/',
-    fonts: 'build/fonts/'
-  },
-  src: {
-    jade: 'src/jade/_pages/*.jade',
-    sass: 'src/sass/style.scss',
-    js: 'src/js/*.js',
-    svg: 'src/img/svg-sprite/*.svg',
-    img: ['!src/img/svg-sprite/*.*','src/img/**/*.*'],
-    fonts: 'src/fonts/**/*.*'
-  },
-  watch: {
-    jade: 'src/jade/**/*.*',
-    sass: 'src/sass/**/*.{scss,sass}',
-    js: 'src/js/**/*.js',
-    svg: 'src/img/svg-sprite/**/*.svg',
-    img: 'src/img/**/*.{jpg,png}',
-    fonts: 'src/fonts/**/*.*'
-  }
-};
-
-/*=====  End of PATHS  ======*/
+var isOnProduction = !!argv.production;
+var buildPath      = isOnProduction ? 'build' : 'tmp';
+var srcPath        = 'src/';
 
 
 
 
 
+/* ==============================
+=            DEPLOY             =
+============================== */
+
+gulp.task('deploy', function() {
+  return gulp.src('**/*', {cwd: buildPath})
+  .pipe(ghPages());
+});
+
+/* =====  End of DEPLOY  ====== */
 
 
 
-/*=================================
-=            Gulp JADE            =
-=================================*/
+
+
+/* ============================
+=            JADE             =
+============================ */
 
 gulp.task('jade', function() {
   // в этой переменной копим данные
@@ -132,17 +116,14 @@ gulp.task('jade', function() {
   }));
 });
 
-/*=====  End of Gulp JADE  ======*/
-
-
-
+/* =====  End of JADE  ====== */
 
 
 
 
 
 /*=======================================
-=            Gulp SVG-SPRITE            =
+=              SVG-SPRITE               =
 =======================================*/
 
 gulp.task('svg', function() {
@@ -165,10 +146,7 @@ gulp.task('svg', function() {
   .pipe(gulp.dest('./'));
 });
 
-/*=====  End of Gulp SVG-SPRITE  ======*/
-
-
-
+/*========  End of SVG-SPRITE  ========*/
 
 
 
@@ -180,8 +158,17 @@ gulp.task('svg', function() {
 
 gulp.task('img', function() {
   return gulp.src(['!svg-sprite/*.*', '**/*.*'], {cwd: path.join(srcPath, 'img')})
-  .pipe(gulp.dest(buildPath + '/img'))
-})
+  .pipe(gulpIf(isOnProduction, imagemin({
+    progressive: true,
+    svgoPlugins: [
+    {removeViewBox: false},
+    {cleanupIDs: false}
+    ],
+    use: [pngquant()]
+  })))
+
+  .pipe(gulp.dest(buildPath + '/img'));
+});
 
 /*=====  End of Gulp IMAGES  ======*/
 
@@ -189,30 +176,29 @@ gulp.task('img', function() {
 
 
 
-
-
-
 /*===============================
-=            Gulp JS            =
+=               JS              =
 ===============================*/
 
 gulp.task('js', function() {
-  return gulp.src('**/*.js', {cwd: path.join(srcPath, 'js')})
+  return gulp.src(['lib/**', 'modules/**', 'scripts.js'], {cwd: path.join(srcPath, 'js')})
   .pipe(plumber({
     errorHandler: notify.onError('Error: <%= error.message %>')
   }))
+  .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
+  .pipe(concat('scripts.js'))
+  .pipe(gulpIf(!isOnProduction, gulp.dest(path.join(buildPath, 'js'))))
   .pipe(uglify())
+  .pipe(rename('scripts.min.js'))
+  .pipe(gulpIf(!isOnProduction, sourcemaps.write('./')))
   .pipe(gulp.dest(path.join(buildPath, 'js')))
   .pipe(notify({
     message:'JS complite: <%= file.relative %>!',
     sound: 'Pop'
-  }))
+  }));
 });
 
-/*=====  End of Gulp JS  ======*/
-
-
-
+/*=======  End of JS  ========*/
 
 
 
@@ -224,10 +210,10 @@ gulp.task('js', function() {
 
 gulp.task('styletest', function() {
   var processors = [
-    stylelint(),
-    reporter({
-      throwError: true
-    })
+  stylelint(),
+  reporter({
+    throwError: true
+  })
   ];
   return gulp.src(['!src/sass/_global/svg-sprite.scss', 'src/sass/**/*.scss'])
 
@@ -237,13 +223,10 @@ gulp.task('styletest', function() {
       sound: 'notwork'
     })
   }))
-  .pipe(postcss(processors, {syntax: syntax_scss}))
+  .pipe(postcss(processors, {syntax: syntax_scss}));
 });
 
 /* =====  End of STYLETEST  ====== */
-
-
-
 
 
 
@@ -262,7 +245,7 @@ gulp.task('style', function() {
     })
   }))
   .pipe(gulpIf(!isOnProduction, sourcemaps.init()))
-  .pipe(sass().on('error', sass.logError))
+  .pipe(sass())
   .pipe(postcss([
     flexboxfixer,
     autoprefixer({browsers: [
@@ -271,23 +254,21 @@ gulp.task('style', function() {
       'last 2 Firefox versions',
       'last 2 Opera versions',
       'last 2 Edge versions'
-    ]}),
+      ]}),
+    mqpacker,
     cssnano({safe:true})
-  ]))
+    ]))
   .pipe(rename('style.min.css'))
   .pipe(gulpIf(!isOnProduction, sourcemaps.write('./')))
-  .pipe(gulp.dest(buildPath + '/css'))
-  .pipe(server.stream())
+  .pipe(gulp.dest(path.join(buildPath, '/css')))
+  .pipe(browserSync.stream({match: '**/*.css'}))
   .pipe(notify({
     message:'SCSS complite: <%= file.relative %>!',
     sound: 'Pop'
-  }))
+  }));
 });
 
 /*=====  End of Gulp SASS  ======*/
-
-
-
 
 
 
@@ -299,8 +280,8 @@ gulp.task('style', function() {
 
 gulp.task('fonts', function() {
   return gulp.src('**/*.*', {cwd: path.join(srcPath, 'fonts')})
-  .pipe(gulp.dest(buildPath + '/fonts'))
-})
+  .pipe(gulp.dest(buildPath + '/fonts'));
+});
 
 /* =====  End of Gulp FONTS  ====== */
 
@@ -308,29 +289,48 @@ gulp.task('fonts', function() {
 
 
 
+/* ===========================
+=            DEL            =
+=========================== */
+
+gulp.task('del', function() {
+  return del([path.join(buildPath), path.join(srcPath, 'sass/_global/svg-sprite.scss')]).then(paths => {
+    console.log('Deleted files and folders:\n', paths.join('\n'));
+  });
+});
+
+/* =====  End of DEL  ====== */
 
 
 
-/*==================================
-=            Gulp SERVE            =
-==================================*/
 
-gulp.task('serve', function() {
-  server.init({
+
+/* ==================================
+=            BROWSERSYNC            =
+================================== */
+
+gulp.task('server', function() {
+  browserSync.init({
     server: {
       baseDir: buildPath
     },
     notify: false,
-    open: true,
+    open: false,
     ui: false
   });
 });
 
-/*=====  End of Gulp SERVE  ======*/
+/* =====  End of BROWSERSYNC  ====== */
 
 
 
-gulp.task('build', function (callback) {
+
+
+/* =============================
+=            BUILD             =
+============================= */
+
+gulp.task('build', ['del'], function (callback) {
   runSequence(
     'svg',
     'jade',
@@ -339,30 +339,31 @@ gulp.task('build', function (callback) {
     'fonts',
     'style',
     callback);
-})
+});
+
+/* =====  End of BUILD  ====== */
+
 
 
 
 
 /* ===============================
-=            DEFAULT            =
+=            DEFAULT             =
 =============================== */
 
-var allTasks = ['build']
-
-if (!isOnProduction) {
-  allTasks.push('serve');
-}
-
-gulp.task('default', allTasks, function() {
-  if (!isOnProduction) {
-    gulp.watch('**/*.scss', {cwd: path.join(srcPath, "sass")}, ['style', server.stream]);
-    gulp.watch('**/*.jade', {cwd: path.join(srcPath, "jade")}, ['jade', server.reload]);
-    gulp.watch('**/*.js', {cwd: path.join(srcPath, "js")}, ['js']);
-    gulp.watch('**/*.*', {cwd: path.join(srcPath, "img/svg-sprite")}, ['svg']);
-    gulp.watch('**/*.*', {cwd: path.join(srcPath, "img")}, ['img']);
-    gulp.watch('**/*.*', {cwd: path.join(srcPath, "fonts")}, ['fonts']);
+gulp.task('default', ['build'], function() {
+  if (isOnProduction) {
+    gulp.start('deploy');
   }
-})
+  if (!isOnProduction) {
+    gulp.start('server');
+    gulp.watch('**/*.scss', {cwd: path.join(srcPath, 'sass')}, ['style', browserSync.stream]);
+    gulp.watch(['**/*.jade', '**/*.json'], {cwd: path.join(srcPath, 'jade')}, ['jade', browserSync.reload]);
+    gulp.watch('**/*.js', {cwd: path.join(srcPath, 'js')}, ['js', browserSync.reload]);
+    gulp.watch('**/*.svg', {cwd: path.join(srcPath, 'img/svg-sprite')}, ['svg', browserSync.reload]);
+    gulp.watch(['**/*.*','!svg-sprite/**'], {cwd: path.join(srcPath, 'img')}, ['img', browserSync.reload]);
+    gulp.watch('**/*.*', {cwd: path.join(srcPath, 'fonts')}, ['fonts', browserSync.reload]);
+  }
+});
 
 /* =====  End of DEFAULT  ====== */

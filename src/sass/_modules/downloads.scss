@@ -26,6 +26,7 @@
   &__link {
     @include text-hide;
     display: inline-block;
+    vertical-align: top;
     color: #fff;
     margin-right: 35px;
     margin-bottom: 24px;

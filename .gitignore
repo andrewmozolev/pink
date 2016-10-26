@@ -11,3 +11,5 @@ build/
 tmp/
 *.todo
 src/sass/_global/svg-sprite.scss
+createModule.js
+.publish

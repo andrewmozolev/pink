@@ -13,3 +13,8 @@ html {
 .container {
   @include container;
 }
+
+
+body {
+  position: relative;
+}

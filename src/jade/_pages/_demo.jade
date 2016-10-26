@@ -1,7 +1,7 @@
 extends ../_layouts/base
 
 block variables
-  - var selected = "demo.html"
+  - var selected = "_demo.html"
 
 block content
 
@@ -11,7 +11,8 @@ block content
 
   .container
     +b.description--small
-        +e.H2.title Стилизация всплывающих окон.
+      +e.H2.title Стилизация всплывающих окон.
 
   +popup-fail("demo")
   +popup-success("demo")
+

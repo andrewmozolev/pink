@@ -80,40 +80,68 @@
 
 
     &__toggles {
-      display: none;
-    }
-
-
-    &__arrow {
-      @include text-hide;
-      position: absolute;
-      top: 213px;
       display: block;
     }
 
 
-    &__arrow--left {
-      left: 0;
+    &__toggle::before,
+    &__toggle::after {
+      content: "";
+      display: none;
+      position: absolute;
+      top: 219px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border-bottom: 2px solid $bg_blue-opacity;
+      border-right: 2px solid $bg_blue-opacity;
+      background-color: transparent;
     }
 
 
-    &__arrow--right {
-      right: 0;
+    &__toggle:hover::before,
+    &__toggle:hover::after {
+      border-color: $bg_blue-opacity-dark;
     }
 
 
-    &__arrow-svg {
-      fill: $bg_blue-opacity;
+    &__toggle:active::before,
+    &__toggle:active::after {
+      border-color: $bg_blue-opacity-light;
     }
 
 
-    &__arrow:hover  &__arrow-svg {
-      fill: $bg_blue-opacity-dark;
+    &__toggle::before {
+      left: 5px;
+      transform: rotate(135deg);
     }
 
 
-    &__arrow:active  &__arrow-svg {
-      fill: $bg_blue-opacity-light;
+    &__toggle::after {
+      right: 5px;
+      transform: rotate(-45deg);
+    }
+
+
+    @for $i from 1 through $reviews {
+      @if $i == 1 {
+        &__input:first-of-type:checked ~ &__toggles &__toggle--#{$reviews}::before,
+        &__input[id="toggle-reviews-#{$i}"]:checked ~ &__toggles &__toggle--#{$i + 1}::after {
+          display: block;
+        }
+      }
+      @else if $i == $reviews {
+        &__input[id="toggle-reviews-#{$i}"]:checked ~ &__toggles &__toggle--#{$i - 1}::before,
+        &__input:last-of-type:checked ~ &__toggles &__toggle--1::after {
+          display: block;
+        }
+      }
+      @else {
+        &__input[id="toggle-reviews-#{$i}"]:checked ~ &__toggles &__toggle--#{$i - 1}::before,
+        &__input[id="toggle-reviews-#{$i}"]:checked ~ &__toggles &__toggle--#{$i + 1}::after {
+          display: block;
+        }
+      }
     }
   }
 }

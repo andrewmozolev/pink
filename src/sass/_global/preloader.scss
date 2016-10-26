@@ -1,0 +1,52 @@
+body.preview::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: $bg_dark;
+}
+
+
+$max: 12; /* количество кружков */
+$size: 120px; /* размер прелоадера */
+$fill: $c_pink; /* цвет кружков */
+$angle: 360/$max; /* угол поворота каждого кружка относительно центра фигуры */
+
+
+.svg-preloader {
+  display: none;
+  content: "";
+  position: absolute;
+  z-index: 1001;
+  top: 50vh;
+  left: 50%;
+  height: $size;
+  width: $size;
+  transform: translate(-50%, -50%);
+}
+
+
+.js-show {
+  display: block;
+}
+
+
+.g-circles {
+  fill: $fill;
+}
+
+
+.u-circle {
+  transform-origin: $size/2 $size/2;
+  animation: opacityPreloader 1.2s linear infinite;
+
+  @for $item from 1 through $max {
+    &:nth-child(#{$max}n + #{$item}) {
+      transform: rotate(#{-$angle*$item}deg) translate(10px, 10px) scale(0.85);
+      animation-delay: -#{$item/10}s;
+    }
+  }
+}

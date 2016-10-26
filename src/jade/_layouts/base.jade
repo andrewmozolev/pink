@@ -45,7 +45,13 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="css/style.min.css")
 
-  body
+  body.preview
+    svg(viewBox="0 0 120 120", class="svg-preloader  js-show", id="preloader")
+      symbol(id="s-circle")
+        circle(r="10", cx="10", cy="10")
+      g(id="circle", class="g-circles")
+        - for (var x = 0; x < 12; x++)
+          use(xlink:href="#s-circle", class="u-circle")
     block style
 
     +page-header
@@ -66,7 +72,7 @@ html(lang="ru")
     if isPopupSuccess
       +popup-success
 
-    script(src= "js/scripts.js")
+    script(src= "js/scripts.min.js")
     //- Добаляем скрипт карты,ести есть isMap
     if isMap
-      script(async defer src="http://maps.google.com/maps/api/js?key=AIzaSyAC349Oh0rR9acZB3s5NyfROUcDBWhxoWs&callback=initMap")
+      script(async defer src="http://maps.google.com/maps/api/js?key=AIzaSyAC349Oh0rR9acZB3s5NyfROUcDBWhxoWs&callback=mapHandler")

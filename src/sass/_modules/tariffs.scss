@@ -30,6 +30,7 @@
     padding-bottom: 17px;
     color: #fff;
     background-color: $bg_blue;
+    background-clip: padding-box;
     border-right: 2px solid $bg_gray-light;
   }
 
@@ -90,6 +91,7 @@
     position: relative;
     height: 61px;
     background-color: #fff;
+    background-clip: padding-box;
     border: 2px solid $bg_gray-light;
     border-top: none;
   }
