@@ -6,7 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body>
+  <body class="preview">
+    <svg viewBox="0 0 120 120" id="preloader" class="svg-preloader  js-show">
+      <symbol id="s-circle">
+        <circle r="10" cx="10" cy="10"></circle>
+      </symbol>
+      <g id="circle" class="g-circles">
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+        <use xlink:href="#s-circle" class="u-circle"></use>
+      </g>
+    </svg>
     <header id="header" class="page-header">
       <div class="container">
         <div class="page-header__inner">
@@ -161,26 +180,14 @@
               </div>
             </div>
             <div class="form__item form__item--os">
-              <div class="radio"><input type="radio" name="OS" id="radio-OS-2" value="radio-OS-2" checked="checked" class="radio__input"/>
-                <label for="radio-OS-2" class="radio__label">Pink для iOS
+              <div class="radio"><input type="radio" name="OS" id="radio-OS-2" value="radio-OS-2" class="radio__input"/>
+                <label for="radio-OS-2" class="radio__label">Pink на Android
                 </label>
               </div>
             </div>
             <div class="form__item form__item--os">
-              <div class="radio"><input type="radio" name="OS" id="radio-OS-3" value="radio-OS-3" checked="checked" class="radio__input"/>
-                <label for="radio-OS-3" class="radio__label">Pink для iOS
-                </label>
-              </div>
-            </div>
-            <div class="form__item form__item--os">
-              <div class="radio"><input type="radio" name="OS" id="radio-OS-4" value="radio-OS-4" class="radio__input"/>
-                <label for="radio-OS-4" class="radio__label">Pink на Android
-                </label>
-              </div>
-            </div>
-            <div class="form__item form__item--os">
-              <div class="radio"><input type="radio" name="OS" id="radio-OS-5" value="radio-OS-5" class="radio__input"/>
-                <label for="radio-OS-5" class="radio__label">Windows Phone
+              <div class="radio"><input type="radio" name="OS" id="radio-OS-3" value="radio-OS-3" class="radio__input"/>
+                <label for="radio-OS-3" class="radio__label">Windows Phone
                 </label>
               </div>
             </div>
@@ -209,38 +216,38 @@
             <h2 class="form__title form__title--achievements">Ваши безбашенные достижения в&nbsp;путешествии
             </h2>
             <div class="form__item form__item--achievements">
-              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-6" value="checkbox-achievements-6" checked="checked" class="checkbox__input"/>
-                <label for="checkbox-achievements-6" class="checkbox__label">Сделал селфи с акулой
+              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-4" value="checkbox-achievements-4" checked="checked" class="checkbox__input"/>
+                <label for="checkbox-achievements-4" class="checkbox__label">Сделал селфи с акулой
                 </label>
               </div>
             </div>
             <div class="form__item form__item--achievements">
-              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-7" value="checkbox-achievements-7" checked="checked" class="checkbox__input"/>
-                <label for="checkbox-achievements-7" class="checkbox__label">Обгорел на пляже
+              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-5" value="checkbox-achievements-5" checked="checked" class="checkbox__input"/>
+                <label for="checkbox-achievements-5" class="checkbox__label">Обгорел на пляже
                 </label>
               </div>
             </div>
             <div class="form__item form__item--achievements">
-              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-8" value="checkbox-achievements-8" class="checkbox__input"/>
-                <label for="checkbox-achievements-8" class="checkbox__label">Видел Чака Норриса
+              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-6" value="checkbox-achievements-6" class="checkbox__input"/>
+                <label for="checkbox-achievements-6" class="checkbox__label">Видел Чака Норриса
+                </label>
+              </div>
+            </div>
+            <div class="form__item form__item--achievements">
+              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-7" value="checkbox-achievements-7" class="checkbox__input"/>
+                <label for="checkbox-achievements-7" class="checkbox__label">Накупил сувениров
+                </label>
+              </div>
+            </div>
+            <div class="form__item form__item--achievements">
+              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-8" value="checkbox-achievements-8" checked="checked" class="checkbox__input"/>
+                <label for="checkbox-achievements-8" class="checkbox__label">Удержал башню
                 </label>
               </div>
             </div>
             <div class="form__item form__item--achievements">
               <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-9" value="checkbox-achievements-9" class="checkbox__input"/>
-                <label for="checkbox-achievements-9" class="checkbox__label">Накупил сувениров
-                </label>
-              </div>
-            </div>
-            <div class="form__item form__item--achievements">
-              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-10" value="checkbox-achievements-10" checked="checked" class="checkbox__input"/>
-                <label for="checkbox-achievements-10" class="checkbox__label">Удержал башню
-                </label>
-              </div>
-            </div>
-            <div class="form__item form__item--achievements">
-              <div class="checkbox"><input type="checkbox" name="achievements" id="checkbox-achievements-11" value="checkbox-achievements-11" class="checkbox__input"/>
-                <label for="checkbox-achievements-11" class="checkbox__label">Разгромил отель
+                <label for="checkbox-achievements-9" class="checkbox__label">Разгромил отель
                 </label>
               </div>
             </div>
@@ -249,7 +256,9 @@
             <h2 class="form__title form__title--textarea">Опишите свои эмоции
             </h2><textarea placeholder="Можно прям в красках, не стесняясь в выражениях" name="user-recall" id="user-recall" class="form__textarea"></textarea>
           </div>
-          <div class="form__btn-wrap"><a class="form__btn btn btn--form">Отправить форму</a><span class="form__footnote"><span class="form__color">*</span>&nbsp;— обязательные поля</span>
+          <div class="form__btn-wrap">
+            <button type="submit" class="form__btn btn btn--form">Отправить форму
+            </button><span class="form__footnote"><span class="form__color">*</span>&nbsp;— обязательные поля</span>
           </div>
         </form>
       </div>
